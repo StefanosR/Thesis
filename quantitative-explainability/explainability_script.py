@@ -112,28 +112,6 @@ feature_importance["feature"] = dt.columns[feature_importance["feature"]]
 
 feature_importance.to_csv('quantitative-explainability/feature_importance.csv') 
 
-# Method 2
-vals = np.abs(shap_values[1])
-
-X_train = pd.DataFrame(X_train)
-
-feature_importance2 = pd.DataFrame(list(zip(X_train.columns,vals)),columns=['feature','feature_importance_vals'])
-feature_importance2.sort_values(by=['feature_importance_vals'],ascending=False,inplace=True)
-feature_importance2["feature"] =  'Feature ' + feature_importance2["feature"].astype(str)
-
-feature_importance2.head()
-
-# Method 3
-X_train = pd.DataFrame(X_train)
-
-feature_importance3 = pd.DataFrame(list(zip(X_train.columns, sum(shap_values))), columns=['feature','feature_importance_vals'])
-feature_importance3["feature_importance_vals"] = np.abs(feature_importance3["feature_importance_vals"])
-
-feature_importance3.sort_values(by=['feature_importance_vals'], ascending=False,inplace=True)
-feature_importance3["feature"] =  'Feature ' + feature_importance3["feature"].astype(str)
-
-feature_importance3.head()
-
 # How to view the sorted explanations
 print("\n",feature_importance.head().to_string(index=False),"\n")
 
