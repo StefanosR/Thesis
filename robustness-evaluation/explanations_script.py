@@ -46,7 +46,7 @@ def myscript(iteration_number):
     ## shap.force_plot(explainer.expected_value, shap_values[0, :], X[0])
 
     # summarize the effects of all the features
-    ## shap.summary_plot(shap_values, X)
+    shap.summary_plot(shap_values, X)
 
     # ------------------------------------------------------------------------------------------------------------------------------------------------
     
@@ -135,7 +135,7 @@ def myscript(iteration_number):
  # Runs the Script
  
 def main(unused_command_line_args):
-    for i in range(1):
+    for i in range(5):
         myscript(i+1)
     return 0
 
