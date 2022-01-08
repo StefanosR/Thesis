@@ -1,7 +1,9 @@
 import datacompy, pandas as pd
 
-df1 = pd.read_csv(r'C:\Users\Στέφανος Ρήγας\Desktop\Fast Projects\Thesis\thesis\robustness-evaluation\feature_importance_1.csv')
-df2 = pd.read_csv(r'C:\Users\Στέφανος Ρήγας\Desktop\Fast Projects\Thesis\thesis\robustness-evaluation\feature_importance_2.csv')
+df1 = pd.read_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\feature_importance_1.csv')
+df2 = pd.read_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\feature_importance_2.csv')
+
+# C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\feature_importance_1.csv
 
 compare = datacompy.Compare(df1,df2,
 on_index=True,  #You can also specify a list of columns eg ['policyID','statecode']
