@@ -1,3 +1,10 @@
+# Structure: Train XGBClassifier as a surrogate of the original_model (MLPClassifier)
+# (non deterministic) with the load_breast_cancer dataset
+# Explainability: Global SHAP values with TreeExplainer
+# Script: Run 10 experiments for 2 loops, on the first loop we have the same scenario as G_E_MASHAP, but 
+# for the 2nd loop of experiments we invoke the input perturbatio script at each run, in order to see how
+# the explanations are influenced. We get 2 log files for the 2 loops of the experiment.
+
 from cmath import exp
 import sys
 from threading import local

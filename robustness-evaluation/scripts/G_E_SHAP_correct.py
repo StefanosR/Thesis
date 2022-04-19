@@ -1,4 +1,8 @@
-from cmath import exp
+# Structure: Train MLPClassifier (non deterministic) with the load_breast_cancer dataset
+# Explainability: Global SHAP values with KernelExplainer
+# Script: Run 10 experiments, keep all feature importance values and measure 
+# and measure the Mean of the ranking deviation + average std. deviation of the explanations
+
 import sys
 import pandas as pd
 import numpy as np
@@ -7,24 +11,17 @@ from xgboost.sklearn import XGBClassifier
 from sklearn.metrics import r2_score
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
-import sys 
+import os
 
 # These 2 lines are for redirecting the python output to a log file
 stdoutOrigin=sys.stdout 
-sys.stdout = open("log_GEM_S1_ND_AR_0L.txt", "w")
+sys.stdout = open("log_GES_cOrrect.txt", "w")
+
 #-----------------------------------------------------------------------------------------------------------------
 
 def myscript(iteration_number):
     
     print("Iteration:", iteration_number)
-    
-    def create_surrogate(X, predictions, sur_parameters):
-        # Create surrogate xgboost model
-        surrogate = XGBClassifier(**sur_parameters)
-        surrogate.fit(X, predictions)
-        sur_predictions = surrogate.predict(X)
-        external_fidelity = r2_score(predictions, sur_predictions)
-        return surrogate, external_fidelity
 
     def calc_shap(model, x_explain, approximate=False):
         explainer = shap.TreeExplainer(model)
@@ -34,18 +31,12 @@ def myscript(iteration_number):
     from sklearn.neural_network import MLPClassifier
     # train original model and get its predictions
     X, y = load_breast_cancer(return_X_y=True)
-    X_train, _, y_train, _ = train_test_split(X, y, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
     original_model = MLPClassifier()
     original_model.fit(X_train, y_train)
-    predictions = original_model.predict(X)
 
-    # Use agnostic explainer
-    sur_parameters = {'n_estimators': 100, 'max_depth': 8}
-    surrogate_model, external_fidelity = create_surrogate(X,
-                                                    predictions,
-                                                    sur_parameters)
     # get the shapley values for the whole dataset
-    shap_values, explainer = calc_shap(surrogate_model, X)
+    shap_values, explainer = calc_shap(original_model, X_test)
 
     # ----------- Extract global explanations -----------
     vals= np.abs(shap_values).mean(0)
@@ -58,9 +49,9 @@ def myscript(iteration_number):
 
     feature_importance = feature_importance.head()
 
-    feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt', header=None, index=None, sep=' ', mode='a')
+    feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt', header=None, index=None, sep=' ', mode='a')
 
-    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','a') as file:
+    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','a') as file:
         file.write("\nRun number: 1\n\n")
     file.close()
     
@@ -77,7 +68,7 @@ def main(unused_command_line_args):
 
 main(sys.argv)
     
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
+with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
     data = file.readlines()
 
 j=0
@@ -86,14 +77,14 @@ for i in range(6,8*experiments,8):
     data[i] = 'Run number: '+str(j+1)+'\n'
 
 # Fix the names of the runs
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','w') as file:
+with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','w') as file:
     file.writelines( data )
     
 file.close()
 
 # Extract the explanations from the different runs
 
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
+with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
     data = file.readlines()
 
 file.close()
@@ -335,3 +326,5 @@ print("\nMean of the standard deviation (from importance of features): "+final_r
 # The next 2 lines are for saving the python script output in a log file
 sys.stdout.close()
 sys.stdout=stdoutOrigin
+
+os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt")

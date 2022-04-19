@@ -1,3 +1,12 @@
+# Structure: Train XGBClassifier as a surrogate of the original_model (MLPClassifier)
+# with the load_breast_cancer dataset. Here it is deterministic!
+# Explainability: Global SHAP values with TreeExplainer
+# Script: Run 2 experiments for 3 loops. Since the classifier now is deterministic it doesn't matter how many
+# runs we do to measure the deviations. The results, hence the explanations will be the same. So we run 2 experiments
+# where the 1st one will be a normal run, and on the 2nd we will invoke the input perturbation script. We repeat this 
+# "Bigger experiment" 3 times to see how the input perturbation script influences the explanations. By the results we
+# can judge the robustness or volatility of the system.
+
 from cmath import exp
 import sys
 from threading import local

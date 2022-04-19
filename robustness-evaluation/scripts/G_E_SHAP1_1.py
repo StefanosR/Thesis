@@ -1,3 +1,8 @@
+# Structure: LGBMRegressor (non deterministic) with the diabetes dataset
+# Explainability: Global SHAP values with TreeExplainer
+# Script: Run 10 experiments, keep all feature importance values and measure 
+# and measure the Mean of the ranking deviation + average std. deviation of the explanations
+
 from cmath import exp
 import sys
 import pandas as pd
