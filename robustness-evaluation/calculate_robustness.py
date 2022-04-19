@@ -1,7 +1,7 @@
 import datacompy, pandas as pd
 
-df1 = pd.read_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\feature_importance_1.csv')
-df2 = pd.read_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\feature_importance_2.csv')
+df1 = pd.read_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\df1.csv')
+df2 = pd.read_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\df2.csv')
 
 # C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\feature_importance_1.csv
 
@@ -14,3 +14,4 @@ df2_name='New' #Optional, defaults to 'df2'
 )
 
 print(compare.report())
+ 
