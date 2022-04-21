@@ -2,6 +2,7 @@
 # Explainability: Global SHAP values with KernelExplainer
 # Script: Run 10 experiments, keep all feature importance values and measure 
 # and measure the Mean of the ranking deviation + average std. deviation of the explanations
+# Runtime: 4 hours for X, 1 hour for X_test
 
 import sys
 import pandas as pd
@@ -15,44 +16,43 @@ import os
 
 # These 2 lines are for redirecting the python output to a log file
 stdoutOrigin=sys.stdout 
-sys.stdout = open("log_GES_cOrrect.txt", "w")
+sys.stdout = open("log_GES__S1_MLPC.txt", "w")
 
 #-----------------------------------------------------------------------------------------------------------------
 
 def myscript(iteration_number):
     
     print("Iteration:", iteration_number)
-
-    def calc_shap(model, x_explain, approximate=False):
-        explainer = shap.TreeExplainer(model)
-        shap_values = explainer.shap_values(x_explain, approximate=approximate)
+    
+    def calc_shap(model, x_explain):
+        explainer = shap.KernelExplainer(model.predict_proba, X_train)        
+        shap_values = explainer.shap_values(x_explain)
         return shap_values, explainer
 
     from sklearn.neural_network import MLPClassifier
     # train original model and get its predictions
     X, y = load_breast_cancer(return_X_y=True)
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
-    original_model = MLPClassifier()
-    original_model.fit(X_train, y_train)
-
+    model = MLPClassifier(solver='lbfgs', alpha=1e-1, hidden_layer_sizes=(5, 2), random_state=0)
+    model.fit(X_train, y_train)
+    
     # get the shapley values for the whole dataset
-    shap_values, explainer = calc_shap(original_model, X_test)
-
+    shap_values, explainer = calc_shap(model, X_test)   
+    shap_values = shap_values[0] + shap_values[1]
+    
     # ----------- Extract global explanations -----------
-    vals= np.abs(shap_values).mean(0)
+    feature_names = load_breast_cancer().feature_names
+    shap_df = pd.DataFrame(shap_values, columns=feature_names)
+    vals = np.abs(shap_df.values).mean(0) # get the mean of the shap values for each feature
+    shap_importance = pd.DataFrame(list(zip(feature_names, vals)), columns=['col_name', 'feature_importance_vals'])
+    shap_importance.sort_values(by=['feature_importance_vals'], ascending=False, inplace=True)
 
-    X_train = pd.DataFrame(X_train)
-
-    feature_importance = pd.DataFrame(list(zip(X_train.columns,vals)),columns=['col_name','feature_importance_vals'])
-    feature_importance.sort_values(by=['feature_importance_vals'],ascending=False,inplace=True)
-    feature_importance["col_name"] =  'Feature ' + feature_importance["col_name"].astype(str)
-
-    feature_importance = feature_importance.head()
-
-    feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt', header=None, index=None, sep=' ', mode='a')
+    shap_importance["col_name"] =  'Feature: ' + shap_importance["col_name"].astype(str)
+    shap_importance = shap_importance.head()
+    shap_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt', header=None, index=None, sep=' ', mode='a')
 
     with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','a') as file:
-        file.write("\nRun number: 1\n\n")
+        file.write("\nRun number: %d \n\n" %iteration_number)
     file.close()
     
 # ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,20 +67,6 @@ def main(unused_command_line_args):
     return 0
 
 main(sys.argv)
-    
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
-    data = file.readlines()
-
-j=0
-for i in range(6,8*experiments,8):
-    j+=1
-    data[i] = 'Run number: '+str(j+1)+'\n'
-
-# Fix the names of the runs
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','w') as file:
-    file.writelines( data )
-    
-file.close()
 
 # Extract the explanations from the different runs
 
@@ -88,7 +74,7 @@ with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-
     data = file.readlines()
 
 file.close()
-
+ 
 #-----------------------------------------------------------------------------------------------------------------
     
 # Make script that compares the  data - explanations, and the highlighted features (if top feature is the same)
@@ -109,8 +95,9 @@ features = []
 for i in range(experiments):
     for j in range(5):
         x = data[i*8+j].split()
-        values.append(x[2])
-        features.append(x[0]+x[1])
+        temp = (x[2].split('"'))
+        values.append(x[3])
+        features.append(x[1]+" "+str(temp[0]))
 
 # Make changes here on the dimensions of the dataframes for evaluating more experiments
         
@@ -151,7 +138,7 @@ print("\n..........................................\n")
 # Make a dictionary for storing the unique feature names as keys and their corresponding shapley values as values
 
 df1 = df.astype(float)
-dict = {animal: df1[df2.eq(animal)].stack().values for animal in np.unique(df2)}
+dict = {element: df1[df2.eq(element)].stack().values for element in np.unique(df2)}
 print("\nThis is the new dictionary we created:\n", dict)
 
 # Calculate std deviation for each feature
@@ -168,11 +155,11 @@ for i in dict:
 
 # In matrix3 we calculate the standard deviation of the features 
 for list in matrix2:
-    matrix3.append("{:.2f}".format(np.std(list, dtype=np.float64)))
+    matrix3.append(np.std(list, dtype=np.float64))
 
 # In matrix4 we calculate the relative standard deviation (percentage)
 for list in matrix2:
-    matrix4.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/len(list)))+"%")
+    matrix4.append(str(100*np.std(list, dtype=np.float64)/len(list))+"%")
     
 print("\nThis is the matrix with the unique features: \n", *matrix, sep = '\n')
 print("\nThis is the matrix with the list of values each feature has: \n", *matrix2, sep = '\n')   
@@ -286,7 +273,7 @@ print("\nThe ranking deviation of each feature is: \n", *ranking_deviation, sep 
 
 rankings_percentage = []
 for list in magic:
-    rankings_percentage.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/len(list)))+"%")
+    rankings_percentage.append(str(100*np.std(list, dtype=np.float64)/len(list))+"%")
     
 ranking_deviation_percentage = []
 for i in range(len(uniqueValues)):
@@ -306,9 +293,9 @@ df2.to_csv(r'df2.csv', index = False)
 
 rankings_percentage_float = []
 for alist in magic:
-    rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+    rankings_percentage_float.append(float(100*np.std(alist, dtype=np.float64)/len(alist)))
     
-final_result = str("{:.2f}".format(np.mean(rankings_percentage_float)))
+final_result = str(np.mean(rankings_percentage_float))
 
 # Print the mean of the ranking deviation
 print("Mean of the ranking deviation: "+final_result+"%")
@@ -316,9 +303,9 @@ print("Mean of the ranking deviation: "+final_result+"%")
 # Calculate the mean of the std deviation
 std_deviation_float = []
 for alist in matrix2:
-    std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+    std_deviation_float.append(float(100*np.std(alist, dtype=np.float64)/len(alist)))
     
-final_result2 = str("{:.2f}".format(np.mean(std_deviation_float)))
+final_result2 = str(np.mean(std_deviation_float))
 
 # Print the mean of the std deviation
 print("\nMean of the standard deviation (from importance of features): "+final_result2+"%")

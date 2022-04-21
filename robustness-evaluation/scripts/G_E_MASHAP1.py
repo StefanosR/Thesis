@@ -67,7 +67,7 @@ def myscript(iteration_number):
     feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt', header=None, index=None, sep=' ', mode='a')
 
     with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','a') as file:
-        file.write("\nRun number: 1\n\n")
+        file.write("\nRun number: %d\n\n" %iteration_number)
     file.close()
     
 # ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -83,25 +83,24 @@ def main(unused_command_line_args):
 
 main(sys.argv)
     
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
-    data = file.readlines()
+# with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
+#     data = file.readlines()
 
-j=0
-for i in range(6,8*experiments,8):
-    j+=1
-    data[i] = 'Run number: '+str(j+1)+'\n'
+# j=0
+# for i in range(6,8*experiments,8):
+#     j+=1
+#     data[i] = 'Run number: '+str(j+1)+'\n'
 
-# Fix the names of the runs
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','w') as file:
-    file.writelines( data )
+# # Fix the names of the runs
+# with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','w') as file:
+#     file.writelines( data )
     
-file.close()
+# file.close()
 
 # Extract the explanations from the different runs
 
 with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
     data = file.readlines()
-
 file.close()
 
 #-----------------------------------------------------------------------------------------------------------------
