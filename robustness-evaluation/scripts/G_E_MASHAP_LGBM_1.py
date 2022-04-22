@@ -16,7 +16,7 @@ import os
 
 # These 2 lines are for redirecting the python output to a log file
 stdoutOrigin=sys.stdout 
-sys.stdout = open("log_GEM_S1_LBGM.txt", "w")
+sys.stdout = open("log_GEM_S1_LBGM_DIA.txt", "w")
 
 #-----------------------------------------------------------------------------------------------------------------
 
