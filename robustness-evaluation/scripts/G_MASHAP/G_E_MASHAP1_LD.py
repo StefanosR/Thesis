@@ -1,17 +1,22 @@
 # Structure: Train XGBClassifier as a surrogate of the original_model (MLPClassifier)
-# (non deterministic) with the fetch_covtype dataset
+# (non deterministic) with the load_breast_cancer dataset
 # Explainability: Global SHAP values with TreeExplainer
 # Script: Run 10 experiments, keep all feature importance values and measure 
 # and measure the Mean of the ranking deviation + average std. deviation of the explanations
 
+from re import T
 import sys
 import pandas as pd
 import numpy as np
 import shap
 from xgboost.sklearn import XGBClassifier
 from sklearn.metrics import r2_score
+from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 import os
+from alive_progress import alive_bar
+from tqdm import tqdm
+import time
 
 # These 2 lines are for redirecting the python output to a log file
 stdoutOrigin=sys.stdout 
@@ -37,16 +42,8 @@ def myscript(iteration_number):
         return shap_values, explainer
 
     from sklearn.neural_network import MLPClassifier
-    # import training dataset
-    cols = ["F1", "F2", "F3", "F4", "F5","F6","F7","F8","F9","F10","Class"]
-    data = pd.read_table(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\datasets\avila\avila-tr.txt', sep=',')
-    data.columns = cols
-    X = data.drop(columns='Class')
-    y = data["Class"]
-    X = X.to_numpy()
-    y = y.to_numpy()
-    
     # train original model and get its predictions
+    X, y = make_classification(n_samples=20000, n_features=30, random_state=42)
     X_train, _, y_train, _ = train_test_split(X, y, random_state=42)
     original_model = MLPClassifier()
     original_model.fit(X_train, y_train)
@@ -57,9 +54,8 @@ def myscript(iteration_number):
     surrogate_model, external_fidelity = create_surrogate(X,
                                                     predictions,
                                                     sur_parameters)
-    
     # get the shapley values for the whole dataset
-    shap_values, explainer = calc_shap(surrogate_model, X_train)
+    shap_values, explainer = calc_shap(surrogate_model, X)
 
     # ----------- Extract global explanations -----------
     vals= np.abs(shap_values).mean(0)
@@ -85,7 +81,8 @@ def myscript(iteration_number):
 experiments = 10
 
 def main(unused_command_line_args):
-    for i in range(experiments):
+    
+    for i in tqdm(range(experiments)):
         myscript(i+1)
     return 0
 

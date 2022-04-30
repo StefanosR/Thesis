@@ -71,7 +71,7 @@ def bigger_experiment(loop_num):
         if (loop_num == 1):
             # invoke the input perturbation script
             change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
-            print("easter_egg")
+            print("Input perturbation occured")
         else:
             print("Did nothing")
             
