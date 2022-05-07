@@ -41,7 +41,7 @@ def myscript(iteration_number):
     from sklearn.neural_network import MLPClassifier
     # train original model and get its predictions
     X, y = load_diabetes(return_X_y=True)
-    X_train, _, y_train, _ = train_test_split(X, y, test_size=0.2)
+    X_train, _, y_train, _ = train_test_split(X, y)
     original_model = lgb.LGBMRegressor()
     original_model.fit(X_train, y_train)
     predictions = original_model.predict(X)

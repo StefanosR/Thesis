@@ -3,6 +3,7 @@
 # Explainability: Global SHAP values with TreeExplainer
 # Script: Run 10 experiments, keep all feature importance values and measure 
 # and measure the Mean of the ranking deviation + average std. deviation of the explanations
+# Runtime: 7 minutes
 
 from re import T
 import sys

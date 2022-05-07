@@ -6,6 +6,7 @@
 # where the 1st one will be a normal run, and on the 2nd we will invoke the input perturbation script. We repeat this 
 # "Bigger experiment" 3 times to see how the input perturbation script influences the explanations. By the results we
 # can judge the robustness or volatility of the system.
+# Runtime: 5 minutes
 
 from cmath import exp
 import sys

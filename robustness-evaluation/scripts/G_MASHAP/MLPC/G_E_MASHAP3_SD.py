@@ -33,7 +33,7 @@ def bigger_experiment(loop_num):
 
     # Function that runs the model and returns the predictions for n iterations
 
-    def myscript(iteration_number):
+    def myscript(iteration_number, loop_num):
         
         print("Iteration:", iteration_number)
         

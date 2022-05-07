@@ -41,7 +41,7 @@ def myscript(iteration_number):
     from sklearn.neural_network import MLPClassifier
     # train original model and get its predictions
     X, y = load_breast_cancer(return_X_y=True)
-    X_train, _, y_train, _ = train_test_split(X, y, random_state=42)
+    X_train, _, y_train, _ = train_test_split(X, y)
     original_model = MLPClassifier()
     original_model.fit(X_train, y_train)
     predictions = original_model.predict(X)
@@ -52,12 +52,13 @@ def myscript(iteration_number):
                                                     predictions,
                                                     sur_parameters)
     # Insert here the instance we want to examine
-    local = X[24]
+    instance = 24
+    local = X[instance]
     from numpy import asarray
     input = asarray([local])
-    
+
     # get the shapley values for the instance
-    shap_values, explainer = calc_shap(surrogate_model, local)
+    shap_values, explainer = calc_shap(surrogate_model, input)
 
     # ----------- Extract global explanations -----------
     vals= np.abs(shap_values).mean(0)
@@ -70,9 +71,9 @@ def myscript(iteration_number):
 
     feature_importance = feature_importance.head()
 
-    feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt', header=None, index=None, sep=' ', mode='a')
+    feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_MASHAP\features.txt', header=None, index=None, sep=' ', mode='a')
 
-    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','a') as file:
+    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_MASHAP\features.txt','a') as file:
         file.write("\nRun number: %d\n\n" %iteration_number)
     file.close()
     
@@ -102,7 +103,7 @@ def main(unused_command_line_args):
 
 main(sys.argv)
     
-# with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
+# with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_MASHAP\features.txt','r') as file:
 #     data = file.readlines()
 
 # j=0
@@ -111,14 +112,14 @@ main(sys.argv)
 #     data[i] = 'Run number: '+str(j+1)+'\n'
 
 # # Fix the names of the runs
-# with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','w') as file:
+# with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_MASHAP\features.txt','w') as file:
 #     file.writelines( data )
     
 # file.close()
 
 # Extract the explanations from the different runs
 
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
+with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_MASHAP\features.txt','r') as file:
     data = file.readlines()
 file.close()
 
@@ -200,12 +201,12 @@ for i in dict:
     matrix2.append(dict[i])
 
 # In matrix3 we calculate the standard deviation of the features 
-for list in matrix2:
-    matrix3.append("{:.2f}".format(np.std(list, dtype=np.float64)))
+for alist in matrix2:
+    matrix3.append("{:.2f}".format(np.std(alist, dtype=np.float64)))
 
 # In matrix4 we calculate the relative standard deviation (percentage)
-for list in matrix2:
-    matrix4.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/statistics.mean(list)))+"%")
+for alist in matrix2:
+    matrix4.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist)))+"%")
     
 print("\nThis is the matrix with the unique features: \n", *matrix, sep = '\n')
 print("\nThis is the matrix with the list of values each feature has: \n", *matrix2, sep = '\n')   
@@ -222,8 +223,6 @@ def getList(dict):
     return feature_names
 
 keys = getList(dict) 
-
-del list
 
 # Concatenate the lists of the features and the deviations
 std_deviation_of_features = list(zip(keys, matrix3))
@@ -307,8 +306,8 @@ for item in uniqueValues:
 
 # The rankings array will contain the std deviation of the rankings measured before
 rankings = []
-for list in magic:
-    rankings.append(np.std(list, dtype=np.float64))
+for alist in magic:
+    rankings.append(np.std(alist, dtype=np.float64))
 
 # The ranking_deviation concatenates the unique features with the std deviation into a comprehensive list
 ranking_deviation = []
@@ -318,8 +317,8 @@ for i in range(len(uniqueValues)):
 print("\nThe ranking deviation of each feature is: \n", *ranking_deviation, sep = '\n')
 
 rankings_percentage = []
-for list in magic:
-    rankings_percentage.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/statistics.mean(list)))+"%")
+for alist in magic:
+    rankings_percentage.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist)))+"%")
     
 ranking_deviation_percentage = []
 for i in range(len(uniqueValues)):
@@ -331,9 +330,9 @@ print("\n..........................................\n")
 # Research ranking deviation and visualize other statistics (distribution)   
 # Expand on more runs and features (also on scenario 2)
 
-# Save our dataframes for reference
-df1.to_csv(r'df1.csv', index = False)
-df2.to_csv(r'df2.csv', index = False)
+# # Save our dataframes for reference
+# df1.to_csv(r'df1.csv', index = False)
+# df2.to_csv(r'df2.csv', index = False)
 
 # Calculate the mean of the ranking deviation
 
@@ -355,9 +354,33 @@ final_result2 = str("{:.2f}".format(np.mean(std_deviation_float)))
 
 # Print the mean of the std deviation
 print("\nMean of the standard deviation (from importance of features): "+final_result2+"%")
-    
+
+with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_MASHAP\predictions.txt','r') as file:
+    data = file.readlines()
+file.close()
+
+# -----------------------------------------------------------------------------------------------------------------------------
+
+# Check if all predictions where equal during these runs
+predz = []
+for i in range(experiments):
+        x = data[i].split(':')
+        predz.append(x[1])
+        
+def all_equal_ivo(lst):
+    return not lst or lst.count(lst[0]) == len(lst)
+
+if all_equal_ivo(predz) == True:
+    print("\nAll predictions were the same")
+else:
+    print("\nNot all predictions were the same")
+
+print("\n",*data,sep="")
+# -----------------------------------------------------------------------------------------------------------------------------
+
 # The next 2 lines are for saving the python script output in a log file
 sys.stdout.close()
 sys.stdout=stdoutOrigin
 
 os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_MASHAP\features.txt")
+os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_MASHAP\predictions.txt")
