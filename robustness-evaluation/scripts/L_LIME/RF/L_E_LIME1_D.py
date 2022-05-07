@@ -1,85 +1,94 @@
-# Structure: LGBMRegressor (non deterministic) with the diabetes dataset
-# Explainability: Global SHAP values with TreeExplainer
+# Structure: RandomForestRegressor with load_boston (deterministic)
+# Explainability: LIME (LimeTabularExplainer) of a single instance
 # Script: Run 10 experiments, keep all feature importance values and measure 
 # and measure the Mean of the ranking deviation + average std. deviation of the explanations
+# Runtime: 1 min
 
-from cmath import exp
-import sys
-import pandas as pd
+# RandomForestRegressor with load_boston
+
+from sklearn.datasets import load_boston
+import sklearn.ensemble
 import numpy as np
-import shap
+import lime
+import statistics
+import sys, os
+import lime.lime_tabular
+import pandas as pd
+import warnings
 import lightgbm as lgb
-from sklearn.datasets import load_diabetes
 from sklearn.model_selection import train_test_split
-import os 
+
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # These 2 lines are for redirecting the python output to a log file
-stdoutOrigin=sys.stdout 
-sys.stdout = open("log_GES_S1_1_ND_DIA.txt", "w")
+stdoutOrigin=sys.stdout
+sys.stdout = open("log_LEL_S1_RF_D_SD.txt", "w")
 
-# ------------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------
 
-def myscript(iteration_number):
+def myscript(iteration_number, number_features):
+        
+    boston = load_boston()
+    model = sklearn.ensemble.RandomForestRegressor(n_estimators=1000, random_state=0)
+    train, test, labels_train, labels_test = sklearn.model_selection.train_test_split(boston.data, boston.target, train_size=0.80, random_state=42, shuffle=False)
+    model.fit(train, labels_train)
+
+    categorical_features = np.argwhere(np.array([len(set(boston.data[:,x])) for x in range(boston.data.shape[1])]) <= 10).flatten()
+    explainer = lime.lime_tabular.LimeTabularExplainer(train, feature_names=boston.feature_names, class_names=['price'], 
+                                                    categorical_features=categorical_features, verbose=False, mode='regression')
+
+    # Choose which instance to examine
+    i = 25 # specific instance
     
-    print("Iteration:", iteration_number)
-    
-    # Train model
-    dataset = load_diabetes()
-    X = dataset.data; y = dataset.target
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-    model = lgb.LGBMRegressor()
-    model.fit(X_train, y_train)
+    # Produce explanations for the instance
+    exp = explainer.explain_instance(test[i], model.predict, num_features=number_features)
 
-    # Calculate shap values 
-    explainer = shap.TreeExplainer(model)
-    shap_values = explainer.shap_values(X_test)
+    # # Visualized explanations
+    # exp.show_in_notebook(show_table=True)
 
-    # ----------- Extract global explanations -----------
-    feature_names = load_diabetes().feature_names
-    shap_df = pd.DataFrame(shap_values, columns=feature_names)
-    vals = np.abs(shap_df.values).mean(0) # get the mean of the shap values for each feature
-    shap_importance = pd.DataFrame(list(zip(feature_names, vals)), columns=['col_name', 'feature_importance_vals'])
-    shap_importance.sort_values(by=['feature_importance_vals'], ascending=False, inplace=True)
+    # the explanations list contains the following:
+    # 1. The feature contribution (weight) of all the features (ranked by absolute value)
+    # 2. The explanation of each feature contribution (how the feature's numerical value affects the prediction)
+    explanations = exp.as_list()
 
-    shap_importance["col_name"] =  'Feature ' + shap_importance["col_name"].astype(str)
-    feature_importance = shap_importance.head()
+    features = boston.feature_names
 
-    feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt', header=None, index=None, sep=' ', mode='a')
+    # Extract LIME explanations
+    feature_importance = []
+    for i in range(len(explanations)):
+        for word in features:
+        # if a word from the features list is present in the explanation strings (1st element of the list) then grab it
+            if word in explanations[i][0]:
+                # transfer the feature and its value to a 
+                feature_importance.append("%s = " %word + str("{:.3f}".format(abs(explanations[i][1]))))
 
-    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','a') as file:
-        file.write("\nRun number: 1\n\n")
+    # Save explanations of each run to a temp file         
+    with open(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_LIME\features.txt", "a") as file:
+            file.write("Run number: %d\n\n" %iteration_number)
+            for row in feature_importance:
+                s = "".join(map(str, row))
+                file.write(s+'\n')
+            file.write('\n')
     file.close()
-    
+
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Runs the Script (repeat N times the experiment)
-
 experiments = 10
+
+# Control the number of features we want to examine (top 5)
+number_features = 5
 
 def main(unused_command_line_args):
     for i in range(experiments):
-        myscript(i+1)
+        myscript(i+1, number_features)
     return 0
 
 main(sys.argv)
-    
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
-    data = file.readlines()
-
-j=0
-for i in range(6,8*experiments,8):
-    j+=1
-    data[i] = 'Run number: '+str(j+1)+'\n'
-
-# Fix the names of the runs
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','w') as file:
-    file.writelines( data )
-    
-file.close()
 
 # Extract the explanations from the different runs
 
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
+with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_LIME\features.txt','r') as file:
     data = file.readlines()
 
 file.close()
@@ -102,14 +111,14 @@ def get_change(current, previous):
 values = []
 features = []
 for i in range(experiments):
-    for j in range(5):
-        x = data[i*8+j].split()
+    for j in range(number_features):
+        x = data[i*8+j+2].split()
         values.append(x[2])
         features.append(x[0]+x[1])
 
-# Make changes here on the dimensions of the dataframes for evaluating more experiments
-        
-# Make dataframe with the shapley values of the features for each run  
+# Make changes here on the dimensions of the dataframes for evaluating more experiments (here we have 5 features)
+  
+# Make dataframe with the weights of the features for each run  
 values = np.array(values)
 sub_arrays = np.hsplit(values, experiments)
 df = pd.DataFrame(sub_arrays)
@@ -124,7 +133,7 @@ df2 = pd.DataFrame(sub_arrays2)
 for i in range(experiments):
     df2.index = ['Run_%d'%(i+1) for i in range(experiments)]
 df2.columns = ['1st Feature', '2nd Feature', '3rd Feature', '4th Feature', '5th Feature']
-df2 = df2.applymap(lambda x: x.replace('"', ''))
+df2 = df2.applymap(lambda x: x.replace('=', ''))
 
 # Measure the difference of the 1st feature between the different runs (if the top feature is the same)
 
@@ -143,7 +152,7 @@ print("\n..........................................\n")
 
 #-----------------------------------------------------------------------------------------------------------------
 
-# Make a dictionary for storing the unique feature names as keys and their corresponding shapley values as values
+# Make a dictionary for storing the unique feature names as keys and their corresponding weights as values
 
 df1 = df.astype(float)
 dict = {animal: df1[df2.eq(animal)].stack().values for animal in np.unique(df2)}
@@ -156,18 +165,18 @@ matrix2 = []
 matrix3= []
 matrix4 = []
 
-# In matrix we will store the keys (features) and in matrix2 the values (shapley values)
+# In matrix we will store the keys (features) and in matrix2 the values (weights)
 for i in dict:
     matrix.append(i)
     matrix2.append(dict[i])
 
-# In matrix3 we calculate the standard deviation of the features 
+# In matrix3 we calculate the standard deviation of the features
 for list in matrix2:
     matrix3.append("{:.2f}".format(np.std(list, dtype=np.float64)))
 
 # In matrix4 we calculate the relative standard deviation (percentage)
 for list in matrix2:
-    matrix4.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/len(list)))+"%")
+    matrix4.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/statistics.mean(list)))+"%")
     
 print("\nThis is the matrix with the unique features: \n", *matrix, sep = '\n')
 print("\nThis is the matrix with the list of values each feature has: \n", *matrix2, sep = '\n')   
@@ -281,7 +290,7 @@ print("\nThe ranking deviation of each feature is: \n", *ranking_deviation, sep 
 
 rankings_percentage = []
 for list in magic:
-    rankings_percentage.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/len(list)))+"%")
+    rankings_percentage.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/statistics.mean(list)))+"%")
     
 ranking_deviation_percentage = []
 for i in range(len(uniqueValues)):
@@ -293,15 +302,15 @@ print("\n..........................................\n")
 # Research ranking deviation and visualize other statistics (distribution)   
 # Expand on more runs and features (also on scenario 2)
 
-# Save our dataframes for reference
-df1.to_csv(r'df1.csv', index = False)
-df2.to_csv(r'df2.csv', index = False)
+# # Save our dataframes for reference
+# df1.to_csv(r'df1.csv', index = False)
+# df2.to_csv(r'df2.csv', index = False)
 
 # Calculate the mean of the ranking deviation
 
 rankings_percentage_float = []
 for alist in magic:
-    rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+    rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
     
 final_result = str("{:.2f}".format(np.mean(rankings_percentage_float)))
 
@@ -311,7 +320,7 @@ print("Mean of the ranking deviation: "+final_result+"%")
 # Calculate the mean of the std deviation
 std_deviation_float = []
 for alist in matrix2:
-    std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+    std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
     
 final_result2 = str("{:.2f}".format(np.mean(std_deviation_float)))
 
@@ -322,4 +331,4 @@ print("\nMean of the standard deviation (from importance of features): "+final_r
 sys.stdout.close()
 sys.stdout=stdoutOrigin
 
-os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt")
+os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_LIME\features.txt")

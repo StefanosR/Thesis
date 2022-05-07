@@ -1,6 +1,6 @@
 # Structure: Train XGBClassifier as a surrogate of the original_model (MLPClassifier)
 # (non deterministic) with the load_breast_cancer dataset
-# Explainability: Global SHAP values with TreeExplainer
+# Explainability: Local SHAP values with TreeExplainer
 # Script: Run 10 experiments, keep all feature importance values and measure 
 # and measure the Mean of the ranking deviation + average std. deviation of the explanations
 
@@ -13,10 +13,11 @@ from sklearn.metrics import r2_score
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 import os
+import statistics
 
 # These 2 lines are for redirecting the python output to a log file
 stdoutOrigin=sys.stdout 
-sys.stdout = open("log_GEM_S1_ND_BC.txt", "w")
+sys.stdout = open("log_LEM_S1_MLPC_ND_SD.txt", "w")
 
 #-----------------------------------------------------------------------------------------------------------------
 
@@ -50,8 +51,13 @@ def myscript(iteration_number):
     surrogate_model, external_fidelity = create_surrogate(X,
                                                     predictions,
                                                     sur_parameters)
-    # get the shapley values for the whole dataset
-    shap_values, explainer = calc_shap(surrogate_model, X)
+    # Insert here the instance we want to examine
+    local = X[24]
+    from numpy import asarray
+    input = asarray([local])
+    
+    # get the shapley values for the instance
+    shap_values, explainer = calc_shap(surrogate_model, local)
 
     # ----------- Extract global explanations -----------
     vals= np.abs(shap_values).mean(0)
@@ -70,6 +76,19 @@ def myscript(iteration_number):
         file.write("\nRun number: %d\n\n" %iteration_number)
     file.close()
     
+    # ----------- Extract local predictions through the loops -----------
+    def grab_predictions(instance,iteration):
+        prediction = surrogate_model.predict(instance)
+        preds = []
+        if prediction.item(0) == 1:
+            preds.append("Iteration Number %d: " %iteration +"Breast cancer detected :(")
+        else:
+            preds.append("Iteration Number %d: " %iteration +"You are okay :)")
+        preds = pd.DataFrame(preds)  
+        preds.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_MASHAP\predictions.txt', header=None, index=None, sep=' ', mode='a')
+
+    grab_predictions(input, iteration_number) # This will show us how the prediction changes for the instance. Will be interesting to compare with 
+    # the input perturbation script to see if it also affects predictions alongside explanations
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Runs the Script (repeat N times the experiment)
@@ -186,7 +205,7 @@ for list in matrix2:
 
 # In matrix4 we calculate the relative standard deviation (percentage)
 for list in matrix2:
-    matrix4.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/len(list)))+"%")
+    matrix4.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/statistics.mean(list)))+"%")
     
 print("\nThis is the matrix with the unique features: \n", *matrix, sep = '\n')
 print("\nThis is the matrix with the list of values each feature has: \n", *matrix2, sep = '\n')   
@@ -300,7 +319,7 @@ print("\nThe ranking deviation of each feature is: \n", *ranking_deviation, sep 
 
 rankings_percentage = []
 for list in magic:
-    rankings_percentage.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/len(list)))+"%")
+    rankings_percentage.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/statistics.mean(list)))+"%")
     
 ranking_deviation_percentage = []
 for i in range(len(uniqueValues)):
@@ -320,7 +339,7 @@ df2.to_csv(r'df2.csv', index = False)
 
 rankings_percentage_float = []
 for alist in magic:
-    rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+    rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
     
 final_result = str("{:.2f}".format(np.mean(rankings_percentage_float)))
 
@@ -330,7 +349,7 @@ print("Mean of the ranking deviation: "+final_result+"%")
 # Calculate the mean of the std deviation
 std_deviation_float = []
 for alist in matrix2:
-    std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+    std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
     
 final_result2 = str("{:.2f}".format(np.mean(std_deviation_float)))
 
@@ -341,4 +360,4 @@ print("\nMean of the standard deviation (from importance of features): "+final_r
 sys.stdout.close()
 sys.stdout=stdoutOrigin
 
-os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt")
+os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\L_E_MASHAP\features.txt")

@@ -1,58 +1,54 @@
-# Structure: Train MLPClassifier (non deterministic) with the load_breast_cancer dataset
-# Explainability: Global SHAP values with KernelExplainer
+# Structure: LGBMRegressor (non deterministic) with fetch_california_housing dataset
+# Explainability: Global SHAP values with TreeExplainer
 # Script: Run 10 experiments, keep all feature importance values and measure 
-# and measure the Mean of the ranking deviation + average std. deviation of the explanations
-# Runtime: 4 hours for X, 1 hour for X_test
+# and measure the Mean of the ranking deviation + average std. deviation of the explanations 
 
+from cmath import exp
 import sys
 import pandas as pd
 import numpy as np
 import shap
-from xgboost.sklearn import XGBClassifier
-from sklearn.metrics import r2_score
-from sklearn.datasets import load_breast_cancer
+import lightgbm as lgb
+from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
-import os
+import os 
+import statistics
 
 # These 2 lines are for redirecting the python output to a log file
-stdoutOrigin=sys.stdout 
-sys.stdout = open("log_GES__S1_MLPC.txt", "w")
+stdoutOrigin=sys.stdout
+sys.stdout = open("log_GES_S1_LGBM_ND_BD.txt", "w")
 
-#-----------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------------------------------
 
 def myscript(iteration_number):
     
     print("Iteration:", iteration_number)
     
-    def calc_shap(model, x_explain):
-        explainer = shap.KernelExplainer(model.predict_proba, X_train)        
-        shap_values = explainer.shap_values(x_explain)
-        return shap_values, explainer
-
-    from sklearn.neural_network import MLPClassifier
-    # train original model and get its predictions
-    X, y = load_breast_cancer(return_X_y=True)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
-    model = MLPClassifier(solver='lbfgs', alpha=1e-1, hidden_layer_sizes=(5, 2), random_state=0)
+    # Train model
+    dataset = fetch_california_housing()
+    X = dataset.data; y = dataset.target
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+    model = lgb.LGBMRegressor()
     model.fit(X_train, y_train)
-    
-    # get the shapley values for the whole dataset
-    shap_values, explainer = calc_shap(model, X_test)   
-    shap_values = shap_values[0] + shap_values[1]
-    
+
+    # Calculate shap values 
+    explainer = shap.TreeExplainer(model)
+    shap_values = explainer.shap_values(X_test)
+
     # ----------- Extract global explanations -----------
-    feature_names = load_breast_cancer().feature_names
+    feature_names = fetch_california_housing().feature_names
     shap_df = pd.DataFrame(shap_values, columns=feature_names)
     vals = np.abs(shap_df.values).mean(0) # get the mean of the shap values for each feature
     shap_importance = pd.DataFrame(list(zip(feature_names, vals)), columns=['col_name', 'feature_importance_vals'])
     shap_importance.sort_values(by=['feature_importance_vals'], ascending=False, inplace=True)
 
-    shap_importance["col_name"] =  'Feature: ' + shap_importance["col_name"].astype(str)
-    shap_importance = shap_importance.head()
-    shap_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt', header=None, index=None, sep=' ', mode='a')
+    shap_importance["col_name"] =  'Feature ' + shap_importance["col_name"].astype(str)
+    feature_importance = shap_importance.head()
+
+    feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt', header=None, index=None, sep=' ', mode='a')
 
     with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','a') as file:
-        file.write("\nRun number: %d \n\n" %iteration_number)
+        file.write("\nRun number: %d\n\n" % iteration_number)
     file.close()
     
 # ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,6 +63,20 @@ def main(unused_command_line_args):
     return 0
 
 main(sys.argv)
+    
+with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
+    data = file.readlines()
+
+# j=0
+# for i in range(6,8*experiments,8):
+#     j+=1
+#     data[i] = 'Run number: '+str(j+1)+'\n'
+
+# # Fix the names of the runs
+# with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','w') as file:
+#     file.writelines( data )
+    
+# file.close()
 
 # Extract the explanations from the different runs
 
@@ -74,7 +84,7 @@ with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-
     data = file.readlines()
 
 file.close()
- 
+
 #-----------------------------------------------------------------------------------------------------------------
     
 # Make script that compares the  data - explanations, and the highlighted features (if top feature is the same)
@@ -95,9 +105,8 @@ features = []
 for i in range(experiments):
     for j in range(5):
         x = data[i*8+j].split()
-        temp = (x[2].split('"'))
-        values.append(x[3])
-        features.append(x[1]+" "+str(temp[0]))
+        values.append(x[2])
+        features.append(x[0]+x[1])
 
 # Make changes here on the dimensions of the dataframes for evaluating more experiments
         
@@ -138,7 +147,7 @@ print("\n..........................................\n")
 # Make a dictionary for storing the unique feature names as keys and their corresponding shapley values as values
 
 df1 = df.astype(float)
-dict = {element: df1[df2.eq(element)].stack().values for element in np.unique(df2)}
+dict = {animal: df1[df2.eq(animal)].stack().values for animal in np.unique(df2)}
 print("\nThis is the new dictionary we created:\n", dict)
 
 # Calculate std deviation for each feature
@@ -154,12 +163,12 @@ for i in dict:
     matrix2.append(dict[i])
 
 # In matrix3 we calculate the standard deviation of the features 
-for list in matrix2:
-    matrix3.append(np.std(list, dtype=np.float64))
+for alist in matrix2:
+    matrix3.append("{:.2f}".format(np.std(alist, dtype=np.float64)))
 
 # In matrix4 we calculate the relative standard deviation (percentage)
-for list in matrix2:
-    matrix4.append(str(100*np.std(list, dtype=np.float64)/len(list))+"%")
+for alist in matrix2:
+    matrix4.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist)))+"%")
     
 print("\nThis is the matrix with the unique features: \n", *matrix, sep = '\n')
 print("\nThis is the matrix with the list of values each feature has: \n", *matrix2, sep = '\n')   
@@ -176,8 +185,6 @@ def getList(dict):
     return feature_names
 
 keys = getList(dict) 
-
-del list
 
 # Concatenate the lists of the features and the deviations
 std_deviation_of_features = list(zip(keys, matrix3))
@@ -261,8 +268,8 @@ for item in uniqueValues:
 
 # The rankings array will contain the std deviation of the rankings measured before
 rankings = []
-for list in magic:
-    rankings.append(np.std(list, dtype=np.float64))
+for alist in magic:
+    rankings.append(np.std(alist, dtype=np.float64))
 
 # The ranking_deviation concatenates the unique features with the std deviation into a comprehensive list
 ranking_deviation = []
@@ -272,8 +279,8 @@ for i in range(len(uniqueValues)):
 print("\nThe ranking deviation of each feature is: \n", *ranking_deviation, sep = '\n')
 
 rankings_percentage = []
-for list in magic:
-    rankings_percentage.append(str(100*np.std(list, dtype=np.float64)/len(list))+"%")
+for alist in magic:
+    rankings_percentage.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist)))+"%")
     
 ranking_deviation_percentage = []
 for i in range(len(uniqueValues)):
@@ -293,9 +300,9 @@ df2.to_csv(r'df2.csv', index = False)
 
 rankings_percentage_float = []
 for alist in magic:
-    rankings_percentage_float.append(float(100*np.std(alist, dtype=np.float64)/len(alist)))
+    rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
     
-final_result = str(np.mean(rankings_percentage_float))
+final_result = str("{:.2f}".format(np.mean(rankings_percentage_float)))
 
 # Print the mean of the ranking deviation
 print("Mean of the ranking deviation: "+final_result+"%")
@@ -303,9 +310,9 @@ print("Mean of the ranking deviation: "+final_result+"%")
 # Calculate the mean of the std deviation
 std_deviation_float = []
 for alist in matrix2:
-    std_deviation_float.append(float(100*np.std(alist, dtype=np.float64)/len(alist)))
+    std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
     
-final_result2 = str(np.mean(std_deviation_float))
+final_result2 = str("{:.2f}".format(np.mean(std_deviation_float)))
 
 # Print the mean of the std deviation
 print("\nMean of the standard deviation (from importance of features): "+final_result2+"%")

@@ -1,77 +1,54 @@
-# Structure: Train XGBClassifier as a surrogate of the original_model (MLPClassifier)
-# (non deterministic) with the load_breast_cancer dataset
+# Structure: LGBMRegressor (non deterministic) with the diabetes dataset
 # Explainability: Global SHAP values with TreeExplainer
 # Script: Run 10 experiments, keep all feature importance values and measure 
 # and measure the Mean of the ranking deviation + average std. deviation of the explanations
 
-from re import T
+from cmath import exp
 import sys
 import pandas as pd
 import numpy as np
 import shap
-from xgboost.sklearn import XGBClassifier
-from sklearn.metrics import r2_score
-from sklearn.datasets import make_classification
+import lightgbm as lgb
+from sklearn.datasets import load_diabetes
 from sklearn.model_selection import train_test_split
-import os
-from alive_progress import alive_bar
-from tqdm import tqdm
-import time
+import os 
+import statistics
 
 # These 2 lines are for redirecting the python output to a log file
-stdoutOrigin=sys.stdout 
-sys.stdout = open("log_GEM_S1_ND_LD.txt", "w")
+stdoutOrigin=sys.stdout
+sys.stdout = open("log_GES_S1_LGBM_ND_SD.txt", "w")
 
-#-----------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------------------------------
 
 def myscript(iteration_number):
     
     print("Iteration:", iteration_number)
     
-    def create_surrogate(X, predictions, sur_parameters):
-        # Create surrogate xgboost model
-        surrogate = XGBClassifier(**sur_parameters)
-        surrogate.fit(X, predictions)
-        sur_predictions = surrogate.predict(X)
-        external_fidelity = r2_score(predictions, sur_predictions)
-        return surrogate, external_fidelity
+    # Train model
+    dataset = load_diabetes()
+    X = dataset.data; y = dataset.target
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+    model = lgb.LGBMRegressor()
+    model.fit(X_train, y_train)
 
-    def calc_shap(model, x_explain, approximate=False):
-        explainer = shap.TreeExplainer(model)
-        shap_values = explainer.shap_values(x_explain, approximate=approximate)
-        return shap_values, explainer
-
-    from sklearn.neural_network import MLPClassifier
-    # train original model and get its predictions
-    X, y = make_classification(n_samples=20000, n_features=30, random_state=42)
-    X_train, _, y_train, _ = train_test_split(X, y, random_state=42)
-    original_model = MLPClassifier()
-    original_model.fit(X_train, y_train)
-    predictions = original_model.predict(X)
-
-    # Use agnostic explainer
-    sur_parameters = {'n_estimators': 100, 'max_depth': 8}
-    surrogate_model, external_fidelity = create_surrogate(X,
-                                                    predictions,
-                                                    sur_parameters)
-    # get the shapley values for the whole dataset
-    shap_values, explainer = calc_shap(surrogate_model, X)
+    # Calculate shap values 
+    explainer = shap.TreeExplainer(model)
+    shap_values = explainer.shap_values(X_test)
 
     # ----------- Extract global explanations -----------
-    vals= np.abs(shap_values).mean(0)
+    feature_names = load_diabetes().feature_names
+    shap_df = pd.DataFrame(shap_values, columns=feature_names)
+    vals = np.abs(shap_df.values).mean(0) # get the mean of the shap values for each feature
+    shap_importance = pd.DataFrame(list(zip(feature_names, vals)), columns=['col_name', 'feature_importance_vals'])
+    shap_importance.sort_values(by=['feature_importance_vals'], ascending=False, inplace=True)
 
-    X_train = pd.DataFrame(X_train)
+    shap_importance["col_name"] =  'Feature ' + shap_importance["col_name"].astype(str)
+    feature_importance = shap_importance.head()
 
-    feature_importance = pd.DataFrame(list(zip(X_train.columns,vals)),columns=['col_name','feature_importance_vals'])
-    feature_importance.sort_values(by=['feature_importance_vals'],ascending=False,inplace=True)
-    feature_importance["col_name"] =  'Feature ' + feature_importance["col_name"].astype(str)
+    feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt', header=None, index=None, sep=' ', mode='a')
 
-    feature_importance = feature_importance.head()
-
-    feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt', header=None, index=None, sep=' ', mode='a')
-
-    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','a') as file:
-        file.write("\nRun number: %d\n\n" %iteration_number)
+    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','a') as file:
+        file.write("\nRun number: %d\n\n" % iteration_number)
     file.close()
     
 # ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -81,15 +58,14 @@ def myscript(iteration_number):
 experiments = 10
 
 def main(unused_command_line_args):
-    
-    for i in tqdm(range(experiments)):
+    for i in range(experiments):
         myscript(i+1)
     return 0
 
 main(sys.argv)
     
-# with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
-#     data = file.readlines()
+with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
+    data = file.readlines()
 
 # j=0
 # for i in range(6,8*experiments,8):
@@ -97,15 +73,16 @@ main(sys.argv)
 #     data[i] = 'Run number: '+str(j+1)+'\n'
 
 # # Fix the names of the runs
-# with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','w') as file:
+# with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','w') as file:
 #     file.writelines( data )
     
 # file.close()
 
 # Extract the explanations from the different runs
 
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
+with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
     data = file.readlines()
+
 file.close()
 
 #-----------------------------------------------------------------------------------------------------------------
@@ -186,12 +163,12 @@ for i in dict:
     matrix2.append(dict[i])
 
 # In matrix3 we calculate the standard deviation of the features 
-for list in matrix2:
-    matrix3.append("{:.2f}".format(np.std(list, dtype=np.float64)))
+for alist in matrix2:
+    matrix3.append("{:.2f}".format(np.std(alist, dtype=np.float64)))
 
 # In matrix4 we calculate the relative standard deviation (percentage)
-for list in matrix2:
-    matrix4.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/len(list)))+"%")
+for alist in matrix2:
+    matrix4.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist)))+"%")
     
 print("\nThis is the matrix with the unique features: \n", *matrix, sep = '\n')
 print("\nThis is the matrix with the list of values each feature has: \n", *matrix2, sep = '\n')   
@@ -208,8 +185,6 @@ def getList(dict):
     return feature_names
 
 keys = getList(dict) 
-
-del list
 
 # Concatenate the lists of the features and the deviations
 std_deviation_of_features = list(zip(keys, matrix3))
@@ -293,8 +268,8 @@ for item in uniqueValues:
 
 # The rankings array will contain the std deviation of the rankings measured before
 rankings = []
-for list in magic:
-    rankings.append(np.std(list, dtype=np.float64))
+for alist in magic:
+    rankings.append(np.std(alist, dtype=np.float64))
 
 # The ranking_deviation concatenates the unique features with the std deviation into a comprehensive list
 ranking_deviation = []
@@ -304,8 +279,8 @@ for i in range(len(uniqueValues)):
 print("\nThe ranking deviation of each feature is: \n", *ranking_deviation, sep = '\n')
 
 rankings_percentage = []
-for list in magic:
-    rankings_percentage.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/len(list)))+"%")
+for alist in magic:
+    rankings_percentage.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist)))+"%")
     
 ranking_deviation_percentage = []
 for i in range(len(uniqueValues)):
@@ -325,7 +300,7 @@ df2.to_csv(r'df2.csv', index = False)
 
 rankings_percentage_float = []
 for alist in magic:
-    rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+    rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
     
 final_result = str("{:.2f}".format(np.mean(rankings_percentage_float)))
 
@@ -335,7 +310,7 @@ print("Mean of the ranking deviation: "+final_result+"%")
 # Calculate the mean of the std deviation
 std_deviation_float = []
 for alist in matrix2:
-    std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+    std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
     
 final_result2 = str("{:.2f}".format(np.mean(std_deviation_float)))
 
@@ -346,4 +321,4 @@ print("\nMean of the standard deviation (from importance of features): "+final_r
 sys.stdout.close()
 sys.stdout=stdoutOrigin
 
-os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt")
+os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt")

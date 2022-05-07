@@ -1,54 +1,42 @@
-# Structure: Train XGBClassifier as a surrogate of the original_model (MLPClassifier)
-# with the load_breast_cancer dataset. Here it is deterministic!
-# Explainability: Global SHAP values with TreeExplainer
-# Script: Run 2 experiments for 3 loops. Since the classifier now is deterministic it doesn't matter how many
-# runs we do to measure the deviations. The results, hence the explanations will be the same. So we run 2 experiments
-# where the 1st one will be a normal run, and on the 2nd we will invoke the input perturbation script. We repeat this 
-# "Bigger experiment" 3 times to see how the input perturbation script influences the explanations. By the results we
-# can judge the robustness or volatility of the system.
+# Structure: Train MLPClassifier (non deterministic) with the make_classification dataset
+# Explainability: Global SHAP values with KernelExplainer
+# Script: Run 10 experiments for 2 loops, on the first loop we have the same scenario as G_E_SHAP, but 
+# for the 2nd loop of experiments we invoke the input perturbatio script at each run, in order to see how
+# the explanations are influenced. We get 2 log files for the 2 loops of the experiment.
+# Runtime: 8 hours for X
 
-from cmath import exp
 import sys
-from threading import local
 import pandas as pd
 import numpy as np
 import shap
 from xgboost.sklearn import XGBClassifier
 from sklearn.metrics import r2_score
-from sklearn.datasets import load_breast_cancer
+from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
-import sys 
-import os
+import os 
+import statistics
 
 stdoutOrigin=sys.stdout
 
-#----------------------------------------------------------------------------------------------------------------- 
+#-----------------------------------------------------------------------------------------------------------------
 
 def bigger_experiment(loop_num):
-        
+
     # These 2 lines are for redirecting the python output to a log file
-      
-    sys.stdout = open("log_GEM_S3_D_%dR_NL.txt"%(loop_num+1), "w")    
+    if loop_num==0:
+        sys.stdout = open("log_GES_S2_MLPC_ND__BD_1L.txt", "w")
+    else:
+        sys.stdout = open("log_GES_S2_MLPC_ND_BD_2L.txt", "w")
 
-    # Function that runs the model and returns the predictions for n iterations
-
-    def myscript(iteration_number, loop_num):
+    def myscript(iteration_number):
         
         print("Iteration:", iteration_number)
         
-        def create_surrogate(X, predictions, sur_parameters):
-            # Create surrogate xgboost model
-            surrogate = XGBClassifier(**sur_parameters)
-            surrogate.fit(X, predictions)
-            sur_predictions = surrogate.predict(X)
-            external_fidelity = r2_score(predictions, sur_predictions)
-            return surrogate, external_fidelity
-
-        def calc_shap(model, x_explain, approximate=False):
-            explainer = shap.TreeExplainer(model)
-            shap_values = explainer.shap_values(x_explain, approximate=approximate)
+        def calc_shap(model, x_explain):
+            explainer = shap.KernelExplainer(model.predict_proba, X_train)        
+            shap_values = explainer.shap_values(x_explain)
             return shap_values, explainer
-        
+
         # Script for making small changes to the model input
         def input_earthquake(numpy_array, earthquake_magnitude):
             import random
@@ -65,78 +53,62 @@ def bigger_experiment(loop_num):
             for i in range(len(training_data)):
                 input_earthquake(training_data[i],earthquake_magnitude)
             return "Earthquake is over"
-
+        
         from sklearn.neural_network import MLPClassifier
         # train original model and get its predictions
-        X, y = load_breast_cancer(return_X_y=True)
+        X, y = make_classification(n_samples=50000, n_features=30, random_state=42)
         
-        if (iteration_number == 2):
+        if (loop_num == 1):
             # invoke the input perturbation script
             change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
-            print("easter_egg")
+            print("Input perturbation occured")
         else:
-            print("Did nothing")  
+            print("Did nothing")
+            
+        X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
+        model = MLPClassifier()
+        model.fit(X_train, y_train)
         
-        X_train, _, y_train, _ = train_test_split(X, y, shuffle=False)
-        original_model = MLPClassifier(random_state=1)
-        original_model.fit(X_train, y_train)
-        predictions = original_model.predict(X)
-
-        # Use agnostic explainer
-        sur_parameters = {'n_estimators': 100, 'max_depth': 8}
-        surrogate_model, external_fidelity = create_surrogate(X,
-                                                        predictions,
-                                                        sur_parameters)
         # get the shapley values for the whole dataset
-        shap_values, explainer = calc_shap(surrogate_model, X)
-
+        shap_values, explainer = calc_shap(model, X_test)   
+        shap_values = shap_values[0] + shap_values[1]
+                
         # ----------- Extract global explanations -----------
-        vals= np.abs(shap_values).mean(0)
-
+        # Next 2 rows are custom for getting the make classification feature names
         X_train = pd.DataFrame(X_train)
-
-        feature_importance = pd.DataFrame(list(zip(X_train.columns,vals)),columns=['col_name','feature_importance_vals'])
-        feature_importance.sort_values(by=['feature_importance_vals'],ascending=False,inplace=True)
-        feature_importance["col_name"] =  'Feature ' + feature_importance["col_name"].astype(str)
-
-        feature_importance = feature_importance.head()
-
-        feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt', header=None, index=None, sep=' ', mode='a')
-
-        with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','a') as file:
-            file.write("\nRun number: 2\n\n")
-        file.close()
+        feature_names = X_train.columns
+        # Else:
+        # feature_names = load_breast_cancer().feature_names
         
+        shap_df = pd.DataFrame(shap_values, columns=feature_names)
+        vals = np.abs(shap_df.values).mean(0) # get the mean of the shap values for each feature
+        shap_importance = pd.DataFrame(list(zip(feature_names, vals)), columns=['col_name', 'feature_importance_vals'])
+        shap_importance.sort_values(by=['feature_importance_vals'], ascending=False, inplace=True)
+
+        shap_importance["col_name"] =  'Feature: ' + shap_importance["col_name"].astype(str)
+        shap_importance = shap_importance.head()
+        shap_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt', header=None, index=None, sep=' ', mode='a')
+
+        with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','a') as file:
+            file.write("\nRun number: %d \n\n" %iteration_number)
+        file.close()
+    
     # ------------------------------------------------------------------------------------------------------------------------------------------------
 
     # Runs the Script (repeat N times the experiment)
 
-    experiments = 2
+    experiments = 10
 
     def main(unused_command_line_args):
         for i in range(experiments):
-            myscript(i+1, loop_num)
+            myscript(i+1)
         return 0
 
     main(sys.argv)
-        
-    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
-        data = file.readlines()
-
-    j=0
-    for i in range(6,8*experiments,8):
-        j+=1
-        data[i] = 'Run number: '+str(j+1)+'\n'
-
-    # Fix the names of the runs
-    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','w') as file:
-        file.writelines( data )
-        
-    file.close()
 
     # Extract the explanations from the different runs
 
-    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
+    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
         data = file.readlines()
 
     file.close()
@@ -161,9 +133,10 @@ def bigger_experiment(loop_num):
     for i in range(experiments):
         for j in range(5):
             x = data[i*8+j].split()
-            values.append(x[2])
-            features.append(x[0]+x[1])
-
+            temp = (x[2].split('"'))
+            values.append(x[3])
+            features.append(x[1]+" "+str(temp[0]))
+            
     # Make changes here on the dimensions of the dataframes for evaluating more experiments
             
     # Make dataframe with the shapley values of the features for each run  
@@ -203,7 +176,7 @@ def bigger_experiment(loop_num):
     # Make a dictionary for storing the unique feature names as keys and their corresponding shapley values as values
 
     df1 = df.astype(float)
-    dict = {animal: df1[df2.eq(animal)].stack().values for animal in np.unique(df2)}
+    dict = {element: df1[df2.eq(element)].stack().values for element in np.unique(df2)}
     print("\nThis is the new dictionary we created:\n", dict)
 
     # Calculate std deviation for each feature
@@ -220,11 +193,11 @@ def bigger_experiment(loop_num):
 
     # In matrix3 we calculate the standard deviation of the features 
     for alist in matrix2:
-        matrix3.append("{:.2f}".format(np.std(alist, dtype=np.float64)))
+        matrix3.append(np.std(alist, dtype=np.float64))
 
     # In matrix4 we calculate the relative standard deviation (percentage)
     for alist in matrix2:
-        matrix4.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist)))+"%")
+        matrix4.append(str(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))+"%")
         
     print("\nThis is the matrix with the unique features: \n", *matrix, sep = '\n')
     print("\nThis is the matrix with the list of values each feature has: \n", *matrix2, sep = '\n')   
@@ -336,7 +309,7 @@ def bigger_experiment(loop_num):
 
     rankings_percentage = []
     for alist in magic:
-        rankings_percentage.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist)))+"%")
+        rankings_percentage.append(str(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))+"%")
         
     ranking_deviation_percentage = []
     for i in range(len(uniqueValues)):
@@ -353,11 +326,12 @@ def bigger_experiment(loop_num):
     df2.to_csv(r'df2.csv', index = False)
 
     # Calculate the mean of the ranking deviation
+
     rankings_percentage_float = []
     for alist in magic:
-        rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+        rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
         
-    final_result = str("{:.2f}".format(np.mean(rankings_percentage_float)))
+    final_result = str(np.mean(rankings_percentage_float))
 
     # Print the mean of the ranking deviation
     print("Mean of the ranking deviation: "+final_result+"%")
@@ -365,19 +339,21 @@ def bigger_experiment(loop_num):
     # Calculate the mean of the std deviation
     std_deviation_float = []
     for alist in matrix2:
-        std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+        std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
         
-    final_result2 = str("{:.2f}".format(np.mean(std_deviation_float)))
+    final_result2 = str(np.mean(std_deviation_float))
 
     # Print the mean of the std deviation
     print("\nMean of the standard deviation (from importance of features): "+final_result2+"%")
         
     # The next 2 lines are for saving the python script output in a log file
     sys.stdout.close()
-    sys.stdout=stdoutOrigin
+    sys.stdout=stdoutOrigin       
+        
+# Make the bigger experiment
 
 # Showtime!
-for i in range(3):
+for i in range(2):
     bigger_experiment(i)
-    # ADD SMART COMMENT HERE
-    os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt")
+    # Input number of experiments to perform above (equals number of log files produced)
+    os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt")

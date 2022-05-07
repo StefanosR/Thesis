@@ -1,5 +1,6 @@
-# Structure: Train LGBMRegressor with the california housing dataset
-# Explainability: Global MASHAP values with TreeExplainer
+# Structure: Train XGBClassifier as a surrogate of the original_model (MLPClassifier)
+# (non deterministic) with the load_breast_cancer dataset
+# Explainability: Global SHAP values with TreeExplainer
 # Script: Run 10 experiments, keep all feature importance values and measure 
 # and measure the Mean of the ranking deviation + average std. deviation of the explanations
 
@@ -7,16 +8,16 @@ import sys
 import pandas as pd
 import numpy as np
 import shap
-from xgboost import XGBRegressor
-import lightgbm as lgb
+from xgboost.sklearn import XGBClassifier
 from sklearn.metrics import r2_score
-from sklearn.datasets import fetch_california_housing
+from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 import os
+import statistics
 
 # These 2 lines are for redirecting the python output to a log file
 stdoutOrigin=sys.stdout 
-sys.stdout = open("log_GEM_S1_LBGM_FCH.txt", "w")
+sys.stdout = open("log_GEM_S1_MLPC_ND_SD.txt", "w")
 
 #-----------------------------------------------------------------------------------------------------------------
 
@@ -26,7 +27,7 @@ def myscript(iteration_number):
     
     def create_surrogate(X, predictions, sur_parameters):
         # Create surrogate xgboost model
-        surrogate = XGBRegressor(**sur_parameters)
+        surrogate = XGBClassifier(**sur_parameters)
         surrogate.fit(X, predictions)
         sur_predictions = surrogate.predict(X)
         external_fidelity = r2_score(predictions, sur_predictions)
@@ -39,9 +40,9 @@ def myscript(iteration_number):
 
     from sklearn.neural_network import MLPClassifier
     # train original model and get its predictions
-    X, y = fetch_california_housing(return_X_y=True)
-    X_train, _, y_train, _ = train_test_split(X, y, test_size=0.2)
-    original_model = lgb.LGBMRegressor()
+    X, y = load_breast_cancer(return_X_y=True)
+    X_train, _, y_train, _ = train_test_split(X, y, random_state=42)
+    original_model = MLPClassifier()
     original_model.fit(X_train, y_train)
     predictions = original_model.predict(X)
 
@@ -50,7 +51,6 @@ def myscript(iteration_number):
     surrogate_model, external_fidelity = create_surrogate(X,
                                                     predictions,
                                                     sur_parameters)
-    
     # get the shapley values for the whole dataset
     shap_values, explainer = calc_shap(surrogate_model, X)
 
@@ -187,7 +187,7 @@ for list in matrix2:
 
 # In matrix4 we calculate the relative standard deviation (percentage)
 for list in matrix2:
-    matrix4.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/len(list)))+"%")
+    matrix4.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/statistics.mean(list)))+"%")
     
 print("\nThis is the matrix with the unique features: \n", *matrix, sep = '\n')
 print("\nThis is the matrix with the list of values each feature has: \n", *matrix2, sep = '\n')   
@@ -301,7 +301,7 @@ print("\nThe ranking deviation of each feature is: \n", *ranking_deviation, sep 
 
 rankings_percentage = []
 for list in magic:
-    rankings_percentage.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/len(list)))+"%")
+    rankings_percentage.append(str("{:.2f}".format(100*np.std(list, dtype=np.float64)/statistics.mean(list)))+"%")
     
 ranking_deviation_percentage = []
 for i in range(len(uniqueValues)):
@@ -321,7 +321,7 @@ df2.to_csv(r'df2.csv', index = False)
 
 rankings_percentage_float = []
 for alist in magic:
-    rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+    rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
     
 final_result = str("{:.2f}".format(np.mean(rankings_percentage_float)))
 
@@ -331,7 +331,7 @@ print("Mean of the ranking deviation: "+final_result+"%")
 # Calculate the mean of the std deviation
 std_deviation_float = []
 for alist in matrix2:
-    std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+    std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
     
 final_result2 = str("{:.2f}".format(np.mean(std_deviation_float)))
 

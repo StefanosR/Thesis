@@ -1,51 +1,37 @@
-# Structure: Train XGBClassifier as a surrogate of the original_model (MLPClassifier)
-# (non deterministic) with the load_breast_cancer dataset
+# Structure: LGBMRegressor (non deterministic) with the fetch_california_housing dataset
 # Explainability: Global SHAP values with TreeExplainer
-# Script: Run 10 experiments for 2 loops, on the first loop we have the same scenario as G_E_MASHAP, but 
-# for the 2nd loop of experiments we invoke the input perturbatio script at each run, in order to see how
-# the explanations are influenced. We get 2 log files for the 2 loops of the experiment.
+# Script: Run 2 experiments for 3 loops. Since the classifier now is deterministic it doesn't matter how many
+# runs we do to measure the deviations. The results, hence the explanations will be the same. So we run 2 experiments
+# where the 1st one will be a normal run, and on the 2nd we will invoke the input perturbation script. We repeat this 
+# "Bigger experiment" 3 times to see how the input perturbation script influences the explanations. By the results we
+# can judge the robustness or volatility of the system.
 
 from cmath import exp
 import sys
-from threading import local
 import pandas as pd
 import numpy as np
 import shap
-from xgboost.sklearn import XGBClassifier
-from sklearn.metrics import r2_score
-from sklearn.datasets import load_breast_cancer
+import lightgbm as lgb
+from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
-import sys 
-import os
+import os 
+import statistics
 
 stdoutOrigin=sys.stdout
 
-#-----------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------- 
 
 def bigger_experiment(loop_num):
-
-    # These 2 lines are for redirecting the python output to a log file
-    if loop_num==0:
-        sys.stdout = open("log_GEM_S2_ND_AR_1L.txt", "w")
-    else:
-        sys.stdout = open("log_GEM_S2_ND_AR_2L.txt", "w")
         
-    def myscript(iteration_number,loop_num):
+    # These 2 lines are for redirecting the python output to a log file
+      
+    sys.stdout = open("log_GES_S3_LGBM_D_BD_%dL.txt"%(loop_num+1), "w")    
+
+    # Function that runs the model and returns the predictions for n iterations
+
+    def myscript(iteration_number):
         
         print("Iteration:", iteration_number)
-            
-        def create_surrogate(X, predictions, sur_parameters):
-            # Create surrogate xgboost model
-            surrogate = XGBClassifier(**sur_parameters)
-            surrogate.fit(X, predictions)
-            sur_predictions = surrogate.predict(X)
-            external_fidelity = r2_score(predictions, sur_predictions)
-            return surrogate, external_fidelity
-
-        def calc_shap(model, x_explain, approximate=False):
-            explainer = shap.TreeExplainer(model)
-            shap_values = explainer.shap_values(x_explain, approximate=approximate)
-            return shap_values, explainer
         
         # Script for making small changes to the model input
         def input_earthquake(numpy_array, earthquake_magnitude):
@@ -64,77 +50,71 @@ def bigger_experiment(loop_num):
                 input_earthquake(training_data[i],earthquake_magnitude)
             return "Earthquake is over"
         
-        from sklearn.neural_network import MLPClassifier
-        # train original model and get its predictions
-        X, y = load_breast_cancer(return_X_y=True)
+        # Train model
+        dataset = fetch_california_housing()
+        X = dataset.data; y = dataset.target
         
-        if (loop_num == 1):
+        if (iteration_number == 2):
             # invoke the input perturbation script
             change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
-            print("Input perturbation occured")
+            print("easter_egg")
         else:
-            print("Did nothing")
+            print("Did nothing") 
             
-        X_train, _, y_train, _ = train_test_split(X, y, random_state=42)
-        original_model = MLPClassifier()
-        original_model.fit(X_train, y_train)
-        predictions = original_model.predict(X)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=False)
+        model = lgb.LGBMRegressor()
+        model.fit(X_train, y_train)
 
-        # Use agnostic explainer
-        sur_parameters = {'n_estimators': 100, 'max_depth': 8}
-        surrogate_model, external_fidelity = create_surrogate(X,
-                                                        predictions,
-                                                        sur_parameters)
-        # get the shapley values for the whole dataset
-        shap_values, explainer = calc_shap(surrogate_model, X)
+        # Calculate shap values 
+        explainer = shap.TreeExplainer(model)
+        shap_values = explainer.shap_values(X_test)
 
         # ----------- Extract global explanations -----------
-        vals= np.abs(shap_values).mean(0)
+        feature_names = fetch_california_housing().feature_names
+        shap_df = pd.DataFrame(shap_values, columns=feature_names)
+        vals = np.abs(shap_df.values).mean(0) # get the mean of the shap values for each feature
+        shap_importance = pd.DataFrame(list(zip(feature_names, vals)), columns=['col_name', 'feature_importance_vals'])
+        shap_importance.sort_values(by=['feature_importance_vals'], ascending=False, inplace=True)
 
-        X_train = pd.DataFrame(X_train)
+        shap_importance["col_name"] =  'Feature ' + shap_importance["col_name"].astype(str)
+        feature_importance = shap_importance.head()
 
-        feature_importance = pd.DataFrame(list(zip(X_train.columns,vals)),columns=['col_name','feature_importance_vals'])
-        feature_importance.sort_values(by=['feature_importance_vals'],ascending=False,inplace=True)
-        feature_importance["col_name"] =  'Feature ' + feature_importance["col_name"].astype(str)
+        feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt', header=None, index=None, sep=' ', mode='a')
 
-        feature_importance = feature_importance.head()
-
-        feature_importance.to_csv(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt', header=None, index=None, sep=' ', mode='a')
-
-        with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','a') as file:
-            file.write("\nRun number: 2\n\n")
+        with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','a') as file:
+            file.write("\nRun number: %d\n\n" % iteration_number)
         file.close()
         
     # ------------------------------------------------------------------------------------------------------------------------------------------------
 
-    # Runs the Script (repeat N times the experiment)
+    # Runs the Script (repeat 2 times the experiment - no need for more due to determinism)
 
-    experiments = 10
+    experiments = 2 
 
     def main(unused_command_line_args):
         for i in range(experiments):
-            myscript(i+1,loop_num)
+            myscript(i+1)
         return 0
 
     main(sys.argv)
         
-    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
+    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
         data = file.readlines()
 
-    j=0
-    for i in range(6,8*experiments,8):
-        j+=1
-        data[i] = 'Run number: '+str(j+1)+'\n'
+    # j=0
+    # for i in range(6,8*experiments,8):
+    #     j+=1
+    #     data[i] = 'Run number: '+str(j+1)+'\n'
 
-    # Fix the names of the runs
-    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','w') as file:
-        file.writelines( data )
+    # # Fix the names of the runs
+    # with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','w') as file:
+    #     file.writelines( data )
         
-    file.close()
+    # file.close()
 
     # Extract the explanations from the different runs
 
-    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt','r') as file:
+    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt','r') as file:
         data = file.readlines()
 
     file.close()
@@ -222,7 +202,7 @@ def bigger_experiment(loop_num):
 
     # In matrix4 we calculate the relative standard deviation (percentage)
     for alist in matrix2:
-        matrix4.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist)))+"%")
+        matrix4.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist)))+"%")
         
     print("\nThis is the matrix with the unique features: \n", *matrix, sep = '\n')
     print("\nThis is the matrix with the list of values each feature has: \n", *matrix2, sep = '\n')   
@@ -334,7 +314,7 @@ def bigger_experiment(loop_num):
 
     rankings_percentage = []
     for alist in magic:
-        rankings_percentage.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist)))+"%")
+        rankings_percentage.append(str("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist)))+"%")
         
     ranking_deviation_percentage = []
     for i in range(len(uniqueValues)):
@@ -346,43 +326,37 @@ def bigger_experiment(loop_num):
     # Research ranking deviation and visualize other statistics (distribution)   
     # Expand on more runs and features (also on scenario 2)
 
-    if loop_num==0:
-        # Save our dataframes for reference
-        df1.to_csv(r'df1.csv', index = False)
-        df2.to_csv(r'df2.csv', index = False)
-    else:
-        # Save our dataframes for reference
-        df1.to_csv(r'df1_new.csv', index = False)
-        df2.to_csv(r'df2_new.csv', index = False)
-    
+    # # Save our dataframes for reference
+    # df1.to_csv(r'df1.csv', index = False)
+    # df2.to_csv(r'df2.csv', index = False)
+
     # Calculate the mean of the ranking deviation
+
     rankings_percentage_float = []
     for alist in magic:
-        rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+        rankings_percentage_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
         
     final_result = str("{:.2f}".format(np.mean(rankings_percentage_float)))
-    
+
     # Print the mean of the ranking deviation
     print("Mean of the ranking deviation: "+final_result+"%")
-    
+
     # Calculate the mean of the std deviation
     std_deviation_float = []
     for alist in matrix2:
-        std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/len(alist))))
+        std_deviation_float.append(float("{:.2f}".format(100*np.std(alist, dtype=np.float64)/statistics.mean(alist))))
         
     final_result2 = str("{:.2f}".format(np.mean(std_deviation_float)))
-    
+
     # Print the mean of the std deviation
     print("\nMean of the standard deviation (from importance of features): "+final_result2+"%")
         
     # The next 2 lines are for saving the python script output in a log file
     sys.stdout.close()
     sys.stdout=stdoutOrigin
-    
-# Make the bigger experiment
 
 # Showtime!
-for i in range(2):
+for i in range(3):
     bigger_experiment(i)
-    # ADD SMART COMMENT HERE
-    os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_MASHAP\features.txt")
+    # Input number of experiments to perform above (equals number of log files produced)
+    os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_SHAP\features.txt")
