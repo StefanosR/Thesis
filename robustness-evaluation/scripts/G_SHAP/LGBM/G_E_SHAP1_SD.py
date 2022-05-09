@@ -27,7 +27,7 @@ def myscript(iteration_number):
     # Train model
     dataset = load_diabetes()
     X = dataset.data; y = dataset.target
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+    X_train, X_test, y_train, y_test = train_test_split(X, y)
     model = lgb.LGBMRegressor()
     model.fit(X_train, y_train)
 

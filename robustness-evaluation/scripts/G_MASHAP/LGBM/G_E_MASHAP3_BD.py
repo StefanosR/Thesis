@@ -1,4 +1,4 @@
-# Structure: Train XGBClassifier as a surrogate of LGBMRegressor with the fetch_california_housing dataset
+# Structure: Train XGBRegressor as a surrogate of LGBMRegressor with the fetch_california_housing dataset
 # Explainability: Global MASHAP values with TreeExplainer
 # Script: Run 2 experiments for 3 loops. Since the classifier now is deterministic it doesn't matter how many
 # runs we do to measure the deviations. The results, hence the explanations will be the same. So we run 2 experiments

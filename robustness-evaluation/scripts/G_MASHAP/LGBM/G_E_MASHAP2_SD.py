@@ -73,7 +73,7 @@ def bigger_experiment(loop_num):
         else:
             print("Did nothing")
             
-        X_train, _, y_train, _ = train_test_split(X, y, test_size=0.2)
+        X_train, _, y_train, _ = train_test_split(X, y)
         original_model = lgb.LGBMRegressor()
         original_model.fit(X_train, y_train)
         predictions = original_model.predict(X)
