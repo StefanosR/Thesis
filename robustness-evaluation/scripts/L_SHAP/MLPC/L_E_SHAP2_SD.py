@@ -350,9 +350,14 @@ def bigger_experiment(loop_num):
     # Research ranking deviation and visualize other statistics (distribution)   
     # Expand on more runs and features (also on scenario 2)
 
-    # # Save our dataframes for reference
-    # df1.to_csv(r'df1.csv', index = False)
-    # df2.to_csv(r'df2.csv', index = False)
+    # if loop_num==0:
+    #     # Save our dataframes for reference
+    #     df1.to_csv(r'df1.csv', index = False)
+    #     df2.to_csv(r'df2.csv', index = False)
+    # else:
+    #     # Save our dataframes for reference
+    #     df1.to_csv(r'df1_new.csv', index = False)
+    #     df2.to_csv(r'df2_new.csv', index = False)
 
     # Calculate the mean of the ranking deviation
 
