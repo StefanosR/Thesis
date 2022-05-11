@@ -146,7 +146,7 @@ print("\n..........................................\n")
 # Make a dictionary for storing the unique feature names as keys and their corresponding shapley values as values
 
 df1 = df.astype(float)
-dict = {animal: df1[df2.eq(animal)].stack().values for animal in np.unique(df2)}
+dict = {element: df1[df2.eq(element)].stack().values for element in np.unique(df2)}
 print("\nThis is the new dictionary we created:\n", dict)
 
 # Calculate std deviation for each feature
