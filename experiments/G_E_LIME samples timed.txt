@@ -1,0 +1,31 @@
+569 samples - 125 min / run -> 21 hours for scenario 1 -> 42 hours for scenario 2
+
+['worst area = 0.151',
+ 'mean area = 0.041',
+ 'mean perimeter = 0.033',
+ 'area error = 0.021',
+ 'worst perimeter = 0.013']
+
+100 samples - 22 minutes -> 3.7 hours for scenario 1 -> 7.4 hours for scenario 2
+
+['worst area = 0.153',
+ 'mean area = 0.039',
+ 'mean perimeter = 0.029',
+ 'area error = 0.020',
+ 'worst perimeter = 0.019']
+
+10 samples - 2 minutes
+
+['worst area = 0.107',
+ 'mean perimeter = 0.031',
+ 'mean area = 0.026',
+ 'worst perimeter = 0.008',
+ 'area error = 0.006']
+
+125 samples - 30 minutes -> 5 hours for scenario 1 -> 10 hours for scenario 2
+
+['worst area = 0.110',
+ 'mean perimeter = 0.028',
+ 'mean area = 0.028',
+ 'worst perimeter = 0.012',
+ 'area error = 0.010']

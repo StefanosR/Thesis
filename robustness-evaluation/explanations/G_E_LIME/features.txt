@@ -1,0 +1,80 @@
+Run number: 1
+
+worst area = 0.094
+worst perimeter = 0.094
+area error = 0.045
+mean texture = 0.007
+radius error = 0.007
+
+Run number: 2
+
+worst area = 0.189
+mean area = 0.184
+worst perimeter = 0.129
+area error = 0.073
+mean perimeter = 0.034
+
+Run number: 3
+
+worst area = 0.108
+mean perimeter = 0.063
+worst perimeter = 0.048
+area error = 0.057
+mean radius = 0.056
+
+Run number: 4
+
+worst area = 0.132
+mean area = 0.056
+area error = 0.068
+mean perimeter = 0.033
+worst perimeter = 0.007
+
+Run number: 5
+
+worst area = 0.253
+worst perimeter = 0.104
+mean area = 0.067
+mean perimeter = 0.047
+area error = 0.023
+
+Run number: 6
+
+worst area = 0.129
+mean area = 0.118
+mean perimeter = 0.105
+worst perimeter = 0.036
+area error = 0.017
+
+Run number: 7
+
+worst area = 0.234
+mean area = 0.107
+worst perimeter = 0.057
+mean perimeter = 0.017
+area error = 0.006
+
+Run number: 8
+
+mean area = 0.162
+worst perimeter = 0.043
+area error = 0.052
+mean perimeter = 0.049
+mean texture = 0.010
+
+Run number: 9
+
+worst area = 0.100
+mean area = 0.096
+mean perimeter = 0.071
+area error = 0.046
+worst perimeter = 0.013
+
+Run number: 10
+
+mean area = 0.092
+worst area = 0.053
+mean perimeter = 0.039
+area error = 0.072
+perimeter error = 0.007
+
