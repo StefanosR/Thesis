@@ -1,10 +1,10 @@
-# Structure: Train MLPClassifier (non deterministic) with the load_breast_cancer dataset
-# Explainability: Gloval LIME values with LimeTabularExplainer & SubmodularPick
+# Structure: Train MLPClassifier (non deterministic) with the make_classification dataset
+# Explainability: Global LIME values with LimeTabularExplainer & SubmodularPick
 # Script: Run 10 experiments, keep all feature importance values and measure 
 # and measure the Mean of the ranking deviation + average std. deviation of the explanations
-# Runtime: 5 hours
+# Runtime: 12 hours for 250 samples / 14 min for 5 samples
 
-from sklearn.datasets import load_breast_cancer
+from sklearn.datasets import make_classification
 import numpy as np
 import lime
 import pandas as pd
@@ -22,18 +22,23 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 
 # These 2 lines are for redirecting the python output to a log file
 stdoutOrigin=sys.stdout
-sys.stdout = open("log_GEL_S1_MLPC_ND_SD.txt", "w")
+sys.stdout = open("log_GEL_S1_MLPC_ND_BD.txt", "w")
 
 #------------------------------------------------------------------------------------------------------------------------------------------------
 
 def myscript(iteration_number, number_features):
         
-    X, y = load_breast_cancer(return_X_y=True)
+    X, y = make_classification(n_samples=50000, n_features=30, random_state=42)
     X_train, X_test, y_train, y_test = train_test_split(X, y)
     model = MLPClassifier()
     model.fit(X_train, y_train)
 
-    feature_names = load_breast_cancer().feature_names
+    z = pd.DataFrame(X)
+
+    feature_names = []
+    for i in z.columns:
+        feature_names.append("Feature"+str(i+1))
+        
     categorical_features = np.argwhere(np.array([len(set(X_train[:,x])) for x in range(X_train.shape[1])]) <=10).flatten()
 
     explainer = lime.lime_tabular.LimeTabularExplainer(X_train, feature_names=feature_names, 
@@ -49,7 +54,7 @@ def myscript(iteration_number, number_features):
     # exp.show_in_notebook(show_table=True)
 
     # Grab global explanations
-    sample_size = 5
+    sample_size = 250
     from lime import submodular_pick
     sp_obj = submodular_pick.SubmodularPick(explainer, X, model.predict_proba, sample_size=sample_size, num_features=10, num_exps_desired=5)
 
@@ -64,8 +69,6 @@ def myscript(iteration_number, number_features):
     sum_list = []
     for i in range(len(features)):
         sum_list.append(features[i]+", "+str(values[i]))
-
-    feature_names = load_breast_cancer().feature_names
     
     # the explanations list contains the following:
     # 1. The feature contribution (weight) of all the features (ranked by absolute value)
@@ -76,7 +79,7 @@ def myscript(iteration_number, number_features):
     for i in range(len(sum_list)):
         for word in feature_names:
         # if a word from the features list is present in the explanation strings (1st element of the list) then grab it
-            if word in sum_list[i]:
+            if (word+' ') in sum_list[i]:
                 # transfer the feature and its value to a 
                 feature_importance.append("%s = " %word + str("{:.3f}".format(float(sum_list[i].split(",")[1]))))
 
@@ -131,8 +134,8 @@ features = []
 for i in range(experiments):
     for j in range(number_features):
         x = data[i*8+j+2].split()
-        values.append(x[3])
-        features.append(x[0]+x[1])
+        values.append(x[2])
+        features.append(x[0])
 
 # Make changes here on the dimensions of the dataframes for evaluating more experiments (here we have 5 features)
   
@@ -170,14 +173,15 @@ print("\n..........................................\n")
 
 #-----------------------------------------------------------------------------------------------------------------
 
-# Make a dictionary for storing the unique feature names as keys and their corresponding weights as values
+# Fix values that are not numbers
 for i in range(len(df.values)):
     for j in range(len(df.values[i])):
         try:
             float(df.values[i][j])
         except:
-            df.values[i][j]=0
-            
+            df.values[i][j]=df.values[i-1][j] # take value of previous run if not a number
+
+# Make a dictionary for storing the unique feature names as keys and their corresponding weights as values
 df1 = df.astype(float)
 dict = {element: df1[df2.eq(element)].stack().values for element in np.unique(df2)}
 print("\nThis is the new dictionary we created:\n", dict)
@@ -349,34 +353,10 @@ final_result2 = str("{:.2f}".format(np.mean(std_deviation_float)))
 # Print the mean of the std deviation
 print("\nMean of the standard deviation (from importance of features): "+final_result2+"%")
 
-# -----------------------------------------------------------------------------------------------------------------------------
-
-# Check if all predictions where equal during these runs
-
-with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_LIME\predictions.txt','r') as file:
-    data = file.readlines()
-file.close()
-
-predz = []
-for i in range(experiments):
-        x = data[i].split(':')
-        predz.append(x[1])
-        
-def all_equal_ivo(lst):
-    return not lst or lst.count(lst[0]) == len(lst)
-
-if all_equal_ivo(predz) == True:
-    print("\nAll predictions were the same")
-else:
-    print("\nNot all predictions were the same")
-
-# print("\n",*data,sep="")
-
-# -----------------------------------------------------------------------------------------------------------------------------    
+# -----------------------------------------------------------------------------------------------------------------------------   
 
 # The next 2 lines are for saving the python script output in a log file
 sys.stdout.close()
 sys.stdout=stdoutOrigin
 
 os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_LIME\features.txt")
-os.remove(r"C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\robustness-evaluation\explanations\G_E_LIME\predictions.txt")

@@ -22,7 +22,7 @@
  'worst perimeter = 0.008',
  'area error = 0.006']
 
-125 samples - 30 minutes -> 5 hours for scenario 1 -> 10 hours for scenario 2
+125 samples - 30 minutes 
 
 ['worst area = 0.110',
  'mean perimeter = 0.028',
