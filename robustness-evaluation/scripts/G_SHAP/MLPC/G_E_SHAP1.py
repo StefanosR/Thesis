@@ -38,7 +38,7 @@ def myscript(iteration_number):
     model.fit(X_train, y_train)
     
     # get the shapley values for the whole dataset
-    shap_values, explainer = calc_shap(model, X_test)   
+    shap_values, explainer = calc_shap(model, X)   
     shap_values = shap_values[0] + shap_values[1]
     
     # ----------- Extract global explanations -----------
