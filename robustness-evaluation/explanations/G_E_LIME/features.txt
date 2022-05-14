@@ -1,0 +1,8 @@
+Run number: 1
+
+mean area = 0.112
+mean perimeter = 0.028
+worst radius = 0.015
+worst area = 0.015
+mean radius = 0.015
+

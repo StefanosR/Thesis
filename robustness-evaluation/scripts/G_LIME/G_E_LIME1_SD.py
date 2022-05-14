@@ -2,7 +2,7 @@
 # Explainability: Global LIME values with LimeTabularExplainer & SubmodularPick
 # Script: Run 10 experiments, keep all feature importance values and measure 
 # and measure the Mean of the ranking deviation + average std. deviation of the explanations
-# Runtime: 6 hours for 250 samples / 7 min for 5 samples
+# Runtime: 3 hours for 125 samples / 7 min for 5 samples
 
 from sklearn.datasets import load_breast_cancer
 import numpy as np
@@ -49,7 +49,7 @@ def myscript(iteration_number, number_features):
     # exp.show_in_notebook(show_table=True)
 
     # Grab global explanations
-    sample_size = 5
+    sample_size = 125
     from lime import submodular_pick
     sp_obj = submodular_pick.SubmodularPick(explainer, X, model.predict_proba, sample_size=sample_size, num_features=10, num_exps_desired=5)
 
