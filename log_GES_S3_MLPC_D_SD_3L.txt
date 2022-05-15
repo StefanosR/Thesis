@@ -1,0 +1,110 @@
+Iteration: 1
+Did nothing
+Iteration: 2
+easter_egg
+
+Our dataframes are:
+
+                   1st Feature             2nd Feature            3rd Feature            4th Feature            5th Feature
+Run_1  1.4888744406468076e-16   1.162600088451662e-16  8.737335693852252e-17  7.970276947708553e-17  7.326081744766727e-17
+Run_2  1.6289022952190654e-16  1.2964390350164806e-16  9.177266445317021e-17  7.176999182420038e-17  7.025172769232613e-17 
+
+       1st Feature 2nd Feature      3rd Feature     4th Feature 5th Feature
+Run_1   mean area  worst area  worst perimeter  mean perimeter  area error
+Run_2   mean area  worst area  worst perimeter  mean perimeter  area error 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature      3rd Feature     4th Feature 5th Feature
+count            2           2                2               2           2
+unique           1           1                1               1           1
+top      mean area  worst area  worst perimeter  mean perimeter  area error
+freq             2           2                2               2           2
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'area error': array([7.32608174e-17, 7.02517277e-17]), 'mean area': array([1.48887444e-16, 1.62890230e-16]), 'mean perimeter': array([7.97027695e-17, 7.17699918e-17]), 'worst area': array([1.16260009e-16, 1.29643904e-16]), 'worst perimeter': array([8.73733569e-17, 9.17726645e-17])}
+
+This is the matrix with the unique features: 
+
+area error
+mean area
+mean perimeter
+worst area
+worst perimeter
+
+This is the matrix with the list of values each feature has: 
+
+[7.32608174e-17 7.02517277e-17]
+[1.48887444e-16 1.62890230e-16]
+[7.97027695e-17 7.17699918e-17]
+[1.16260009e-16 1.29643904e-16]
+[8.73733569e-17 9.17726645e-17]
+
+This is the the std deviation of each list: 
+
+1.5045448776705702e-18
+7.001392728612887e-18
+3.966388826442572e-18
+6.691947328240931e-18
+2.1996537573238445e-18
+
+This is the relative std deviation of each list of values: 
+
+2.096743356063986%
+4.491272673935359%
+5.2370984622816135%
+5.442733516824119%
+2.45571042017665%
+
+The standard deviation of our features is: 
+
+('area error', 1.5045448776705702e-18)
+('mean area', 7.001392728612887e-18)
+('mean perimeter', 3.966388826442572e-18)
+('worst area', 6.691947328240931e-18)
+('worst perimeter', 2.1996537573238445e-18)
+
+The relative standard deviation of our features is: 
+
+('area error', '2.096743356063986%')
+('mean area', '4.491272673935359%')
+('mean perimeter', '5.2370984622816135%')
+('worst area', '5.442733516824119%')
+('worst perimeter', '2.45571042017665%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+mean area[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+worst area[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+worst perimeter[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature')]
+mean perimeter[('Run_1', '4th Feature'), ('Run_2', '4th Feature')]
+area error[('Run_1', '5th Feature'), ('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+mean area: 0.0
+worst area: 0.0
+worst perimeter: 0.0
+mean perimeter: 0.0
+area error: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+mean area: 0.0%
+worst area: 0.0%
+worst perimeter: 0.0%
+mean perimeter: 0.0%
+area error: 0.0%
+
+..........................................
+
+Mean of the ranking deviation: 0.0%
+
+Mean of the standard deviation (from importance of features): 3.946%
