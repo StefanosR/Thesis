@@ -1,0 +1,136 @@
+Iteration: 1
+Did nothing
+[14:21:53] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+Iteration: 2
+easter_egg
+[14:21:53] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+
+Our dataframes are:
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1   3.5931795   1.6289699   1.5122612  0.67129827  0.45876828
+Run_2   3.7373466   1.9938066   1.4176993    0.588862   0.5839902 
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1   Feature23   Feature13   Feature20   Feature26    Feature2
+Run_2   Feature23   Feature13   Feature20   Feature27   Feature18 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count            2           2           2           2           2
+unique           1           1           1           2           2
+top      Feature23   Feature13   Feature20   Feature26    Feature2
+freq             2           2           2           1           1
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature13': array([1.6289699, 1.9938066]), 'Feature18': array([0.5839902]), 'Feature2': array([0.45876828]), 'Feature20': array([1.5122612, 1.4176993]), 'Feature23': array([3.5931795, 3.7373466]), 'Feature26': array([0.67129827]), 'Feature27': array([0.588862])}
+
+This is the matrix with the unique features: 
+
+Feature13
+Feature18
+Feature2
+Feature20
+Feature23
+Feature26
+Feature27
+
+This is the matrix with the list of values each feature has: 
+
+[1.6289699 1.9938066]
+[0.5839902]
+[0.45876828]
+[1.5122612 1.4176993]
+[3.5931795 3.7373466]
+[0.67129827]
+[0.588862]
+
+This is the the std deviation of each list: 
+
+0.18
+0.00
+0.00
+0.05
+0.07
+0.00
+0.00
+
+This is the relative std deviation of each list of values: 
+
+10.07%
+0.00%
+0.00%
+3.23%
+1.97%
+0.00%
+0.00%
+
+The standard deviation of our features is: 
+
+('Feature13', '0.18')
+('Feature18', '0.00')
+('Feature2', '0.00')
+('Feature20', '0.05')
+('Feature23', '0.07')
+('Feature26', '0.00')
+('Feature27', '0.00')
+
+The relative standard deviation of our features is: 
+
+('Feature13', '10.07%')
+('Feature18', '0.00%')
+('Feature2', '0.00%')
+('Feature20', '3.23%')
+('Feature23', '1.97%')
+('Feature26', '0.00%')
+('Feature27', '0.00%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature23[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+Feature13[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+Feature20[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature')]
+Feature26[('Run_1', '4th Feature')]
+Feature27[('Run_2', '4th Feature')]
+Feature2[('Run_1', '5th Feature')]
+Feature18[('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature23: 0.0
+Feature13: 0.0
+Feature20: 0.0
+Feature26: 0.0
+Feature27: 0.0
+Feature2: 0.0
+Feature18: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+Feature23: 0.00%
+Feature13: 0.00%
+Feature20: 0.00%
+Feature26: 0.00%
+Feature27: 0.00%
+Feature2: 0.00%
+Feature18: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 0.00%
+
+Mean of the standard deviation (from importance of features): 2.18%
+
+All predictions were the same
+
+"Iteration Number 1: You are okay :)"
+"Iteration Number 2: You are okay :)"
+

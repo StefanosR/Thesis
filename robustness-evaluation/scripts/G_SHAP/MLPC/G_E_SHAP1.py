@@ -284,9 +284,9 @@ print("\n..........................................\n")
 # Research ranking deviation and visualize other statistics (distribution)   
 # Expand on more runs and features (also on scenario 2)
 
-# Save our dataframes for reference
-df1.to_csv(r'df1.csv', index = False)
-df2.to_csv(r'df2.csv', index = False)
+# # Save our dataframes for reference
+# df1.to_csv(r'df1.csv', index = False)
+# df2.to_csv(r'df2.csv', index = False)
 
 # Calculate the mean of the ranking deviation
 

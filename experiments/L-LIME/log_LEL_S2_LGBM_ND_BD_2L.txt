@@ -1,0 +1,177 @@
+Input perturbation occured
+Intercept 2.081675825291632
+Prediction_local [2.27858547]
+Right: 1.5932584627740833
+Input perturbation occured
+Intercept 2.0635172126926666
+Prediction_local [2.38138335]
+Right: 1.7554281841306965
+Input perturbation occured
+Intercept 2.0806165648251187
+Prediction_local [2.21579352]
+Right: 1.532103273161076
+Input perturbation occured
+Intercept 2.033947819083636
+Prediction_local [2.42433658]
+Right: 1.7425386106972929
+Input perturbation occured
+Intercept 2.1535953871369764
+Prediction_local [2.15480751]
+Right: 1.6140347206108756
+Input perturbation occured
+Intercept 2.3210925502677084
+Prediction_local [1.55230987]
+Right: 1.9082332009400509
+Input perturbation occured
+Intercept 2.3293605124792216
+Prediction_local [1.65065949]
+Right: 1.643489756703657
+Input perturbation occured
+Intercept 2.1029360485467192
+Prediction_local [2.28325681]
+Right: 1.3594037419016471
+Input perturbation occured
+Intercept 2.1737547591326347
+Prediction_local [1.98986342]
+Right: 1.353267081771395
+Input perturbation occured
+Intercept 2.1197838206216346
+Prediction_local [2.27586297]
+Right: 1.8753977082568978
+
+Our dataframes are:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1        0.611       0.601       0.229       0.222       0.179
+Run_2        0.599       0.529       0.270       0.197       0.174
+Run_3        0.664       0.583       0.474       0.266       0.263
+Run_4        0.624       0.588       0.262       0.262       0.171
+Run_5        0.646       0.638       0.390       0.240       0.144
+Run_6        1.203       0.527       0.443       0.208       0.142
+Run_7        0.565       0.405       0.225       0.207       0.141
+Run_8        0.689       0.625       0.392       0.302       0.207
+Run_9        1.233       0.700       0.302       0.241       0.194
+Run_10       0.653       0.592       0.400       0.320       0.174 
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1     AveOccup      MedInc   Longitude    Latitude    HouseAge
+Run_2     AveOccup      MedInc    HouseAge    Latitude   Longitude
+Run_3     AveOccup      MedInc    Latitude   Longitude    HouseAge
+Run_4     AveOccup      MedInc   Longitude    HouseAge    Latitude
+Run_5     AveOccup      MedInc    Latitude    HouseAge   Longitude
+Run_6       MedInc    AveOccup    Latitude    HouseAge   Longitude
+Run_7       MedInc    Latitude   Longitude    HouseAge    AveRooms
+Run_8     AveOccup      MedInc    Latitude   Longitude    HouseAge
+Run_9       MedInc    AveOccup   Longitude    HouseAge    Latitude
+Run_10    AveOccup      MedInc    Latitude   Longitude    HouseAge 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count           10          10          10          10          10
+unique           2           3           3           3           4
+top       AveOccup      MedInc    Latitude    HouseAge    HouseAge
+freq             7           7           5           5           4
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'AveOccup': array([0.611, 0.599, 0.664, 0.624, 0.646, 0.527, 0.689, 0.7  , 0.653]), 'AveRooms': array([0.141]), 'HouseAge': array([0.179, 0.27 , 0.263, 0.262, 0.24 , 0.208, 0.207, 0.207, 0.241,
+       0.174]), 'Latitude': array([0.222, 0.197, 0.474, 0.171, 0.39 , 0.443, 0.405, 0.392, 0.194,
+       0.4  ]), 'Longitude': array([0.229, 0.174, 0.266, 0.262, 0.144, 0.142, 0.225, 0.302, 0.302,
+       0.32 ]), 'MedInc': array([0.601, 0.529, 0.583, 0.588, 0.638, 1.203, 0.565, 0.625, 1.233,
+       0.592])}
+
+This is the matrix with the unique features: 
+
+AveOccup
+AveRooms
+HouseAge
+Latitude
+Longitude
+MedInc
+
+This is the matrix with the list of values each feature has: 
+
+[0.611 0.599 0.664 0.624 0.646 0.527 0.689 0.7   0.653]
+[0.141]
+[0.179 0.27  0.263 0.262 0.24  0.208 0.207 0.207 0.241 0.174]
+[0.222 0.197 0.474 0.171 0.39  0.443 0.405 0.392 0.194 0.4  ]
+[0.229 0.174 0.266 0.262 0.144 0.142 0.225 0.302 0.302 0.32 ]
+[0.601 0.529 0.583 0.588 0.638 1.203 0.565 0.625 1.233 0.592]
+
+This is the the std deviation of each list: 
+
+0.05
+0.00
+0.03
+0.11
+0.06
+0.25
+
+This is the relative std deviation of each list of values: 
+
+7.80%
+0.00%
+14.72%
+33.95%
+26.28%
+35.33%
+
+The standard deviation of our features is: 
+
+('AveOccup', '0.05')
+('AveRooms', '0.00')
+('HouseAge', '0.03')
+('Latitude', '0.11')
+('Longitude', '0.06')
+('MedInc', '0.25')
+
+The relative standard deviation of our features is: 
+
+('AveOccup', '7.80%')
+('AveRooms', '0.00%')
+('HouseAge', '14.72%')
+('Latitude', '33.95%')
+('Longitude', '26.28%')
+('MedInc', '35.33%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+AveOccup[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_8', '1st Feature'), ('Run_10', '1st Feature'), ('Run_6', '2nd Feature'), ('Run_9', '2nd Feature')]
+MedInc[('Run_6', '1st Feature'), ('Run_7', '1st Feature'), ('Run_9', '1st Feature'), ('Run_1', '2nd Feature'), ('Run_2', '2nd Feature'), ('Run_3', '2nd Feature'), ('Run_4', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_10', '2nd Feature')]
+Latitude[('Run_7', '2nd Feature'), ('Run_3', '3rd Feature'), ('Run_5', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_10', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_2', '4th Feature'), ('Run_4', '5th Feature'), ('Run_9', '5th Feature')]
+Longitude[('Run_1', '3rd Feature'), ('Run_4', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_3', '4th Feature'), ('Run_8', '4th Feature'), ('Run_10', '4th Feature'), ('Run_2', '5th Feature'), ('Run_5', '5th Feature'), ('Run_6', '5th Feature')]
+HouseAge[('Run_2', '3rd Feature'), ('Run_4', '4th Feature'), ('Run_5', '4th Feature'), ('Run_6', '4th Feature'), ('Run_7', '4th Feature'), ('Run_9', '4th Feature'), ('Run_1', '5th Feature'), ('Run_3', '5th Feature'), ('Run_8', '5th Feature'), ('Run_10', '5th Feature')]
+AveRooms[('Run_7', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+AveOccup: 0.41573970964154905
+MedInc: 0.45825756949558394
+Latitude: 0.9219544457292888
+Longitude: 0.8306623862918074
+HouseAge: 0.6403124237432849
+AveRooms: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+AveOccup: 34.02%
+MedInc: 26.96%
+Latitude: 26.34%
+Longitude: 21.30%
+HouseAge: 14.89%
+AveRooms: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 20.59%
+
+Mean of the standard deviation (from importance of features): 19.68%
+
+All predictions were the same

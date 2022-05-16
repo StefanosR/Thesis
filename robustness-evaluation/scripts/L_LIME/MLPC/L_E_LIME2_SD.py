@@ -202,7 +202,15 @@ def bigger_experiment(loop_num):
     print("\n..........................................\n")    
 
     #-----------------------------------------------------------------------------------------------------------------
-
+    
+    # Fix values that are not numbers
+    for i in range(len(df.values)):
+        for j in range(len(df.values[i])):
+            try:
+                float(df.values[i][j])
+            except:
+                df.values[i][j]=df.values[i-1][j] # take value of previous run if not a number
+            
     # Make a dictionary for storing the unique feature names as keys and their corresponding weights as values
 
     df1 = df.astype(float)

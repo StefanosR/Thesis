@@ -67,7 +67,7 @@ def bigger_experiment(loop_num):
 
         # Calculate shap values 
         explainer = shap.TreeExplainer(model)
-        shap_values = explainer.shap_values(X_test)
+        shap_values = explainer.shap_values(X)
 
         # ----------- Extract global explanations -----------
         feature_names = fetch_california_housing().feature_names

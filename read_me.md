@@ -1,6 +1,6 @@
 Information:
 
-- Explain mains, notebooks, scripts
+- Explain all repo files
 
 Log file format: Explainability Method + Scenario/Script + Model used + Determinism + Dataset (+ Number of Loop)
 
