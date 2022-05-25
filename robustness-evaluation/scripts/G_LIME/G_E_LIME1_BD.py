@@ -2,7 +2,7 @@
 # Explainability: Global LIME values with LimeTabularExplainer & SubmodularPick
 # Script: Run 10 experiments, keep all feature importance values and measure 
 # and measure the Mean of the ranking deviation + average std. deviation of the explanations
-# Runtime: 12 hours for 250 samples / 14 min for 5 samples
+# Runtime: 10 hours for 250 samples / 14 min for 5 samples
 
 from sklearn.datasets import make_classification
 import numpy as np

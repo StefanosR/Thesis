@@ -1,0 +1,387 @@
+Input perturbation occured
+Intercept 0.6837602183738061
+Prediction_local [0.46629049]
+Right: 0.0019890032397337923
+Intercept 0.5424761169628805
+Prediction_local [0.93647526]
+Right: 0.9787389461336796
+Intercept 0.5066509033275692
+Prediction_local [1.03696168]
+Right: 0.9994600786575786
+Intercept 0.17877776245607138
+Prediction_local [0.9628737]
+Right: 0.9992329494257158
+Intercept 0.21849181959087632
+Prediction_local [0.76486601]
+Right: 0.9979794470161683
+Intercept 0.5587749335734054
+Prediction_local [0.88367476]
+Right: 0.9984907780800465
+Input perturbation occured
+Intercept 0.7105908121529219
+Prediction_local [0.50356275]
+Right: 0.037096700860352924
+Intercept 0.31218120830454826
+Prediction_local [0.45479329]
+Right: 0.996717276250511
+Intercept 0.1770396897288942
+Prediction_local [0.85469004]
+Right: 0.9676571091219277
+Intercept 0.42275434315767496
+Prediction_local [0.14798963]
+Right: 0.9986528550700985
+Intercept 0.2165272945065436
+Prediction_local [0.71837334]
+Right: 0.987148617685107
+Intercept 0.20534096118571887
+Prediction_local [0.7914185]
+Right: 0.9990474750369338
+Input perturbation occured
+Intercept 0.7041095671475297
+Prediction_local [0.55027221]
+Right: 0.07966594388317631
+Intercept 0.5690513626386331
+Prediction_local [0.92340504]
+Right: 0.9990572525400573
+Intercept 0.18444935934886642
+Prediction_local [0.84315592]
+Right: 0.9844823567407439
+Intercept 0.2456829188430251
+Prediction_local [0.61603392]
+Right: 0.999367957009291
+Intercept 0.5289752842632633
+Prediction_local [1.06686593]
+Right: 0.9998126985865621
+Intercept 0.13329607513393918
+Prediction_local [0.97591485]
+Right: 0.9928916406431119
+Input perturbation occured
+Intercept 0.7357930449707231
+Prediction_local [0.48923612]
+Right: 0.0841666374817892
+Intercept 0.5116544119851967
+Prediction_local [1.15922925]
+Right: 0.9987610522583991
+Intercept 0.38286604299187604
+Prediction_local [0.1420008]
+Right: 0.8666022427595742
+Intercept 0.20503131749104364
+Prediction_local [0.6942818]
+Right: 0.9795615713332771
+Intercept 0.501922344243706
+Prediction_local [1.23100051]
+Right: 0.9999787976417096
+Intercept 0.16649141149544475
+Prediction_local [0.79029333]
+Right: 0.9721549120282247
+Input perturbation occured
+Intercept 0.7351631433888566
+Prediction_local [0.48815909]
+Right: 0.1581710168020704
+Intercept 0.5902955139140852
+Prediction_local [0.88600302]
+Right: 0.9970199476893663
+Intercept 0.47363129261463854
+Prediction_local [1.22174769]
+Right: 0.9998087686869535
+Intercept 0.5446816823063578
+Prediction_local [1.01384513]
+Right: 0.9965556456280864
+Intercept 0.2926737950897512
+Prediction_local [0.46778043]
+Right: 0.9995047728588836
+Intercept 0.6193400350908421
+Prediction_local [0.79491855]
+Right: 0.9992375180461814
+Input perturbation occured
+Intercept 0.7372599292206028
+Prediction_local [0.47388945]
+Right: 0.2827102343473734
+Intercept 0.6347569546065648
+Prediction_local [0.76993278]
+Right: 0.9191392535875547
+Intercept 0.23999672085257356
+Prediction_local [0.63338567]
+Right: 0.989814363190428
+Intercept 0.6134612525476593
+Prediction_local [0.84082152]
+Right: 0.9985592318613
+Intercept 0.5512995186696916
+Prediction_local [1.03567019]
+Right: 0.9999635607304731
+Intercept 0.5954316637760092
+Prediction_local [0.886046]
+Right: 0.9977882010429135
+Input perturbation occured
+Intercept 0.6863933167348155
+Prediction_local [0.48499869]
+Right: 0.06632800796912669
+Intercept 0.5063045452431634
+Prediction_local [1.00442761]
+Right: 0.999423135060654
+Intercept 0.2808993076567808
+Prediction_local [0.6194795]
+Right: 0.9453317774786267
+Intercept 0.2525128219623625
+Prediction_local [0.68683182]
+Right: 0.9733720642258004
+Intercept 0.21770700254431596
+Prediction_local [0.8185661]
+Right: 0.9994278394519944
+Intercept 0.31475457696215015
+Prediction_local [0.46962187]
+Right: 0.9826810150481526
+Input perturbation occured
+Intercept 0.7097118130527965
+Prediction_local [0.50514243]
+Right: 0.07668399441601152
+Intercept 0.2270813152021674
+Prediction_local [0.70284835]
+Right: 0.9924123747086364
+Intercept 0.5199081548445958
+Prediction_local [1.0479803]
+Right: 0.99876607453888
+Intercept 0.16811964756649206
+Prediction_local [0.90151756]
+Right: 0.9812857064790437
+Intercept 0.12520114176709526
+Prediction_local [0.9910217]
+Right: 0.9993283077122462
+Intercept 0.5302412487357482
+Prediction_local [1.052772]
+Right: 0.9967032298828103
+Input perturbation occured
+Intercept 0.7511072332757222
+Prediction_local [0.44020841]
+Right: 0.05326053655084206
+Intercept 0.19984926512965367
+Prediction_local [0.71126551]
+Right: 0.9983784313338177
+Intercept 0.22737810165142733
+Prediction_local [0.66303472]
+Right: 0.9634261892085191
+Intercept 0.6593466263316377
+Prediction_local [0.70962685]
+Right: 0.9933144169357894
+Intercept 0.5898891247523277
+Prediction_local [0.89111482]
+Right: 0.9998164173626065
+Intercept 0.12948405811348773
+Prediction_local [0.92967053]
+Right: 0.9998160229726708
+Input perturbation occured
+Intercept 0.7223828760980441
+Prediction_local [0.53339413]
+Right: 0.4259323171945517
+Intercept 0.514661737915656
+Prediction_local [1.1488926]
+Right: 0.9998923309294848
+Intercept 0.48182366961163026
+Prediction_local [1.25285319]
+Right: 0.9999493582875421
+Intercept 0.23427106653389826
+Prediction_local [0.5796508]
+Right: 0.9964691387508462
+Intercept 0.4565674116833407
+Prediction_local [1.3501945]
+Right: 0.999359652968455
+Intercept 0.15296742138268268
+Prediction_local [0.83430357]
+Right: 0.9965851763478027
+
+Our dataframes are:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1        0.169       0.063       0.004       0.012       0.010
+Run_2        0.299       0.019       0.058       0.021       0.012
+Run_3        0.235       0.046       0.015       0.003       0.006
+Run_4        0.159       0.126       0.005       0.002       0.005
+Run_5        0.120       0.059       0.054       0.041       0.006
+Run_6        0.145       0.115       0.074       0.077       0.013
+Run_7        0.045       0.074       0.131       0.070       0.009
+Run_8        0.194       0.177       0.037       0.001       0.006
+Run_9        0.133       0.054       0.044       0.046       0.005
+Run_10       0.166       0.030       0.032       0.011       0.008 
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1    Feature26   Feature28   Feature21   Feature27   Feature17
+Run_2    Feature26   Feature14   Feature27   Feature28   Feature30
+Run_3    Feature26   Feature14   Feature27   Feature28   Feature15
+Run_4    Feature26   Feature27   Feature28   Feature14    Feature9
+Run_5    Feature26   Feature27   Feature14   Feature28   Feature20
+Run_6    Feature26   Feature27   Feature28   Feature14   Feature12
+Run_7    Feature14   Feature28   Feature27   Feature26   Feature21
+Run_8    Feature26   Feature14   Feature28   Feature27   Feature12
+Run_9    Feature26   Feature14   Feature28   Feature27    Feature2
+Run_10   Feature26   Feature27   Feature14   Feature28   Feature11 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count           10          10          10          10          10
+unique           2           3           4           4           9
+top      Feature26   Feature14   Feature28   Feature28   Feature12
+freq             9           4           4           4           2
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature11': array([0.008]), 'Feature12': array([0.013, 0.006]), 'Feature14': array([0.019, 0.046, 0.002, 0.054, 0.077, 0.045, 0.177, 0.054, 0.032]), 'Feature15': array([0.006]), 'Feature17': array([0.01]), 'Feature2': array([0.005]), 'Feature20': array([0.006]), 'Feature21': array([0.004, 0.009]), 'Feature26': array([0.169, 0.299, 0.235, 0.159, 0.12 , 0.145, 0.07 , 0.194, 0.133,
+       0.166]), 'Feature27': array([0.012, 0.058, 0.015, 0.126, 0.059, 0.115, 0.131, 0.001, 0.046,
+       0.03 ]), 'Feature28': array([0.063, 0.021, 0.003, 0.005, 0.041, 0.074, 0.074, 0.037, 0.044,
+       0.011]), 'Feature30': array([0.012]), 'Feature9': array([0.005])}
+
+This is the matrix with the unique features: 
+
+Feature11
+Feature12
+Feature14
+Feature15
+Feature17
+Feature2
+Feature20
+Feature21
+Feature26
+Feature27
+Feature28
+Feature30
+Feature9
+
+This is the matrix with the list of values each feature has: 
+
+[0.008]
+[0.013 0.006]
+[0.019 0.046 0.002 0.054 0.077 0.045 0.177 0.054 0.032]
+[0.006]
+[0.01]
+[0.005]
+[0.006]
+[0.004 0.009]
+[0.169 0.299 0.235 0.159 0.12  0.145 0.07  0.194 0.133 0.166]
+[0.012 0.058 0.015 0.126 0.059 0.115 0.131 0.001 0.046 0.03 ]
+[0.063 0.021 0.003 0.005 0.041 0.074 0.074 0.037 0.044 0.011]
+[0.012]
+[0.005]
+
+This is the the std deviation of each list: 
+
+0.00
+0.00
+0.05
+0.00
+0.00
+0.00
+0.00
+0.00
+0.06
+0.05
+0.03
+0.00
+0.00
+
+This is the relative std deviation of each list of values: 
+
+0.00%
+36.84%
+84.21%
+0.00%
+0.00%
+0.00%
+0.00%
+38.46%
+35.53%
+77.88%
+68.82%
+0.00%
+0.00%
+
+The standard deviation of our features is: 
+
+('Feature11', '0.00')
+('Feature12', '0.00')
+('Feature14', '0.05')
+('Feature15', '0.00')
+('Feature17', '0.00')
+('Feature2', '0.00')
+('Feature20', '0.00')
+('Feature21', '0.00')
+('Feature26', '0.06')
+('Feature27', '0.05')
+('Feature28', '0.03')
+('Feature30', '0.00')
+('Feature9', '0.00')
+
+The relative standard deviation of our features is: 
+
+('Feature11', '0.00%')
+('Feature12', '36.84%')
+('Feature14', '84.21%')
+('Feature15', '0.00%')
+('Feature17', '0.00%')
+('Feature2', '0.00%')
+('Feature20', '0.00%')
+('Feature21', '38.46%')
+('Feature26', '35.53%')
+('Feature27', '77.88%')
+('Feature28', '68.82%')
+('Feature30', '0.00%')
+('Feature9', '0.00%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature26[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_6', '1st Feature'), ('Run_8', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature'), ('Run_7', '4th Feature')]
+Feature14[('Run_7', '1st Feature'), ('Run_2', '2nd Feature'), ('Run_3', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_5', '3rd Feature'), ('Run_10', '3rd Feature'), ('Run_4', '4th Feature'), ('Run_6', '4th Feature')]
+Feature28[('Run_1', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_4', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_2', '4th Feature'), ('Run_3', '4th Feature'), ('Run_5', '4th Feature'), ('Run_10', '4th Feature')]
+Feature27[('Run_4', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_6', '2nd Feature'), ('Run_10', '2nd Feature'), ('Run_2', '3rd Feature'), ('Run_3', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_8', '4th Feature'), ('Run_9', '4th Feature')]
+Feature21[('Run_1', '3rd Feature'), ('Run_7', '5th Feature')]
+Feature17[('Run_1', '5th Feature')]
+Feature30[('Run_2', '5th Feature')]
+Feature15[('Run_3', '5th Feature')]
+Feature9[('Run_4', '5th Feature')]
+Feature20[('Run_5', '5th Feature')]
+Feature12[('Run_6', '5th Feature'), ('Run_8', '5th Feature')]
+Feature2[('Run_9', '5th Feature')]
+Feature11[('Run_10', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature26: 0.9000000000000001
+Feature14: 0.9558139185602919
+Feature28: 0.7483314773547882
+Feature27: 0.8306623862918074
+Feature21: 1.0
+Feature17: 0.0
+Feature30: 0.0
+Feature15: 0.0
+Feature9: 0.0
+Feature20: 0.0
+Feature12: 0.0
+Feature2: 0.0
+Feature11: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+Feature26: 69.23%
+Feature14: 37.40%
+Feature28: 23.39%
+Feature27: 28.64%
+Feature21: 25.00%
+Feature17: 0.00%
+Feature30: 0.00%
+Feature15: 0.00%
+Feature9: 0.00%
+Feature20: 0.00%
+Feature12: 0.00%
+Feature2: 0.00%
+Feature11: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 14.13%
+
+Mean of the standard deviation (from importance of features): 26.29%

@@ -1,0 +1,153 @@
+Did nothing
+Intercept 0.7052468187558757
+Prediction_local [0.50312123]
+Right: 0.060342653038916526
+Intercept 0.59982736495203
+Prediction_local [0.84829517]
+Right: 0.999999739329188
+Intercept 0.17595989250518657
+Prediction_local [0.82861513]
+Right: 0.973801033854843
+Intercept 0.4152901124810214
+Prediction_local [0.17222877]
+Right: 0.9992750962559945
+Intercept 0.47404766864850495
+Prediction_local [1.22335007]
+Right: 0.9981017850161649
+Intercept 0.5137355047306756
+Prediction_local [1.11692861]
+Right: 0.9987313503271431
+easter_egg
+Intercept 0.7214810295969208
+Prediction_local [0.52568866]
+Right: 0.04782729376676124
+Intercept 0.6112254866493745
+Prediction_local [0.81758238]
+Right: 0.9997397105179938
+Intercept 0.2652173170091626
+Prediction_local [0.48083658]
+Right: 0.9954151647808724
+Intercept 0.5857563041967875
+Prediction_local [0.90849558]
+Right: 0.9999031172079063
+Intercept 0.13267968624370594
+Prediction_local [0.91447319]
+Right: 0.9793308871473938
+Intercept 0.11935480645778002
+Prediction_local [0.93405897]
+Right: 0.9990117682148548
+
+Our dataframes are:
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1       0.190       0.110       0.046       0.042       0.007
+Run_2       0.225       0.068       0.013       0.020       0.001 
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1   Feature26   Feature27   Feature28   Feature14    Feature1
+Run_2   Feature26   Feature27   Feature28   Feature14    Feature6 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count            2           2           2           2           2
+unique           1           1           1           1           2
+top      Feature26   Feature27   Feature28   Feature14    Feature1
+freq             2           2           2           2           1
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature1': array([0.007]), 'Feature14': array([0.042, 0.02 ]), 'Feature26': array([0.19 , 0.225]), 'Feature27': array([0.11 , 0.068]), 'Feature28': array([0.046, 0.013]), 'Feature6': array([0.001])}
+
+This is the matrix with the unique features: 
+
+Feature1
+Feature14
+Feature26
+Feature27
+Feature28
+Feature6
+
+This is the matrix with the list of values each feature has: 
+
+[0.007]
+[0.042 0.02 ]
+[0.19  0.225]
+[0.11  0.068]
+[0.046 0.013]
+[0.001]
+
+This is the the std deviation of each list: 
+
+0.00
+0.01
+0.02
+0.02
+0.02
+0.00
+
+This is the relative std deviation of each list of values: 
+
+0.00%
+35.48%
+8.43%
+23.60%
+55.93%
+0.00%
+
+The standard deviation of our features is: 
+
+('Feature1', '0.00')
+('Feature14', '0.01')
+('Feature26', '0.02')
+('Feature27', '0.02')
+('Feature28', '0.02')
+('Feature6', '0.00')
+
+The relative standard deviation of our features is: 
+
+('Feature1', '0.00%')
+('Feature14', '35.48%')
+('Feature26', '8.43%')
+('Feature27', '23.60%')
+('Feature28', '55.93%')
+('Feature6', '0.00%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature26[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+Feature27[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+Feature28[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature')]
+Feature14[('Run_1', '4th Feature'), ('Run_2', '4th Feature')]
+Feature1[('Run_1', '5th Feature')]
+Feature6[('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature26: 0.0
+Feature27: 0.0
+Feature28: 0.0
+Feature14: 0.0
+Feature1: 0.0
+Feature6: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+Feature26: 0.00%
+Feature27: 0.00%
+Feature28: 0.00%
+Feature14: 0.00%
+Feature1: 0.00%
+Feature6: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 0.00%
+
+Mean of the standard deviation (from importance of features): 20.57%

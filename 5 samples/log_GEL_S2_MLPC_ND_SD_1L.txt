@@ -1,0 +1,377 @@
+Did nothing
+Intercept 0.9064175740922152
+Prediction_local [0.6389225]
+Right: 0.07666330712889832
+Intercept 0.776738084118052
+Prediction_local [1.01110587]
+Right: 0.9975853185903845
+Intercept 0.07435708104599531
+Prediction_local [0.41019676]
+Right: 0.7167301421973638
+Intercept 0.8807261407142831
+Prediction_local [0.69900183]
+Right: 0.8230845296477998
+Intercept 0.12467583363794588
+Prediction_local [0.2663313]
+Right: 0.9984217417101614
+Intercept 0.7829278676203203
+Prediction_local [1.03286792]
+Right: 0.9989968240512443
+Did nothing
+Intercept 0.49468853661575185
+Prediction_local [0.32433743]
+Right: 6.544589937651227e-08
+Intercept 0.3729264804307904
+Prediction_local [0.693733]
+Right: 0.9867228107490073
+Intercept 0.3838638114656053
+Prediction_local [0.64916394]
+Right: 0.9443113120040891
+Intercept 0.4820906808633695
+Prediction_local [0.70077305]
+Right: 0.5319661017640329
+Intercept 0.412897508854995
+Prediction_local [0.58157924]
+Right: 0.8654004845061213
+Intercept 0.35950193297403144
+Prediction_local [0.74315661]
+Right: 0.9791500771150625
+Did nothing
+Intercept 0.6496597839716921
+Prediction_local [0.58936898]
+Right: 1.0134414245264465e-13
+Intercept 0.3570646510837401
+Prediction_local [0.37547582]
+Right: 0.9988397371208756
+Intercept 0.2980126018634509
+Prediction_local [0.58808025]
+Right: 0.9185813391699459
+Intercept 0.24615037379553883
+Prediction_local [0.66274317]
+Right: 0.8254511212635036
+Intercept 0.5381705849212105
+Prediction_local [0.88852257]
+Right: 0.9755724572428176
+Intercept 0.7392565038190916
+Prediction_local [0.32487394]
+Right: 0.5525945609479221
+Did nothing
+Intercept 0.5142916558780413
+Prediction_local [-0.19728993]
+Right: 1.5210243215235426e-44
+Intercept 0.5054070070435956
+Prediction_local [1.14624774]
+Right: 1.0
+Intercept 0.5892111726542857
+Prediction_local [0.86831173]
+Right: 0.9999999999987134
+Intercept 0.3680724861711964
+Prediction_local [0.27708296]
+Right: 0.9519802821690974
+Intercept 0.22951309275028903
+Prediction_local [0.63167572]
+Right: 0.9987283891252887
+Intercept 0.2465873892927265
+Prediction_local [0.61765285]
+Right: 0.9999252302451426
+Did nothing
+Intercept 0.5099777630576293
+Prediction_local [-0.24651757]
+Right: 2.34730868395861e-15
+Intercept 0.25743172028050365
+Prediction_local [0.47524673]
+Right: 0.9963141772982136
+Intercept 0.17787304415148714
+Prediction_local [0.75010406]
+Right: 0.9494593356953547
+Intercept 0.18516709921610575
+Prediction_local [0.70472351]
+Right: 0.9958281374355635
+Intercept 0.5183902597474614
+Prediction_local [1.19087626]
+Right: 0.9999804343002013
+Intercept 0.30005726442415365
+Prediction_local [0.33994247]
+Right: 0.7796174354188642
+Did nothing
+Intercept 0.37361970413171364
+Prediction_local [-0.1149692]
+Right: 3.1030975959882426e-28
+Intercept 0.21186169020292245
+Prediction_local [0.36427072]
+Right: 0.6619099936264303
+Intercept 0.2287456073848626
+Prediction_local [0.28453315]
+Right: 0.7354880249736403
+Intercept 0.19792262247945838
+Prediction_local [0.35211715]
+Right: 0.7630225619932719
+Intercept 0.6050464726285795
+Prediction_local [1.17223435]
+Right: 0.999999999999997
+Intercept 0.22560008401071957
+Prediction_local [0.33911602]
+Right: 0.9801392940206823
+Did nothing
+Intercept 0.8393690839016632
+Prediction_local [0.52370254]
+Right: 0.9237356152244529
+Intercept 0.678626400309118
+Prediction_local [0.9840424]
+Right: 0.9964104628015665
+Intercept 0.7371960512867717
+Prediction_local [0.76745353]
+Right: 0.9399846360464784
+Intercept 0.2019843869242913
+Prediction_local [0.38631474]
+Right: 0.9993319154515102
+Intercept 0.2797742078323155
+Prediction_local [0.15652001]
+Right: 0.9441933061638257
+Intercept 0.7401749686543545
+Prediction_local [0.80793137]
+Right: 0.9904355907053897
+Did nothing
+Intercept 0.6637093729293323
+Prediction_local [0.08777025]
+Right: 3.5305321376560564e-32
+Intercept 0.34835420854842036
+Prediction_local [0.88309305]
+Right: 0.9894342264481426
+Intercept 0.5363849728606399
+Prediction_local [0.44382272]
+Right: 0.9988652091099356
+Intercept 0.339516024955243
+Prediction_local [0.90095488]
+Right: 0.9999999999929169
+Intercept 0.4972133039697763
+Prediction_local [0.55709653]
+Right: 0.9968378403543363
+Intercept 0.4932181785568732
+Prediction_local [0.6181955]
+Right: 0.9992362700675639
+Did nothing
+Intercept 0.7821828941483224
+Prediction_local [0.47201189]
+Right: 7.044476775744121e-09
+Intercept 0.639755339529375
+Prediction_local [0.90832189]
+Right: 0.9992293534000056
+Intercept 0.6377128495561943
+Prediction_local [0.94686143]
+Right: 0.9939792597362374
+Intercept 0.6855510199454553
+Prediction_local [0.82429]
+Right: 0.9865753925526256
+Intercept 0.6849052916911162
+Prediction_local [0.82041993]
+Right: 0.9977691175101326
+Intercept 0.6401182996824748
+Prediction_local [0.97103821]
+Right: 0.9972459252194307
+Did nothing
+Intercept 0.6176902190545601
+Prediction_local [0.16575394]
+Right: 8.563442085719317e-36
+Intercept 0.49277695179580366
+Prediction_local [0.563341]
+Right: 0.9919289521663672
+Intercept 0.4294114894210514
+Prediction_local [0.75324539]
+Right: 0.9922831733687997
+Intercept 0.5251768458552712
+Prediction_local [0.45979843]
+Right: 0.9834892902886152
+Intercept 0.40592741004596855
+Prediction_local [0.80710763]
+Right: 0.9956772424523868
+Intercept 0.46625667660670694
+Prediction_local [0.61291913]
+Right: 0.9015790037985005
+
+Our dataframes are:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1        0.076       0.031       0.019       0.014       0.014
+Run_2        0.207       0.078       0.051       0.038       0.011
+Run_3        0.066       0.063       0.023       0.018       0.000
+Run_4        0.182       0.068       0.037       0.046       0.008
+Run_5        0.139       0.054       0.040       0.008       0.016
+Run_6        0.068       0.062       0.032       0.026       0.000
+Run_7        0.063       0.057       0.048       0.038       0.035
+Run_8        0.142       0.131       0.069       0.036           =
+Run_9        0.146       0.087       0.064       0.042       0.042
+Run_10       0.124       0.048       0.033       0.008           = 
+
+        1st Feature      2nd Feature      3rd Feature      4th Feature        5th Feature
+Run_1   worst area        mean area   mean perimeter      mean radius    worst perimeter
+Run_2    mean area   mean perimeter       worst area  worst perimeter       mean texture
+Run_3   worst area  worst perimeter        mean area     mean texture      worst texture
+Run_4   worst area        mean area   mean perimeter       area error    worst perimeter
+Run_5   worst area        mean area       area error   worst symmetry    worst perimeter
+Run_6   worst area        mean area  worst perimeter   mean perimeter         area error
+Run_7   area error   mean perimeter        mean area       worst area    worst perimeter
+Run_8   worst area        mean area   mean perimeter  worst perimeter      worst concave
+Run_9   worst area   mean perimeter        mean area  worst perimeter         area error
+Run_10  worst area       area error        mean area  perimeter error  fractal dimension 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature      4th Feature      5th Feature
+count           10          10          10               10               10
+unique           3           4           5                8                6
+top     worst area   mean area   mean area  worst perimeter  worst perimeter
+freq             8           5           4                3                4
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'area error': array([0.046, 0.04 , 0.   , 0.063, 0.042, 0.048]), 'fractal dimension': array([0.042]), 'mean area': array([0.031, 0.207, 0.023, 0.068, 0.054, 0.062, 0.048, 0.131, 0.064,
+       0.033]), 'mean perimeter': array([0.019, 0.078, 0.037, 0.026, 0.057, 0.069, 0.087]), 'mean radius': array([0.014]), 'mean texture': array([0.011, 0.018]), 'perimeter error': array([0.008]), 'worst area': array([0.076, 0.051, 0.066, 0.182, 0.139, 0.068, 0.038, 0.142, 0.146,
+       0.124]), 'worst concave': array([0.035]), 'worst perimeter': array([0.014, 0.038, 0.063, 0.008, 0.016, 0.032, 0.035, 0.036, 0.042]), 'worst symmetry': array([0.008]), 'worst texture': array([0.])}
+
+This is the matrix with the unique features: 
+
+area error
+fractal dimension
+mean area
+mean perimeter
+mean radius
+mean texture
+perimeter error
+worst area
+worst concave
+worst perimeter
+worst symmetry
+worst texture
+
+This is the matrix with the list of values each feature has: 
+
+[0.046 0.04  0.    0.063 0.042 0.048]
+[0.042]
+[0.031 0.207 0.023 0.068 0.054 0.062 0.048 0.131 0.064 0.033]
+[0.019 0.078 0.037 0.026 0.057 0.069 0.087]
+[0.014]
+[0.011 0.018]
+[0.008]
+[0.076 0.051 0.066 0.182 0.139 0.068 0.038 0.142 0.146 0.124]
+[0.035]
+[0.014 0.038 0.063 0.008 0.016 0.032 0.035 0.036 0.042]
+[0.008]
+[0.]
+
+This is the the std deviation of each list: 
+
+0.02
+0.00
+0.05
+0.02
+0.00
+0.00
+0.00
+0.05
+0.00
+0.02
+0.00
+0.00
+
+This is the relative std deviation of each list of values: 
+
+48.43%
+0.00%
+73.90%
+45.93%
+0.00%
+24.14%
+0.00%
+45.03%
+0.00%
+50.40%
+0.00%
+nan%
+
+The standard deviation of our features is: 
+
+('area error', '0.02')
+('fractal dimension', '0.00')
+('mean area', '0.05')
+('mean perimeter', '0.02')
+('mean radius', '0.00')
+('mean texture', '0.00')
+('perimeter error', '0.00')
+('worst area', '0.05')
+('worst concave', '0.00')
+('worst perimeter', '0.02')
+('worst symmetry', '0.00')
+('worst texture', '0.00')
+
+The relative standard deviation of our features is: 
+
+('area error', '48.43%')
+('fractal dimension', '0.00%')
+('mean area', '73.90%')
+('mean perimeter', '45.93%')
+('mean radius', '0.00%')
+('mean texture', '24.14%')
+('perimeter error', '0.00%')
+('worst area', '45.03%')
+('worst concave', '0.00%')
+('worst perimeter', '50.40%')
+('worst symmetry', '0.00%')
+('worst texture', 'nan%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+worst area[('Run_1', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_6', '1st Feature'), ('Run_8', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature'), ('Run_2', '3rd Feature'), ('Run_7', '4th Feature')]
+mean area[('Run_2', '1st Feature'), ('Run_1', '2nd Feature'), ('Run_4', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_6', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_3', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_10', '3rd Feature')]
+area error[('Run_7', '1st Feature'), ('Run_10', '2nd Feature'), ('Run_5', '3rd Feature'), ('Run_4', '4th Feature'), ('Run_6', '5th Feature'), ('Run_9', '5th Feature')]
+mean perimeter[('Run_2', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_1', '3rd Feature'), ('Run_4', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_6', '4th Feature')]
+worst perimeter[('Run_3', '2nd Feature'), ('Run_6', '3rd Feature'), ('Run_2', '4th Feature'), ('Run_8', '4th Feature'), ('Run_9', '4th Feature'), ('Run_1', '5th Feature'), ('Run_4', '5th Feature'), ('Run_5', '5th Feature'), ('Run_7', '5th Feature')]
+mean radius[('Run_1', '4th Feature')]
+mean texture[('Run_3', '4th Feature'), ('Run_2', '5th Feature')]
+worst symmetry[('Run_5', '4th Feature')]
+perimeter error[('Run_10', '4th Feature')]
+worst texture[('Run_3', '5th Feature')]
+worst concave[('Run_8', '5th Feature')]
+fractal dimension[('Run_10', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+worst area: 1.02469507659596
+mean area: 0.6403124237432849
+area error: 1.4907119849998598
+mean perimeter: 0.6998542122237652
+worst perimeter: 0.9938079899999066
+mean radius: 0.0
+mean texture: 0.5
+worst symmetry: 0.0
+perimeter error: 0.0
+worst texture: 0.0
+worst concave: 0.0
+fractal dimension: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+worst area: 68.31%
+mean area: 27.84%
+area error: 44.72%
+mean perimeter: 25.78%
+worst perimeter: 24.17%
+mean radius: 0.00%
+mean texture: 11.11%
+worst symmetry: 0.00%
+perimeter error: 0.00%
+worst texture: 0.00%
+worst concave: 0.00%
+fractal dimension: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 16.83%
+
+Mean of the standard deviation (from importance of features): nan%

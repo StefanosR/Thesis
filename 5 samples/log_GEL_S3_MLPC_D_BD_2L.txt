@@ -1,0 +1,162 @@
+Did nothing
+Intercept 0.7061777173686657
+Prediction_local [0.52908773]
+Right: 0.060342653038916526
+Intercept 0.6161748976008748
+Prediction_local [0.80177266]
+Right: 0.9990674091215532
+Intercept 0.20125669894808587
+Prediction_local [0.76557523]
+Right: 0.9186972549442844
+Intercept 0.20811018931202988
+Prediction_local [0.7345661]
+Right: 0.8317829725687905
+Intercept 0.6461968311539542
+Prediction_local [0.7056764]
+Right: 0.8994595281588974
+Intercept 0.2366203779645924
+Prediction_local [0.64924433]
+Right: 0.9753500452590924
+easter_egg
+Intercept 0.7277684832041194
+Prediction_local [0.46573563]
+Right: 0.13648665283714922
+Intercept 0.26840005545527557
+Prediction_local [0.53408163]
+Right: 0.9853105283816855
+Intercept 0.8343305401365566
+Prediction_local [0.19880998]
+Right: 0.7268787670868302
+Intercept 0.54421678602218
+Prediction_local [1.06294066]
+Right: 0.9975390229870196
+Intercept 0.20831479032273964
+Prediction_local [0.69203711]
+Right: 0.9914021209139623
+Intercept 0.5222996027186806
+Prediction_local [1.08626325]
+Right: 0.9998535605062866
+
+Our dataframes are:
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1       0.114       0.042       0.046       0.049       0.006
+Run_2       0.115       0.016       0.003       0.007       0.009 
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1   Feature27   Feature28   Feature26   Feature14   Feature16
+Run_2   Feature26   Feature27   Feature14   Feature10    Feature9 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count            2           2           2           2           2
+unique           2           2           2           2           2
+top      Feature27   Feature28   Feature26   Feature14   Feature16
+freq             1           1           1           1           1
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature10': array([0.007]), 'Feature14': array([0.049, 0.003]), 'Feature16': array([0.006]), 'Feature26': array([0.046, 0.115]), 'Feature27': array([0.114, 0.016]), 'Feature28': array([0.042]), 'Feature9': array([0.009])}
+
+This is the matrix with the unique features: 
+
+Feature10
+Feature14
+Feature16
+Feature26
+Feature27
+Feature28
+Feature9
+
+This is the matrix with the list of values each feature has: 
+
+[0.007]
+[0.049 0.003]
+[0.006]
+[0.046 0.115]
+[0.114 0.016]
+[0.042]
+[0.009]
+
+This is the the std deviation of each list: 
+
+0.00
+0.02
+0.00
+0.03
+0.05
+0.00
+0.00
+
+This is the relative std deviation of each list of values: 
+
+0.00%
+88.46%
+0.00%
+42.86%
+75.38%
+0.00%
+0.00%
+
+The standard deviation of our features is: 
+
+('Feature10', '0.00')
+('Feature14', '0.02')
+('Feature16', '0.00')
+('Feature26', '0.03')
+('Feature27', '0.05')
+('Feature28', '0.00')
+('Feature9', '0.00')
+
+The relative standard deviation of our features is: 
+
+('Feature10', '0.00%')
+('Feature14', '88.46%')
+('Feature16', '0.00%')
+('Feature26', '42.86%')
+('Feature27', '75.38%')
+('Feature28', '0.00%')
+('Feature9', '0.00%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature27[('Run_1', '1st Feature'), ('Run_2', '2nd Feature')]
+Feature26[('Run_2', '1st Feature'), ('Run_1', '3rd Feature')]
+Feature28[('Run_1', '2nd Feature')]
+Feature14[('Run_2', '3rd Feature'), ('Run_1', '4th Feature')]
+Feature10[('Run_2', '4th Feature')]
+Feature16[('Run_1', '5th Feature')]
+Feature9[('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature27: 0.5
+Feature26: 1.0
+Feature28: 0.0
+Feature14: 0.5
+Feature10: 0.0
+Feature16: 0.0
+Feature9: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+Feature27: 33.33%
+Feature26: 50.00%
+Feature28: 0.00%
+Feature14: 14.29%
+Feature10: 0.00%
+Feature16: 0.00%
+Feature9: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 13.95%
+
+Mean of the standard deviation (from importance of features): 29.53%
