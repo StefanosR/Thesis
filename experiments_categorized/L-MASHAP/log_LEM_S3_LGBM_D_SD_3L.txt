@@ -1,0 +1,112 @@
+Iteration: 1
+Did nothing
+Iteration: 2
+easter_egg
+
+Our dataframes are:
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1   29.934288   16.655935   5.7158937    2.500792   2.4948123
+Run_2    27.21544   14.571142  12.4268675   6.5872884    4.437872 
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1    Feature2    Feature8    Feature1    Feature9    Feature6
+Run_2    Feature2    Feature8    Feature1    Feature6    Feature9 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count            2           2           2           2           2
+unique           1           1           1           2           2
+top       Feature2    Feature8    Feature1    Feature9    Feature6
+freq             2           2           2           1           1
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature1': array([ 5.7158937, 12.4268675]), 'Feature2': array([29.934288, 27.21544 ]), 'Feature6': array([2.4948123, 6.5872884]), 'Feature8': array([16.655935, 14.571142]), 'Feature9': array([2.500792, 4.437872])}
+
+This is the matrix with the unique features: 
+
+Feature1
+Feature2
+Feature6
+Feature8
+Feature9
+
+This is the matrix with the list of values each feature has: 
+
+[ 5.7158937 12.4268675]
+[29.934288 27.21544 ]
+[2.4948123 6.5872884]
+[16.655935 14.571142]
+[2.500792 4.437872]
+
+This is the the std deviation of each list: 
+
+3.36
+1.36
+2.05
+1.04
+0.97
+
+This is the relative std deviation of each list of values: 
+
+36.99%
+4.76%
+45.06%
+6.68%
+27.92%
+
+The standard deviation of our features is: 
+
+('Feature1', '3.36')
+('Feature2', '1.36')
+('Feature6', '2.05')
+('Feature8', '1.04')
+('Feature9', '0.97')
+
+The relative standard deviation of our features is: 
+
+('Feature1', '36.99%')
+('Feature2', '4.76%')
+('Feature6', '45.06%')
+('Feature8', '6.68%')
+('Feature9', '27.92%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature2[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+Feature8[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+Feature1[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature')]
+Feature9[('Run_1', '4th Feature'), ('Run_2', '5th Feature')]
+Feature6[('Run_2', '4th Feature'), ('Run_1', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature2: 0.0
+Feature8: 0.0
+Feature1: 0.0
+Feature9: 0.5
+Feature6: 0.5
+
+This is the ranking deviation percentage for each feature: 
+
+Feature2: 0.00%
+Feature8: 0.00%
+Feature1: 0.00%
+Feature9: 11.11%
+Feature6: 11.11%
+
+..........................................
+
+Mean of the ranking deviation: 4.44%
+
+Mean of the standard deviation (from importance of features): 24.28%
+
+All predictions were the same

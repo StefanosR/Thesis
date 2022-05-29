@@ -1,0 +1,123 @@
+Iteration: 1
+Did nothing
+Iteration: 2
+easter_egg
+
+Our dataframes are:
+
+               1st Feature  ...        5th Feature
+Run_1    21.1545630903351  ...  5.647473711598959
+Run_2  23.207358797015548  ...  5.076884691899154
+
+[2 rows x 5 columns] 
+
+        1st Feature 2nd Feature  3rd Feature  4th Feature 5th Feature
+Run_1  Feature bmi  Feature s5  Feature age  Feature sex  Feature s6
+Run_2  Feature bmi  Feature s5  Feature age   Feature s3  Feature s6 
+
+
+Describe df with the feature names:
+
+         1st Feature 2nd Feature  3rd Feature  4th Feature 5th Feature
+count             2           2            2            2           2
+unique            1           1            1            2           1
+top     Feature bmi  Feature s5  Feature age  Feature sex  Feature s6
+freq              2           2            2            1           2
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature age': array([10.8914404 ,  7.11723204]), 'Feature bmi': array([21.15456309, 23.2073588 ]), 'Feature s3': array([5.49770583]), 'Feature s5': array([16.68332476, 19.95006202]), 'Feature s6': array([5.64747371, 5.07688469]), 'Feature sex': array([9.25020252])}
+
+This is the matrix with the unique features: 
+
+Feature age
+Feature bmi
+Feature s3
+Feature s5
+Feature s6
+Feature sex
+
+This is the matrix with the list of values each feature has: 
+
+[10.8914404   7.11723204]
+[21.15456309 23.2073588 ]
+[5.49770583]
+[16.68332476 19.95006202]
+[5.64747371 5.07688469]
+[9.25020252]
+
+This is the the std deviation of each list: 
+
+1.89
+1.03
+0.00
+1.63
+0.29
+0.00
+
+This is the relative std deviation of each list of values: 
+
+20.96%
+4.63%
+0.00%
+8.92%
+5.32%
+0.00%
+
+The standard deviation of our features is: 
+
+('Feature age', '1.89')
+('Feature bmi', '1.03')
+('Feature s3', '0.00')
+('Feature s5', '1.63')
+('Feature s6', '0.29')
+('Feature sex', '0.00')
+
+The relative standard deviation of our features is: 
+
+('Feature age', '20.96%')
+('Feature bmi', '4.63%')
+('Feature s3', '0.00%')
+('Feature s5', '8.92%')
+('Feature s6', '5.32%')
+('Feature sex', '0.00%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature bmi[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+Feature s5[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+Feature age[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature')]
+Feature sex[('Run_1', '4th Feature')]
+Feature s3[('Run_2', '4th Feature')]
+Feature s6[('Run_1', '5th Feature'), ('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature bmi: 0.0
+Feature s5: 0.0
+Feature age: 0.0
+Feature sex: 0.0
+Feature s3: 0.0
+Feature s6: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+Feature bmi: 0.00%
+Feature s5: 0.00%
+Feature age: 0.00%
+Feature sex: 0.00%
+Feature s3: 0.00%
+Feature s6: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 0.00%
+
+Mean of the standard deviation (from importance of features): 6.64%
+
+All predictions were the same

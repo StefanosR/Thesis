@@ -1,0 +1,163 @@
+Iteration: 1
+Input perturbation occured
+Iteration: 2
+Input perturbation occured
+Iteration: 3
+Input perturbation occured
+Iteration: 4
+Input perturbation occured
+Iteration: 5
+Input perturbation occured
+Iteration: 6
+Input perturbation occured
+Iteration: 7
+Input perturbation occured
+Iteration: 8
+Input perturbation occured
+Iteration: 9
+Input perturbation occured
+Iteration: 10
+Input perturbation occured
+
+Our dataframes are:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature  5th Feature
+Run_1   0.65220886  0.41755185  0.17415988  0.16547114   0.10831939
+Run_2    0.8032886  0.21105266   0.1921208  0.06571294   0.06368443
+Run_3     0.755966  0.28926226  0.22504412  0.15899037   0.14018548
+Run_4    0.6658443  0.25828534  0.22017941  0.20037556   0.06664609
+Run_5   0.65127206  0.35567352   0.2588916   0.1767038   0.08095261
+Run_6   0.78630495   0.4230469  0.19992287  0.18690875   0.13866125
+Run_7    0.8280177  0.34069058  0.20229405  0.13011396  0.071791835
+Run_8    0.7065254   0.4065441  0.22139767  0.15798849   0.13419008
+Run_9   0.66529864    0.438188  0.19626413  0.18732873   0.18263654
+Run_10   0.7756246  0.36768493  0.22342804  0.19784355   0.09854103 
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1     Feature0    Feature1    Feature2    Feature5    Feature7
+Run_2     Feature0    Feature1    Feature2    Feature5    Feature6
+Run_3     Feature0    Feature1    Feature2    Feature7    Feature5
+Run_4     Feature0    Feature1    Feature7    Feature2    Feature5
+Run_5     Feature0    Feature1    Feature7    Feature2    Feature6
+Run_6     Feature0    Feature1    Feature2    Feature5    Feature7
+Run_7     Feature0    Feature1    Feature2    Feature6    Feature5
+Run_8     Feature0    Feature1    Feature2    Feature5    Feature7
+Run_9     Feature0    Feature1    Feature7    Feature5    Feature2
+Run_10    Feature0    Feature1    Feature2    Feature7    Feature5 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count           10          10          10          10          10
+unique           1           1           2           4           4
+top       Feature0    Feature1    Feature2    Feature5    Feature5
+freq            10          10           7           5           4
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature0': array([0.65220886, 0.8032886 , 0.755966  , 0.6658443 , 0.65127206,
+       0.78630495, 0.8280177 , 0.7065254 , 0.66529864, 0.7756246 ]), 'Feature1': array([0.41755185, 0.21105266, 0.28926226, 0.25828534, 0.35567352,
+       0.4230469 , 0.34069058, 0.4065441 , 0.438188  , 0.36768493]), 'Feature2': array([0.17415988, 0.1921208 , 0.22504412, 0.20037556, 0.1767038 ,
+       0.19992287, 0.20229405, 0.22139767, 0.18263654, 0.22342804]), 'Feature5': array([0.16547114, 0.06571294, 0.14018548, 0.06664609, 0.18690875,
+       0.07179183, 0.15798849, 0.18732873, 0.09854103]), 'Feature6': array([0.06368443, 0.08095261, 0.13011396]), 'Feature7': array([0.10831939, 0.15899037, 0.22017941, 0.2588916 , 0.13866125,
+       0.13419008, 0.19626413, 0.19784355])}
+
+This is the matrix with the unique features: 
+
+Feature0
+Feature1
+Feature2
+Feature5
+Feature6
+Feature7
+
+This is the matrix with the list of values each feature has: 
+
+[0.65220886 0.8032886  0.755966   0.6658443  0.65127206 0.78630495
+ 0.8280177  0.7065254  0.66529864 0.7756246 ]
+[0.41755185 0.21105266 0.28926226 0.25828534 0.35567352 0.4230469
+ 0.34069058 0.4065441  0.438188   0.36768493]
+[0.17415988 0.1921208  0.22504412 0.20037556 0.1767038  0.19992287
+ 0.20229405 0.22139767 0.18263654 0.22342804]
+[0.16547114 0.06571294 0.14018548 0.06664609 0.18690875 0.07179183
+ 0.15798849 0.18732873 0.09854103]
+[0.06368443 0.08095261 0.13011396]
+[0.10831939 0.15899037 0.22017941 0.2588916  0.13866125 0.13419008
+ 0.19626413 0.19784355]
+
+This is the the std deviation of each list: 
+
+0.06
+0.07
+0.02
+0.05
+0.03
+0.05
+
+This is the relative std deviation of each list of values: 
+
+8.89%
+20.70%
+8.97%
+38.21%
+30.73%
+26.64%
+
+The standard deviation of our features is: 
+
+('Feature0', '0.06')
+('Feature1', '0.07')
+('Feature2', '0.02')
+('Feature5', '0.05')
+('Feature6', '0.03')
+('Feature7', '0.05')
+
+The relative standard deviation of our features is: 
+
+('Feature0', '8.89%')
+('Feature1', '20.70%')
+('Feature2', '8.97%')
+('Feature5', '38.21%')
+('Feature6', '30.73%')
+('Feature7', '26.64%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature0[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_6', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature')]
+Feature1[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature'), ('Run_3', '2nd Feature'), ('Run_4', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_6', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_10', '2nd Feature')]
+Feature2[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature'), ('Run_3', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_10', '3rd Feature'), ('Run_4', '4th Feature'), ('Run_5', '4th Feature'), ('Run_9', '5th Feature')]
+Feature7[('Run_4', '3rd Feature'), ('Run_5', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_3', '4th Feature'), ('Run_10', '4th Feature'), ('Run_1', '5th Feature'), ('Run_6', '5th Feature'), ('Run_8', '5th Feature')]
+Feature5[('Run_1', '4th Feature'), ('Run_2', '4th Feature'), ('Run_6', '4th Feature'), ('Run_8', '4th Feature'), ('Run_9', '4th Feature'), ('Run_3', '5th Feature'), ('Run_4', '5th Feature'), ('Run_7', '5th Feature'), ('Run_10', '5th Feature')]
+Feature6[('Run_7', '4th Feature'), ('Run_2', '5th Feature'), ('Run_5', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature0: 0.0
+Feature1: 0.0
+Feature2: 0.66332495807108
+Feature7: 0.8660254037844386
+Feature5: 0.49690399499995325
+Feature6: 0.4714045207910317
+
+This is the ranking deviation percentage for each feature: 
+
+Feature0: 0.00%
+Feature1: 0.00%
+Feature2: 19.51%
+Feature7: 21.65%
+Feature5: 11.18%
+Feature6: 10.10%
+
+..........................................
+
+Mean of the ranking deviation: 10.41%
+
+Mean of the standard deviation (from importance of features): 22.36%
+
+All predictions were the same
