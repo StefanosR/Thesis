@@ -1,0 +1,2 @@
+'Explainability_method','Category','Implementation','Scenario','Dataset','Loop','Feature','output 0','output 1','output 2','flag','username','timestamp'
+'SHAP','Local','LGBM','1st','big','none',1,'Mean of the standard deviation (from importance of features): 10.19%','Mean of the ranking deviation: 10.24%','output 2/0.png','','','2022-05-30 15:31:10.844396'
