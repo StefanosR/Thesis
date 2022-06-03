@@ -1,9 +1,9 @@
 ,feature,feature_importance_vals
-0,thalassemia_2,2.054
-1,num_major_vessels,1.556
-2,max_heart_rate_achieved,1.345
-3,exercise_induced_angina_1,1.306
-4,st_depression,0.999
-5,thalassemia_3,0.878
-6,st_slope_2,0.76
-7,st_slope_1,0.651
+0,thalassemia_2,1.832
+1,num_major_vessels,1.428
+2,exercise_induced_angina_1,1.212
+3,st_depression,1.148
+4,max_heart_rate_achieved,1.078
+5,thalassemia_3,0.792
+6,chest_pain_type_2,0.647
+7,rest_ecg_1,0.578
