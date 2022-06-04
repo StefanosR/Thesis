@@ -19,8 +19,11 @@ Folders:
 Files:
 
 main_global: automated script to perform multiple experiments
+
 main_local: automated script to perform multiple experiments
+
 surrogate_fidelity: notebook for measuring MASHAP fidelity between surrogate and original model
+
 user_interface: UI implementation and server hosting (script and notebook format available)
 
 Other info:
