@@ -1,0 +1,72 @@
+"Feature: worst area" 3.7366675366097957e-16
+"Feature: mean area" 2.647191073063764e-16
+"Feature: mean perimeter" 1.4581433112305577e-16
+"Feature: area error" 9.034128893125261e-17
+"Feature: worst radius" 8.139328646729492e-17
+
+Run number: 1 
+
+"Feature: worst area" 2.5228184118994865e-16
+"Feature: mean area" 2.480441160025888e-16
+"Feature: worst perimeter" 9.182296838525038e-17
+"Feature: worst radius" 8.521486094380972e-17
+"Feature: worst concavity" 8.170730495240144e-17
+
+Run number: 2 
+
+"Feature: worst area" 1.7097239460945403e-16
+"Feature: mean area" 1.2808219506479548e-16
+"Feature: worst perimeter" 1.1361371714543356e-16
+"Feature: area error" 8.576363111195704e-17
+"Feature: worst radius" 8.225607512054876e-17
+
+Run number: 3 
+
+"Feature: worst area" 5.486390730515962e-16
+"Feature: mean area" 3.558119064956752e-16
+"Feature: worst perimeter" 1.231562206248842e-16
+"Feature: mean perimeter" 8.310666888117711e-17
+"Feature: worst texture" 7.42066838069323e-17
+
+Run number: 4 
+
+"Feature: worst area" 1.3601573489846972e-16
+"Feature: mean area" 1.2104040675436063e-16
+"Feature: worst perimeter" 8.722549386543838e-17
+"Feature: area error" 7.384083702816742e-17
+"Feature: mean perimeter" 7.00566094103182e-17
+
+Run number: 5 
+
+"Feature: worst area" 7.242790628134589e-16
+"Feature: mean area" 3.7853099145697425e-16
+"Feature: mean perimeter" 1.3294109759526654e-16
+"Feature: worst perimeter" 1.2196416987074194e-16
+"Feature: area error" 9.606221793418842e-17
+
+Run number: 6 
+
+"Feature: worst area" 2.1833430884372415e-16
+"Feature: mean area" 1.7446775570823682e-16
+"Feature: area error" 1.231074410543822e-16
+"Feature: mean perimeter" 9.388238087738102e-17
+"Feature: worst perimeter" 7.255656239854487e-17
+
+Run number: 7 
+
+"Feature: worst area" 2.90165275131052e-16
+"Feature: mean area" 2.4399236292776773e-16
+"Feature: worst perimeter" 2.175302081112305e-16
+"Feature: mean perimeter" 1.2274159427561731e-16
+"Feature: area error" 8.436502936397048e-17
+
+Run number: 8 
+
+"Feature: worst area" 3.516153390709264e-16
+"Feature: mean area" 1.8157051848179914e-16
+"Feature: mean perimeter" 1.0424499088589625e-16
+"Feature: worst perimeter" 8.437951079896325e-17
+"Feature: area error" 7.805950769579994e-17
+
+Run number: 9 
+
