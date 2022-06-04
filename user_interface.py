@@ -117,8 +117,9 @@ def choose_script(Explainability_method, Category, Implementation, Scenario, Dat
         except ValueError:
             return "Something went wrong on the floats conversion", "Please try another input", img
         
+        # plt.style.use('seaborn-whitegrid')
         plt.style.use('seaborn')
-        plt.rcParams["figure.figsize"] = (12.8,7)
+        plt.rcParams["figure.figsize"] = (12.8,6.8)
         sns.histplot(floats, bins=5, kde=True, stat="count").set(xlabel='Values', title='Distribution of the weights for Feature #%d' % (feature))
         sns.set(font_scale = 1.5)
         plt.tight_layout()
