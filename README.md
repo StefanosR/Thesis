@@ -26,6 +26,8 @@ surrogate_fidelity: notebook for measuring MASHAP fidelity between surrogate and
 
 user_interface: UI implementation and server hosting (script and notebook format available)
 
+
+
 Other info:
 
 Log file format: Explainability Method (local/global + shap/lime/mashap) + Scenario/Script + Model used + Determinism + Dataset (+ Number of Loop)
