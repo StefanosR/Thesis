@@ -1,235 +1,162 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## <font color='orange'>User Interface Implementation</font>"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 4,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "import gradio as gr\n",
-    "import matplotlib.pyplot as plt\n",
-    "from scipy.stats import norm\n",
-    "import numpy as np\n",
-    "import seaborn as sns\n",
-    "plt.style.use('seaborn')\n",
-    "%matplotlib inline\n",
-    "plt.rcParams[\"figure.figsize\"] = (8,4)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 7,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "def choose_script(Explainability_method, Category, Implementation, Scenario, Dataset, Loop, Feature):\n",
-    "    \n",
-    "    global weights\n",
-    "    \n",
-    "    method = Explainability_method\n",
-    "    category = Category\n",
-    "    implementation = Implementation\n",
-    "    scenario = Scenario\n",
-    "    dataset = Dataset\n",
-    "    loop = Loop\n",
-    "    \n",
-    "    if implementation == \"LGBM\":\n",
-    "        i = \"LGBM\"\n",
-    "    elif implementation == \"MLPC\":\n",
-    "        i = \"MLPC\"\n",
-    "    else:\n",
-    "        print(\"Invalid implementation\")  \n",
-    "          \n",
-    "    if category == \"Global\":\n",
-    "        c = \"GE\"\n",
-    "    elif category == \"Local\":\n",
-    "        c = \"LE\"\n",
-    "    else:\n",
-    "        print(\"Invalid category\")\n",
-    "    \n",
-    "    if method == \"LIME\":\n",
-    "        m = \"L\"\n",
-    "    elif method == \"SHAP\":\n",
-    "        m = \"S\"\n",
-    "    elif method == \"MASHAP\":\n",
-    "        m = \"M\"\n",
-    "    else:\n",
-    "        print(\"Invalid method\")\n",
-    "\n",
-    "    if scenario == \"1st\":\n",
-    "        s = \"S1\"\n",
-    "        det = \"ND\"\n",
-    "    elif scenario == \"2nd\":\n",
-    "        s = \"S2\"\n",
-    "        det = \"ND\"\n",
-    "    elif scenario == \"3rd\":\n",
-    "        s = \"S3\"\n",
-    "        det = \"D\"\n",
-    "    else:\n",
-    "        print(\"Invalid scenario\")\n",
-    "        \n",
-    "    if dataset == \"small\":\n",
-    "        d = \"SD\"\n",
-    "    elif dataset == \"big\":\n",
-    "        d = \"BD\"\n",
-    "    else:\n",
-    "        print(\"Invalid dataset\")\n",
-    "    \n",
-    "    if loop == \"1st\":\n",
-    "        l = \"_1L\"\n",
-    "    elif loop == \"2nd\":\n",
-    "        l = \"_2L\"\n",
-    "    elif loop == \"3rd\":  \n",
-    "        l = \"_3L\"\n",
-    "    else:\n",
-    "        l = \"\"\n",
-    "\n",
-    "    search_word1 = 'Mean of the standard deviation'\n",
-    "    search_word2 = 'Mean of the ranking deviation'\n",
-    "\n",
-    "    log = \"log_%s%s_%s_%s_%s_%s%s.txt\" % (c, m, s, i, det, d, l)\n",
-    "    feature = Feature\n",
-    "    \n",
-    "    import matplotlib.image as mpimg\n",
-    "    img = mpimg.imread('plots/warning.png')\n",
-    "        \n",
-    "    if (m == \"S\" and d == \"BD\" and i == \"MLPC\"):\n",
-    "        return \"Warning: SHAP crashes with big datasets on MLPC\",\"Please change inputs\", img\n",
-    "    elif (m == \"L\" and c == \"GE\" and i == \"LGBM\"):\n",
-    "        return \"Warning: LIME global explanations are not supported for regression\",\"Please change inputs\", img\n",
-    "    elif ((s == \"S2\" or s == \"S3\") and l == \"\"):    \n",
-    "        return \"Warning: Scenarios 2 and 3 require a loop choice to present results\",\"Please change inputs\", img\n",
-    "    elif (s == \"S2\" and l == \"_3L\"):    \n",
-    "        return \"Warning: Scenario 2 does not have a 3rd loop\",\"Please change inputs\", img\n",
-    "    elif (s == \"S1\" and l != \"\"):    \n",
-    "        return \"Warning: Scenario 1 does not have any loops\",\"Please change inputs\", img\n",
-    "    else:\n",
-    "        img = mpimg.imread('plots/error.png')\n",
-    "        try:\n",
-    "            if s == \"S3\":\n",
-    "                weights = []\n",
-    "                for j in range(2):\n",
-    "                    search_word = 'Run_%s ' % (j+1)\n",
-    "                    with open(r'C:\\Users\\Stefanos Rigas\\Documents\\Projects\\Thesis\\thesis\\experiments\\%s'% (log)) as file:  \n",
-    "                        line1 = [line1 for line1 in file.read().split('\\n') if search_word in line1]\n",
-    "                    weights.append((line1[0].split())[feature])         \n",
-    "            else:\n",
-    "                weights = []\n",
-    "                for j in range(10):\n",
-    "                    search_word = 'Run_%s ' % (j+1)\n",
-    "                    with open(r'C:\\Users\\Stefanos Rigas\\Documents\\Projects\\Thesis\\thesis\\experiments\\%s'% (log)) as file:  \n",
-    "                        line1 = [line1 for line1 in file.read().split('\\n') if search_word in line1]\n",
-    "                    weights.append((line1[0].split())[feature]) \n",
-    "        except:\n",
-    "            return \"Something went wrong on the weights calculation\", \"Please try another input\", img\n",
-    "        \n",
-    "        try:\n",
-    "            floats = [float(x) for x in weights]\n",
-    "        except ValueError:\n",
-    "            return \"Something went wrong on the floats conversion\", \"Please try another input\", img\n",
-    "            \n",
-    "        import seaborn as sns\n",
-    "        sns.histplot(floats, bins=5, kde=True, stat=\"count\").set(xlabel='Values', title='Distribution of the weights for Feature #%d' % (feature))\n",
-    "        plt.tight_layout()\n",
-    "        plt.savefig('plots/distribution_%s_%s_%s_%s_%s_%sfeature#%d.png' % (c, m, s, i, d, l, feature), dpi=500)\n",
-    "        plt.clf()\n",
-    "        img = mpimg.imread('plots/distribution_%s_%s_%s_%s_%s_%sfeature#%d.png' % (c, m, s, i, d, l, feature))\n",
-    "    \n",
-    "        # opens it, then closes it automatically at the end of the with block\n",
-    "        with open(r'C:\\Users\\Stefanos Rigas\\Documents\\Projects\\Thesis\\thesis\\experiments\\%s'% (log)) as file:  \n",
-    "            line1 = [line1 for line1 in file.read().split('\\n') if search_word1 in line1]\n",
-    "        with open(r'C:\\Users\\Stefanos Rigas\\Documents\\Projects\\Thesis\\thesis\\experiments\\%s'% (log)) as file: \n",
-    "            line2 = [line2 for line2 in file.read().split('\\n') if search_word2 in line2]\n",
-    "        return ((str(line1).strip(\"['']\")).split(\":\"))[1], ((str(line2).strip(\"['']\")).split(\":\"))[1], img\n",
-    "\n",
-    "def login(username,password):\n",
-    "    if (username==\"stefanos\" or \"kanellopoulos\" or \"makris\") and password==\"thesis\":\n",
-    "        return True\n",
-    "    elif username== \"admin\" and password==\" \":\n",
-    "        return True\n",
-    "    else:\n",
-    "        return False"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 8,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Running on local URL:  http://127.0.0.1:7862/\n",
-      "Running on public URL: https://37774.gradio.app\n",
-      "\n",
-      "This share link expires in 72 hours. For free permanent hosting, check out Spaces (https://huggingface.co/spaces)\n"
-     ]
-    },
-    {
-     "data": {
-      "text/plain": [
-       "(<gradio.routes.App at 0x23702a21fa0>,\n",
-       " 'http://127.0.0.1:7862/',\n",
-       " 'https://37774.gradio.app')"
-      ]
-     },
-     "execution_count": 8,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "demo = gr.Interface(\n",
-    "fn=choose_script,\n",
-    "inputs=[gr.Radio([\"SHAP\", \"MASHAP\", \"LIME\"]),gr.Radio([\"Local\",\"Global\"]),gr.Radio([\"LGBM\",\"MLPC\"]),gr.Radio([\"1st\",\"2nd\",\"3rd\"]),gr.Radio([\"big\",\"small\"]),gr.Radio([\"none\",\"1st\",\"2nd\",\"3rd\"]), gr.Slider(1, 5,step=1)],\n",
-    "outputs=[gr.Textbox(label=\"Mean Coefficient of Variation (from the weights)\"),gr.Textbox(label=\"Mean Coefficient of Variation (from the rankings)\"),gr.Image(label=\"Image output\")],\n",
-    "title=\"Robustness Evaluation of Machine Learning Explainability Methods\",\n",
-    "thumbnail=\"plots/thumbnail.png\",\n",
-    "theme=\"default\", \n",
-    "article=\"<center>Stefanos Rigas - Computer Engineering and Informatics Department - University of Patras</center>\",\n",
-    "description=\"\"\"The inputs on the left allow the user to switch the settings of the experiment. The outputs on the right show the mean \n",
-    "relative standard deviation (or Coefficient of Variation) of the features, meaning how the weights and the rankings of the top features \n",
-    "produced by the explainability methods are distributed. Low percentage signifies a more robust system, while high percentages imply \n",
-    "instability. The output image is a reflection of the distribution of the weights (from 10 runs) for the feature that was specified. \n",
-    "The plot inlcudes the kernel density estimation of the feature's values. Some setting combinations will produce warnings (orange) or errors (red). \n",
-    "Warnings can be simply corrected by applying the proper settings which are specified in the outputs. The errors that are identified \n",
-    "by the interface are under debugging. If the interface is not working properly, flag the current instance.\"\"\",\n",
-    ")\n",
-    "demo.launch(auth=login,auth_message=\"Please provide your credentials\",favicon_path=\"plots/logo.png\",share=True)"
-   ]
-  }
- ],
- "metadata": {
-  "interpreter": {
-   "hash": "f260b7b810d028430917447e98c925cd6cd41b1b415b1130af8617780b6df8ca"
-  },
-  "kernelspec": {
-   "display_name": "Python 3.8.7 64-bit",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.8.7"
-  },
-  "orig_nbformat": 4
- },
- "nbformat": 4,
- "nbformat_minor": 2
-}
+import gradio as gr
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+import numpy as np
+import seaborn as sns
+
+def choose_script(Explainability_method, Category, Implementation, Scenario, Dataset, Loop, Feature):
+    
+    import gradio as gr
+    import matplotlib.pyplot as plt
+    from scipy.stats import norm
+    import numpy as np
+    import seaborn as sns
+    plt.style.use('seaborn')
+    plt.rcParams["figure.figsize"] = (8,4)
+    global weights
+    
+    method = Explainability_method
+    category = Category
+    implementation = Implementation
+    scenario = Scenario
+    dataset = Dataset
+    loop = Loop
+    
+    if implementation == "LGBM":
+        i = "LGBM"
+    elif implementation == "MLPC":
+        i = "MLPC"
+    else:
+        print("Invalid implementation")  
+          
+    if category == "Global":
+        c = "GE"
+    elif category == "Local":
+        c = "LE"
+    else:
+        print("Invalid category")
+    
+    if method == "LIME":
+        m = "L"
+    elif method == "SHAP":
+        m = "S"
+    elif method == "MASHAP":
+        m = "M"
+    else:
+        print("Invalid method")
+
+    if scenario == "1st":
+        s = "S1"
+        det = "ND"
+    elif scenario == "2nd":
+        s = "S2"
+        det = "ND"
+    elif scenario == "3rd":
+        s = "S3"
+        det = "D"
+    else:
+        print("Invalid scenario")
+        
+    if dataset == "small":
+        d = "SD"
+    elif dataset == "big":
+        d = "BD"
+    else:
+        print("Invalid dataset")
+    
+    if loop == "1st":
+        l = "_1L"
+    elif loop == "2nd":
+        l = "_2L"
+    elif loop == "3rd":  
+        l = "_3L"
+    else:
+        l = ""
+
+    search_word1 = 'Mean of the standard deviation'
+    search_word2 = 'Mean of the ranking deviation'
+
+    log = "log_%s%s_%s_%s_%s_%s%s.txt" % (c, m, s, i, det, d, l)
+    feature = Feature
+    
+    import matplotlib.image as mpimg
+    img = mpimg.imread('plots/warning.png')
+        
+    if (m == "S" and d == "BD" and i == "MLPC"):
+        return "Warning: SHAP crashes with big datasets on MLPC","Please change inputs", img
+    elif (m == "L" and c == "GE" and i == "LGBM"):
+        return "Warning: LIME global explanations are not supported for regression","Please change inputs", img
+    elif ((s == "S2" or s == "S3") and l == ""):    
+        return "Warning: Scenarios 2 and 3 require a loop choice to present results","Please change inputs", img
+    elif (s == "S2" and l == "_3L"):    
+        return "Warning: Scenario 2 does not have a 3rd loop","Please change inputs", img
+    elif (s == "S1" and l != ""):    
+        return "Warning: Scenario 1 does not have any loops","Please change inputs", img
+    else:
+        img = mpimg.imread('plots/error.png')
+        try:
+            if s == "S3":
+                weights = []
+                for j in range(2):
+                    search_word = 'Run_%s ' % (j+1)
+                    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\experiments\%s'% (log)) as file:  
+                        line1 = [line1 for line1 in file.read().split('\n') if search_word in line1]
+                    weights.append((line1[0].split())[feature])         
+            else:
+                weights = []
+                for j in range(10):
+                    search_word = 'Run_%s ' % (j+1)
+                    with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\experiments\%s'% (log)) as file:  
+                        line1 = [line1 for line1 in file.read().split('\n') if search_word in line1]
+                    weights.append((line1[0].split())[feature]) 
+        except:
+            return "Something went wrong on the weights calculation", "Please try another input", img
+        
+        try:
+            floats = [float(x) for x in weights]
+        except ValueError:
+            return "Something went wrong on the floats conversion", "Please try another input", img
+        
+        # plt.style.use('seaborn-whitegrid')
+        plt.style.use('seaborn')
+        plt.rcParams["figure.figsize"] = (12.8,6.8)
+        sns.histplot(floats, bins=5, kde=True, stat="count").set(xlabel='Values', title='Distribution of the weights for Feature #%d' % (feature))
+        sns.set(font_scale = 1.5)
+        plt.tight_layout()
+        plt.savefig('plots/distribution_%s_%s_%s_%s_%s_%sfeature#%d.png' % (c, m, s, i, d, l, feature), bbox_inches='tight', format='png')
+        img = mpimg.imread('plots/distribution_%s_%s_%s_%s_%s_%sfeature#%d.png' % (c, m, s, i, d, l, feature))
+        plt.clf()
+
+        # opens it, then closes it automatically at the end of the with block
+        with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\experiments\%s'% (log)) as file:  
+            line1 = [line1 for line1 in file.read().split('\n') if search_word1 in line1]
+        with open(r'C:\Users\Stefanos Rigas\Documents\Projects\Thesis\thesis\experiments\%s'% (log)) as file: 
+            line2 = [line2 for line2 in file.read().split('\n') if search_word2 in line2]
+        return ((str(line1).strip("['']")).split(":"))[1], ((str(line2).strip("['']")).split(":"))[1], img
+
+def login(username,password):
+    if (username=="stefanos" or "kanellopoulos" or "makris") and password=="thesis":
+        return True
+    elif username== "admin" and password==" ":
+        return True
+    else:
+        return False
+    
+demo = gr.Interface(
+fn=choose_script,
+inputs=[gr.Radio(["SHAP", "MASHAP", "LIME"]),gr.Radio(["Local","Global"]),gr.Radio(["LGBM","MLPC"]),gr.Radio(["1st","2nd","3rd"]),gr.Radio(["big","small"]),gr.Radio(["none","1st","2nd","3rd"]), gr.Slider(1, 5,step=1)],
+outputs=[gr.Textbox(label="Mean Coefficient of Variation (from the weights)"),gr.Textbox(label="Mean Coefficient of Variation (from the rankings)"),gr.Image(label="Image output")],
+title="Robustness Evaluation of Machine Learning Explainability Methods",
+thumbnail="plots/thumbnail.png",
+theme="default", 
+live=True,
+article="<center>Stefanos Rigas - Computer Engineering and Informatics Department - University of Patras</center>",
+description="""The inputs on the left allow the user to switch the settings of the experiment. The outputs on the right show the mean 
+relative standard deviation (or Coefficient of Variation) of the features, meaning how the weights and the rankings of the top features 
+produced by the explainability methods are distributed. Low percentage signifies a more robust system, while high percentages imply 
+instability. The output image is a reflection of the distribution of the weights (from 10 runs) for the feature that was specified. 
+The plot inlcudes the kernel density estimation of the feature's values. Some setting combinations will produce warnings (orange) or errors (red). 
+Warnings can be simply corrected by applying the proper settings which are specified in the outputs. The errors that are identified 
+by the interface are under debugging. If the interface is not working properly, flag the current instance.""",
+)
+demo.launch(auth=login,auth_message="Please provide your credentials",favicon_path="plots/logo.png",share=True)
