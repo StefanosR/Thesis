@@ -67,14 +67,7 @@ def bigger_experiment(loop_num):
         from sklearn.neural_network import MLPClassifier
         # train original model and get its predictions
         X, y = load_diabetes(return_X_y=True)
-        
-        if (iteration_number == 2):
-            # invoke the input perturbation script
-            change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
-            print("easter_egg")
-        else:
-            print("Did nothing") 
-            
+                    
         X_train, _, y_train, _ = train_test_split(X, y, shuffle=False)
         original_model = lgb.LGBMRegressor()
         original_model.fit(X_train, y_train)
@@ -85,7 +78,13 @@ def bigger_experiment(loop_num):
         surrogate_model, external_fidelity = create_surrogate(X,
                                                         predictions,
                                                         sur_parameters)
-        
+        if (iteration_number == 2):
+            # invoke the input perturbation script
+            change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
+            print("easter_egg")
+        else:
+            print("Did nothing") 
+                    
         # get the shapley values for the whole dataset
         shap_values, explainer = calc_shap(surrogate_model, X)
 

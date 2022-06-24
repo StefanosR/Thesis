@@ -12,130 +12,124 @@ Iteration: 10
 Our dataframes are:
 
                     1st Feature             2nd Feature             3rd Feature             4th Feature             5th Feature
-Run_1    1.147112574817282e-16   8.299691484754764e-17   8.029498395021118e-17   7.729237273157734e-17   6.330673634210615e-17
-Run_2     2.16898360237072e-16  1.8410629396711323e-16  1.0132126537893358e-16   8.961416845845741e-17   7.777597644225716e-17
-Run_3    6.431952217465359e-16    5.08417268449554e-16  1.7995698175128822e-16   6.175798497866816e-17  5.3163634400849847e-17
-Run_4     2.96238331658549e-16   2.528854883749107e-16   9.886399451489614e-17   6.671825755408866e-17    6.39225784196937e-17
-Run_5    4.004436891434124e-16  3.1294838327863493e-16   9.788687874327827e-17   7.900461187427588e-17   7.037977406489384e-17
-Run_6    2.342334001042146e-16    2.32166365804193e-16  1.5879579432289626e-16     7.4090070146201e-17   6.791030830823089e-17
-Run_7   1.0181150006247851e-15   5.705380514838308e-16  1.7761861109034936e-16  1.0574648704041045e-16   1.008151773349755e-16
-Run_8    3.423838053534259e-16  1.6390850305613546e-16   1.292628131071013e-16   9.355311877649263e-17    6.17656067865591e-17
-Run_9   1.7300284423159912e-16  1.5170446426117034e-16  1.4597896217349996e-16   8.834437526382764e-17   7.644520878449991e-17
-Run_10   5.740776190683809e-16   4.632229963794659e-16   9.458358720334704e-17   8.251674095041873e-17   6.870297632888813e-17 
+Run_1   3.0565099790707433e-16   2.497759186738633e-16  1.8286169004807266e-16  1.7935585029592372e-16    7.95425302935659e-17
+Run_2     4.71359548129754e-16   2.762456153492577e-16   1.136668459433754e-16   9.174624929239575e-17   6.838813703370104e-17
+Run_3    5.933239525176618e-16   5.625113816856261e-16   6.943746277266604e-17   6.549490941817329e-17   6.423329234473562e-17
+Run_4    1.837351172527603e-16   1.607591293961164e-16   1.181188985006026e-16  1.0182705494649873e-16   7.798673808521607e-17
+Run_5   1.7305989586213377e-16   1.279570854867368e-16  1.0114772267618613e-16   7.996711296251128e-17   6.355396007442302e-17
+Run_6    7.914706186477679e-16   4.649786771621749e-16  2.3828792474554143e-16   8.741550606915295e-17   8.377622604962119e-17
+Run_7   1.5335440764970913e-15   4.580397832582677e-16  2.3492159072747455e-16   2.275702450880204e-16  2.0305059595642513e-16
+Run_8    7.644671609028421e-16   4.569722611192051e-16   1.721379449238524e-16   9.447570930704457e-17   8.377622604962119e-17
+Run_9    5.234740380094488e-16   4.154480760963476e-16  1.1360619127638321e-16   9.056954875274714e-17   8.042808843165197e-17
+Run_10   1.705609235820553e-16  1.5064193094181812e-16  1.4445818764196372e-16   8.364885124893758e-17   6.220742646719627e-17 
 
-        1st Feature 2nd Feature      3rd Feature      4th Feature      5th Feature
-Run_1   worst area   mean area  worst perimeter       area error      mean radius
-Run_2   worst area   mean area  worst perimeter   mean perimeter       area error
-Run_3   worst area   mean area   mean perimeter       area error     mean texture
-Run_4   worst area   mean area  worst perimeter       area error    worst texture
-Run_5   worst area   mean area       area error   mean perimeter  worst perimeter
-Run_6    mean area  worst area   mean perimeter       area error  worst perimeter
-Run_7   worst area   mean area  worst perimeter       area error   mean perimeter
-Run_8   worst area   mean area  worst perimeter   mean perimeter       area error
-Run_9    mean area  worst area       area error     worst radius   mean perimeter
-Run_10   mean area  worst area       area error  worst perimeter   mean perimeter 
+        1st Feature      2nd Feature      3rd Feature      4th Feature      5th Feature
+Run_1   worst area        mean area   mean perimeter  worst perimeter       area error
+Run_2   worst area  worst perimeter   mean perimeter        mean area       area error
+Run_3    mean area       worst area       area error  worst perimeter   mean perimeter
+Run_4   worst area        mean area   mean perimeter       area error     worst radius
+Run_5   worst area        mean area  worst perimeter       area error   mean perimeter
+Run_6   worst area        mean area   mean perimeter       area error  worst perimeter
+Run_7   worst area        mean area  worst perimeter   mean perimeter       area error
+Run_8   worst area        mean area  worst perimeter   mean perimeter    worst texture
+Run_9   worst area        mean area       area error   mean perimeter     worst radius
+Run_10  worst area  worst perimeter        mean area   mean perimeter  worst concavity 
 
 
 Describe df with the feature names:
 
-        1st Feature 2nd Feature      3rd Feature 4th Feature     5th Feature
-count           10          10               10          10              10
-unique           2           2                3           4               6
-top     worst area   mean area  worst perimeter  area error  mean perimeter
-freq             7           7                5           5               3
+        1st Feature 2nd Feature     3rd Feature     4th Feature 5th Feature
+count           10          10              10              10          10
+unique           2           3               4               4           6
+top     worst area   mean area  mean perimeter  mean perimeter  area error
+freq             9           7               4               4           3
 
 ..........................................
 
 
 This is the new dictionary we created:
- {'area error': array([7.72923727e-17, 7.77759764e-17, 6.17579850e-17, 6.67182576e-17,
-       9.78868787e-17, 7.40900701e-17, 1.05746487e-16, 6.17656068e-17,
-       1.45978962e-16, 9.45835872e-17]), 'mean area': array([8.29969148e-17, 1.84106294e-16, 5.08417268e-16, 2.52885488e-16,
-       3.12948383e-16, 2.34233400e-16, 5.70538051e-16, 1.63908503e-16,
-       1.73002844e-16, 5.74077619e-16]), 'mean perimeter': array([8.96141685e-17, 1.79956982e-16, 7.90046119e-17, 1.58795794e-16,
-       1.00815177e-16, 9.35531188e-17, 7.64452088e-17, 6.87029763e-17]), 'mean radius': array([6.33067363e-17]), 'mean texture': array([5.31636344e-17]), 'worst area': array([1.14711257e-16, 2.16898360e-16, 6.43195222e-16, 2.96238332e-16,
-       4.00443689e-16, 2.32166366e-16, 1.01811500e-15, 3.42383805e-16,
-       1.51704464e-16, 4.63222996e-16]), 'worst perimeter': array([8.02949840e-17, 1.01321265e-16, 9.88639945e-17, 7.03797741e-17,
-       6.79103083e-17, 1.77618611e-16, 1.29262813e-16, 8.25167410e-17]), 'worst radius': array([8.83443753e-17]), 'worst texture': array([6.39225784e-17])}
+ {'area error': array([7.95425303e-17, 6.83881370e-17, 6.94374628e-17, 1.01827055e-16,
+       7.99671130e-17, 8.74155061e-17, 2.03050596e-16, 1.13606191e-16]), 'mean area': array([2.49775919e-16, 9.17462493e-17, 5.93323953e-16, 1.60759129e-16,
+       1.27957085e-16, 4.64978677e-16, 4.58039783e-16, 4.56972261e-16,
+       4.15448076e-16, 1.44458188e-16]), 'mean perimeter': array([1.82861690e-16, 1.13666846e-16, 6.42332923e-17, 1.18118899e-16,
+       6.35539601e-17, 2.38287925e-16, 2.27570245e-16, 9.44757093e-17,
+       9.05695488e-17, 8.36488512e-17]), 'worst area': array([3.05650998e-16, 4.71359548e-16, 5.62511382e-16, 1.83735117e-16,
+       1.73059896e-16, 7.91470619e-16, 1.53354408e-15, 7.64467161e-16,
+       5.23474038e-16, 1.70560924e-16]), 'worst concavity': array([6.22074265e-17]), 'worst perimeter': array([1.79355850e-16, 2.76245615e-16, 6.54949094e-17, 1.01147723e-16,
+       8.37762260e-17, 2.34921591e-16, 1.72137945e-16, 1.50641931e-16]), 'worst radius': array([7.79867381e-17, 8.04280884e-17]), 'worst texture': array([8.3776226e-17])}
 
 This is the matrix with the unique features: 
 
 area error
 mean area
 mean perimeter
-mean radius
-mean texture
 worst area
+worst concavity
 worst perimeter
 worst radius
 worst texture
 
 This is the matrix with the list of values each feature has: 
 
-[7.72923727e-17 7.77759764e-17 6.17579850e-17 6.67182576e-17
- 9.78868787e-17 7.40900701e-17 1.05746487e-16 6.17656068e-17
- 1.45978962e-16 9.45835872e-17]
-[8.29969148e-17 1.84106294e-16 5.08417268e-16 2.52885488e-16
- 3.12948383e-16 2.34233400e-16 5.70538051e-16 1.63908503e-16
- 1.73002844e-16 5.74077619e-16]
-[8.96141685e-17 1.79956982e-16 7.90046119e-17 1.58795794e-16
- 1.00815177e-16 9.35531188e-17 7.64452088e-17 6.87029763e-17]
-[6.33067363e-17]
-[5.31636344e-17]
-[1.14711257e-16 2.16898360e-16 6.43195222e-16 2.96238332e-16
- 4.00443689e-16 2.32166366e-16 1.01811500e-15 3.42383805e-16
- 1.51704464e-16 4.63222996e-16]
-[8.02949840e-17 1.01321265e-16 9.88639945e-17 7.03797741e-17
- 6.79103083e-17 1.77618611e-16 1.29262813e-16 8.25167410e-17]
-[8.83443753e-17]
-[6.39225784e-17]
+[7.95425303e-17 6.83881370e-17 6.94374628e-17 1.01827055e-16
+ 7.99671130e-17 8.74155061e-17 2.03050596e-16 1.13606191e-16]
+[2.49775919e-16 9.17462493e-17 5.93323953e-16 1.60759129e-16
+ 1.27957085e-16 4.64978677e-16 4.58039783e-16 4.56972261e-16
+ 4.15448076e-16 1.44458188e-16]
+[1.82861690e-16 1.13666846e-16 6.42332923e-17 1.18118899e-16
+ 6.35539601e-17 2.38287925e-16 2.27570245e-16 9.44757093e-17
+ 9.05695488e-17 8.36488512e-17]
+[3.05650998e-16 4.71359548e-16 5.62511382e-16 1.83735117e-16
+ 1.73059896e-16 7.91470619e-16 1.53354408e-15 7.64467161e-16
+ 5.23474038e-16 1.70560924e-16]
+[6.22074265e-17]
+[1.79355850e-16 2.76245615e-16 6.54949094e-17 1.01147723e-16
+ 8.37762260e-17 2.34921591e-16 1.72137945e-16 1.50641931e-16]
+[7.79867381e-17 8.04280884e-17]
+[8.3776226e-17]
 
 This is the the std deviation of each list: 
 
-2.4562476909515767e-17
-1.7126134221648596e-16
-3.824343708819337e-17
+4.140977655472358e-17
+1.7105620570939612e-16
+6.17260552206701e-17
+3.947887082273566e-16
 0.0
-0.0
-2.5740357917664304e-16
-3.4417863892967976e-17
-0.0
+6.883638558475569e-17
+1.220675173217948e-18
 0.0
 
 This is the relative std deviation of each list of values: 
 
-28.442085977544565%
-56.02057995103761%
-36.1260855166988%
+41.24302115738468%
+54.07251630930844%
+48.337263309298365%
+72.04392060556079%
 0.0%
-0.0%
-66.3568714334649%
-34.06998838555022%
-0.0%
+43.57692404049216%
+1.5411122810376214%
 0.0%
 
 The standard deviation of our features is: 
 
-('area error', 2.4562476909515767e-17)
-('mean area', 1.7126134221648596e-16)
-('mean perimeter', 3.824343708819337e-17)
-('mean radius', 0.0)
-('mean texture', 0.0)
-('worst area', 2.5740357917664304e-16)
-('worst perimeter', 3.4417863892967976e-17)
-('worst radius', 0.0)
+('area error', 4.140977655472358e-17)
+('mean area', 1.7105620570939612e-16)
+('mean perimeter', 6.17260552206701e-17)
+('worst area', 3.947887082273566e-16)
+('worst concavity', 0.0)
+('worst perimeter', 6.883638558475569e-17)
+('worst radius', 1.220675173217948e-18)
 ('worst texture', 0.0)
 
 The relative standard deviation of our features is: 
 
-('area error', '28.442085977544565%')
-('mean area', '56.02057995103761%')
-('mean perimeter', '36.1260855166988%')
-('mean radius', '0.0%')
-('mean texture', '0.0%')
-('worst area', '66.3568714334649%')
-('worst perimeter', '34.06998838555022%')
-('worst radius', '0.0%')
+('area error', '41.24302115738468%')
+('mean area', '54.07251630930844%')
+('mean perimeter', '48.337263309298365%')
+('worst area', '72.04392060556079%')
+('worst concavity', '0.0%')
+('worst perimeter', '43.57692404049216%')
+('worst radius', '1.5411122810376214%')
 ('worst texture', '0.0%')
 
 ..........................................
@@ -143,42 +137,39 @@ The relative standard deviation of our features is:
 
 These are the positions where each feature is present and what ranking it has:
  
-worst area[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_6', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_10', '2nd Feature')]
-mean area[('Run_6', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature'), ('Run_1', '2nd Feature'), ('Run_2', '2nd Feature'), ('Run_3', '2nd Feature'), ('Run_4', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_8', '2nd Feature')]
-worst perimeter[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature'), ('Run_4', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_10', '4th Feature'), ('Run_5', '5th Feature'), ('Run_6', '5th Feature')]
-mean perimeter[('Run_3', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_2', '4th Feature'), ('Run_5', '4th Feature'), ('Run_8', '4th Feature'), ('Run_7', '5th Feature'), ('Run_9', '5th Feature'), ('Run_10', '5th Feature')]
-area error[('Run_5', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_10', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_3', '4th Feature'), ('Run_4', '4th Feature'), ('Run_6', '4th Feature'), ('Run_7', '4th Feature'), ('Run_2', '5th Feature'), ('Run_8', '5th Feature')]
-worst radius[('Run_9', '4th Feature')]
-mean radius[('Run_1', '5th Feature')]
-mean texture[('Run_3', '5th Feature')]
-worst texture[('Run_4', '5th Feature')]
+worst area[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_6', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature'), ('Run_3', '2nd Feature')]
+mean area[('Run_3', '1st Feature'), ('Run_1', '2nd Feature'), ('Run_4', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_6', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_10', '3rd Feature'), ('Run_2', '4th Feature')]
+worst perimeter[('Run_2', '2nd Feature'), ('Run_10', '2nd Feature'), ('Run_5', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_3', '4th Feature'), ('Run_6', '5th Feature')]
+mean perimeter[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature'), ('Run_4', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_7', '4th Feature'), ('Run_8', '4th Feature'), ('Run_9', '4th Feature'), ('Run_10', '4th Feature'), ('Run_3', '5th Feature'), ('Run_5', '5th Feature')]
+area error[('Run_3', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_4', '4th Feature'), ('Run_5', '4th Feature'), ('Run_6', '4th Feature'), ('Run_1', '5th Feature'), ('Run_2', '5th Feature'), ('Run_7', '5th Feature')]
+worst radius[('Run_4', '5th Feature'), ('Run_9', '5th Feature')]
+worst texture[('Run_8', '5th Feature')]
+worst concavity[('Run_10', '5th Feature')]
 
 The ranking deviation of each feature is: 
 
-worst area: 0.45825756949558405
-mean area: 0.45825756949558394
-worst perimeter: 0.8569568250501305
-mean perimeter: 0.7806247497997998
-area error: 0.7
+worst area: 0.3
+mean area: 0.7483314773547882
+worst perimeter: 0.9682458365518543
+mean perimeter: 0.7483314773547882
+area error: 0.7806247497997998
 worst radius: 0.0
-mean radius: 0.0
-mean texture: 0.0
 worst texture: 0.0
+worst concavity: 0.0
 
 This is the ranking deviation percentage for each feature: 
 
-worst area: 35.25058226889108%
-mean area: 26.95632761738729%
-worst perimeter: 23.64018827724498%
-mean perimeter: 18.924236358783027%
-area error: 17.94871794871795%
+worst area: 27.27272727272727%
+mean area: 34.01506715249037%
+worst perimeter: 29.7921795862109%
+mean perimeter: 19.69293361459969%
+area error: 18.924236358783027%
 worst radius: 0.0%
-mean radius: 0.0%
-mean texture: 0.0%
 worst texture: 0.0%
+worst concavity: 0.0%
 
 ..........................................
 
-Mean of the ranking deviation: 13.635555555555557%
+Mean of the ranking deviation: 16.21125%
 
-Mean of the standard deviation (from importance of features): 24.55777777777778%
+Mean of the standard deviation (from importance of features): 32.60125%

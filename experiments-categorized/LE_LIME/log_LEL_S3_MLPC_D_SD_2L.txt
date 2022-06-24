@@ -1,0 +1,125 @@
+Did nothing
+Intercept 0.28111758276011767
+Prediction_local [0.8767503]
+Right: 0.994118825513738
+easter_egg
+Intercept 0.2652726572772882
+Prediction_local [0.87675004]
+Right: 0.9915126479486238
+
+Our dataframes are:
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1       0.544       0.122       0.070       0.034       0.034
+Run_2       0.548       0.091       0.045       0.040       0.032 
+
+       1st Feature     2nd Feature    3rd Feature       4th Feature 5th Feature
+Run_1   worstarea  worstperimeter  meanperimeter  worstcompactness   areaerror
+Run_2   worstarea  worstperimeter      areaerror     meanperimeter    meanarea 
+
+
+Describe df with the feature names:
+
+        1st Feature     2nd Feature    3rd Feature       4th Feature 5th Feature
+count            2               2              2                 2           2
+unique           1               1              2                 2           2
+top      worstarea  worstperimeter  meanperimeter  worstcompactness   areaerror
+freq             2               2              1                 1           1
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'areaerror': array([0.034, 0.045]), 'meanarea': array([0.032]), 'meanperimeter': array([0.07, 0.04]), 'worstarea': array([0.544, 0.548]), 'worstcompactness': array([0.034]), 'worstperimeter': array([0.122, 0.091])}
+
+This is the matrix with the unique features: 
+
+areaerror
+meanarea
+meanperimeter
+worstarea
+worstcompactness
+worstperimeter
+
+This is the matrix with the list of values each feature has: 
+
+[0.034 0.045]
+[0.032]
+[0.07 0.04]
+[0.544 0.548]
+[0.034]
+[0.122 0.091]
+
+This is the the std deviation of each list: 
+
+0.01
+0.00
+0.02
+0.00
+0.00
+0.02
+
+This is the relative std deviation of each list of values: 
+
+13.92%
+0.00%
+27.27%
+0.37%
+0.00%
+14.55%
+
+The standard deviation of our features is: 
+
+('areaerror', '0.01')
+('meanarea', '0.00')
+('meanperimeter', '0.02')
+('worstarea', '0.00')
+('worstcompactness', '0.00')
+('worstperimeter', '0.02')
+
+The relative standard deviation of our features is: 
+
+('areaerror', '13.92%')
+('meanarea', '0.00%')
+('meanperimeter', '27.27%')
+('worstarea', '0.37%')
+('worstcompactness', '0.00%')
+('worstperimeter', '14.55%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+worstarea[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+worstperimeter[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+meanperimeter[('Run_1', '3rd Feature'), ('Run_2', '4th Feature')]
+areaerror[('Run_2', '3rd Feature'), ('Run_1', '5th Feature')]
+worstcompactness[('Run_1', '4th Feature')]
+meanarea[('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+worstarea: 0.0
+worstperimeter: 0.0
+meanperimeter: 0.5
+areaerror: 1.0
+worstcompactness: 0.0
+meanarea: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+worstarea: 0.00%
+worstperimeter: 0.00%
+meanperimeter: 14.29%
+areaerror: 25.00%
+worstcompactness: 0.00%
+meanarea: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 6.55%
+
+Mean of the standard deviation (from importance of features): 9.35%
+
+All predictions were the same

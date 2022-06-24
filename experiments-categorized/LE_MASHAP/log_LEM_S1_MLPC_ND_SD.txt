@@ -1,0 +1,218 @@
+Iteration: 1
+[11:09:07] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+Iteration: 2
+[11:09:07] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+Iteration: 3
+[11:09:08] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+Iteration: 4
+[11:09:08] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+Iteration: 5
+[11:09:08] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+Iteration: 6
+[11:09:08] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+Iteration: 7
+[11:09:09] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+Iteration: 8
+[11:09:09] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+Iteration: 9
+[11:09:10] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+Iteration: 10
+[11:09:10] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
+
+Our dataframes are:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1    3.8616831   1.3604034   1.1865786    0.971716   0.9341814
+Run_2    3.3237557   2.1023543   1.5283657   0.6741396   0.6731343
+Run_3    3.2682412   1.8112371   1.7443951   0.5779652  0.48224518
+Run_4     5.182394   1.2805177  0.92519933    0.760442  0.72262627
+Run_5     3.988898    1.993897   1.0755864   0.7085759  0.60689753
+Run_6    2.8142095   1.9264418    1.717452  0.71546054  0.70732844
+Run_7    3.8001037     1.01074   0.9791811  0.91923624   0.6758863
+Run_8    3.1364546   2.2930417   0.9665876   0.8407398   0.7849175
+Run_9     2.487402   2.0205402   1.7691259    1.188573  0.46330392
+Run_10   3.3354201   1.6334859   1.5786822   1.0117682   0.5338391 
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1    Feature23   Feature20   Feature10   Feature13   Feature24
+Run_2    Feature23   Feature20   Feature10   Feature13   Feature24
+Run_3    Feature20   Feature10   Feature23   Feature13   Feature27
+Run_4    Feature23   Feature13   Feature21   Feature20   Feature10
+Run_5    Feature23   Feature20   Feature10   Feature28   Feature26
+Run_6    Feature23   Feature20   Feature10   Feature18   Feature13
+Run_7    Feature23   Feature10   Feature13   Feature20   Feature24
+Run_8    Feature23   Feature20   Feature13   Feature24   Feature21
+Run_9    Feature23   Feature20   Feature13   Feature27   Feature26
+Run_10   Feature23   Feature10   Feature20   Feature13   Feature22 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count           10          10          10          10          10
+unique           2           3           5           6           7
+top      Feature23   Feature20   Feature10   Feature13   Feature24
+freq             9           6           4           4           3
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature10': array([1.1865786 , 1.5283657 , 1.8112371 , 0.72262627, 1.0755864 ,
+       1.717452  , 1.01074   , 1.6334859 ]), 'Feature13': array([0.971716  , 0.6741396 , 0.5779652 , 1.2805177 , 0.70732844,
+       0.9791811 , 0.9665876 , 1.7691259 , 1.0117682 ]), 'Feature18': array([0.71546054]), 'Feature20': array([1.3604034 , 2.1023543 , 3.2682412 , 0.760442  , 1.993897  ,
+       1.9264418 , 0.91923624, 2.2930417 , 2.0205402 , 1.5786822 ]), 'Feature21': array([0.92519933, 0.7849175 ]), 'Feature22': array([0.5338391]), 'Feature23': array([3.8616831, 3.3237557, 1.7443951, 5.182394 , 3.988898 , 2.8142095,
+       3.8001037, 3.1364546, 2.487402 , 3.3354201]), 'Feature24': array([0.9341814, 0.6731343, 0.6758863, 0.8407398]), 'Feature26': array([0.60689753, 0.46330392]), 'Feature27': array([0.48224518, 1.188573  ]), 'Feature28': array([0.7085759])}
+
+This is the matrix with the unique features: 
+
+Feature10
+Feature13
+Feature18
+Feature20
+Feature21
+Feature22
+Feature23
+Feature24
+Feature26
+Feature27
+Feature28
+
+This is the matrix with the list of values each feature has: 
+
+[1.1865786  1.5283657  1.8112371  0.72262627 1.0755864  1.717452
+ 1.01074    1.6334859 ]
+[0.971716   0.6741396  0.5779652  1.2805177  0.70732844 0.9791811
+ 0.9665876  1.7691259  1.0117682 ]
+[0.71546054]
+[1.3604034  2.1023543  3.2682412  0.760442   1.993897   1.9264418
+ 0.91923624 2.2930417  2.0205402  1.5786822 ]
+[0.92519933 0.7849175 ]
+[0.5338391]
+[3.8616831 3.3237557 1.7443951 5.182394  3.988898  2.8142095 3.8001037
+ 3.1364546 2.487402  3.3354201]
+[0.9341814 0.6731343 0.6758863 0.8407398]
+[0.60689753 0.46330392]
+[0.48224518 1.188573  ]
+[0.7085759]
+
+This is the the std deviation of each list: 
+
+0.37
+0.34
+0.00
+0.68
+0.07
+0.00
+0.89
+0.11
+0.07
+0.35
+0.00
+
+This is the relative std deviation of each list of values: 
+
+27.37%
+34.27%
+0.00%
+37.56%
+8.20%
+0.00%
+26.37%
+14.28%
+13.42%
+42.27%
+0.00%
+
+The standard deviation of our features is: 
+
+('Feature10', '0.37')
+('Feature13', '0.34')
+('Feature18', '0.00')
+('Feature20', '0.68')
+('Feature21', '0.07')
+('Feature22', '0.00')
+('Feature23', '0.89')
+('Feature24', '0.11')
+('Feature26', '0.07')
+('Feature27', '0.35')
+('Feature28', '0.00')
+
+The relative standard deviation of our features is: 
+
+('Feature10', '27.37%')
+('Feature13', '34.27%')
+('Feature18', '0.00%')
+('Feature20', '37.56%')
+('Feature21', '8.20%')
+('Feature22', '0.00%')
+('Feature23', '26.37%')
+('Feature24', '14.28%')
+('Feature26', '13.42%')
+('Feature27', '42.27%')
+('Feature28', '0.00%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature23[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_6', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature'), ('Run_3', '3rd Feature')]
+Feature20[('Run_3', '1st Feature'), ('Run_1', '2nd Feature'), ('Run_2', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_6', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_10', '3rd Feature'), ('Run_4', '4th Feature'), ('Run_7', '4th Feature')]
+Feature10[('Run_3', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_10', '2nd Feature'), ('Run_1', '3rd Feature'), ('Run_2', '3rd Feature'), ('Run_5', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_4', '5th Feature')]
+Feature13[('Run_4', '2nd Feature'), ('Run_7', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_2', '4th Feature'), ('Run_3', '4th Feature'), ('Run_10', '4th Feature'), ('Run_6', '5th Feature')]
+Feature21[('Run_4', '3rd Feature'), ('Run_8', '5th Feature')]
+Feature28[('Run_5', '4th Feature')]
+Feature18[('Run_6', '4th Feature')]
+Feature24[('Run_8', '4th Feature'), ('Run_1', '5th Feature'), ('Run_2', '5th Feature'), ('Run_7', '5th Feature')]
+Feature27[('Run_9', '4th Feature'), ('Run_3', '5th Feature')]
+Feature26[('Run_5', '5th Feature'), ('Run_9', '5th Feature')]
+Feature22[('Run_10', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature23: 0.6
+Feature20: 0.9165151389911681
+Feature10: 0.9270248108869579
+Feature13: 0.8314794192830981
+Feature21: 1.0
+Feature28: 0.0
+Feature18: 0.0
+Feature24: 0.4330127018922193
+Feature27: 0.5
+Feature26: 0.0
+Feature22: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+Feature23: 50.00%
+Feature20: 38.19%
+Feature10: 32.24%
+Feature13: 23.39%
+Feature21: 25.00%
+Feature28: 0.00%
+Feature18: 0.00%
+Feature24: 9.12%
+Feature27: 11.11%
+Feature26: 0.00%
+Feature22: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 17.19%
+
+Mean of the standard deviation (from importance of features): 18.52%
+
+All predictions were the same
+
+"Iteration Number 1: You are okay :)"
+"Iteration Number 2: You are okay :)"
+"Iteration Number 3: You are okay :)"
+"Iteration Number 4: You are okay :)"
+"Iteration Number 5: You are okay :)"
+"Iteration Number 6: You are okay :)"
+"Iteration Number 7: You are okay :)"
+"Iteration Number 8: You are okay :)"
+"Iteration Number 9: You are okay :)"
+"Iteration Number 10: You are okay :)"
+

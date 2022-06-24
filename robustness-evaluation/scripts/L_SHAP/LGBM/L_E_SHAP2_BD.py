@@ -52,21 +52,21 @@ def bigger_experiment(loop_num):
         # Train model
         dataset = fetch_california_housing()
         X = dataset.data; y = dataset.target
+        X_train, X_test, y_train, y_test = train_test_split(X, y)
         
         if (loop_num == 1):
             # invoke the input perturbation script
-            change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
+            change_inputs(X_test,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
             print("Input perturbation occured")
         else:
             print("Did nothing")
             
-        X_train, X_test, y_train, y_test = train_test_split(X, y)
         model = lgb.LGBMRegressor()
         model.fit(X_train, y_train)
 
         # Insert here the instance we want to examine
         instance = 24
-        local = X[instance]
+        local = X_test[instance]
         from numpy import asarray
         input = asarray([local])
 

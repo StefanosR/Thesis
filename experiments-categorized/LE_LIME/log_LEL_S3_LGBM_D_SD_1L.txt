@@ -1,0 +1,125 @@
+Did nothing
+Intercept 174.48793340604018
+Prediction_local [102.20567785]
+Right: 67.13270540020723
+easter_egg
+Intercept 166.3405213674294
+Prediction_local [110.96591567]
+Right: 66.27971530857546
+
+Our dataframes are:
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1      47.622      23.043      17.555      10.229       5.709
+Run_2      48.635      23.924       8.614       5.174       3.397 
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1          s5         bmi         sex          s1          s3
+Run_2          s5         bmi          s1          s3          bp 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count            2           2           2           2           2
+unique           1           1           2           2           2
+top             s5         bmi         sex          s1          s3
+freq             2           2           1           1           1
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'bmi': array([23.043, 23.924]), 'bp': array([3.397]), 's1': array([10.229,  8.614]), 's3': array([5.709, 5.174]), 's5': array([47.622, 48.635]), 'sex': array([17.555])}
+
+This is the matrix with the unique features: 
+
+bmi
+bp
+s1
+s3
+s5
+sex
+
+This is the matrix with the list of values each feature has: 
+
+[23.043 23.924]
+[3.397]
+[10.229  8.614]
+[5.709 5.174]
+[47.622 48.635]
+[17.555]
+
+This is the the std deviation of each list: 
+
+0.44
+0.00
+0.81
+0.27
+0.51
+0.00
+
+This is the relative std deviation of each list of values: 
+
+1.88%
+0.00%
+8.57%
+4.92%
+1.05%
+0.00%
+
+The standard deviation of our features is: 
+
+('bmi', '0.44')
+('bp', '0.00')
+('s1', '0.81')
+('s3', '0.27')
+('s5', '0.51')
+('sex', '0.00')
+
+The relative standard deviation of our features is: 
+
+('bmi', '1.88%')
+('bp', '0.00%')
+('s1', '8.57%')
+('s3', '4.92%')
+('s5', '1.05%')
+('sex', '0.00%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+s5[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+bmi[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+sex[('Run_1', '3rd Feature')]
+s1[('Run_2', '3rd Feature'), ('Run_1', '4th Feature')]
+s3[('Run_2', '4th Feature'), ('Run_1', '5th Feature')]
+bp[('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+s5: 0.0
+bmi: 0.0
+sex: 0.0
+s1: 0.5
+s3: 0.5
+bp: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+s5: 0.00%
+bmi: 0.00%
+sex: 0.00%
+s1: 14.29%
+s3: 11.11%
+bp: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 4.23%
+
+Mean of the standard deviation (from importance of features): 2.74%
+
+All predictions were the same

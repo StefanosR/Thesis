@@ -40,7 +40,7 @@ def myscript(iteration_number):
         
     # Insert here the instance we want to examine
     instance = 24
-    local = X[instance]
+    local = X_test[instance]
     
     # get the shapley values for the whole dataset
     shap_values, explainer = calc_shap(model, local)   

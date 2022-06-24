@@ -1,0 +1,153 @@
+Iteration: 1
+Iteration: 2
+Iteration: 3
+Iteration: 4
+Iteration: 5
+Iteration: 6
+Iteration: 7
+Iteration: 8
+Iteration: 9
+Iteration: 10
+
+Our dataframes are:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1    0.5977454  0.35455963   0.3110321  0.11922401  0.10103994
+Run_2    0.5502775  0.38421082  0.37738216   0.1347959  0.11774035
+Run_3   0.56768453   0.4147609   0.3751619  0.10874261  0.10822644
+Run_4    0.5910663  0.37929946  0.30726662  0.14194347  0.09404787
+Run_5     0.533161   0.3723014  0.31616244  0.14628373  0.14508477
+Run_6   0.56005216  0.42719817  0.41155377  0.10146757  0.09597056
+Run_7    0.5195236  0.36823025  0.34102455  0.13058186  0.10058974
+Run_8   0.62956816  0.35916814   0.2958503  0.14880964  0.13739543
+Run_9   0.54134256   0.3720462  0.34802076  0.13134007  0.12053542
+Run_10   0.5671872  0.37319216   0.3261661   0.1229109  0.10206117 
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1     Feature0    Feature7    Feature6    Feature2    Feature1
+Run_2     Feature0    Feature7    Feature6    Feature1    Feature5
+Run_3     Feature0    Feature7    Feature6    Feature2    Feature1
+Run_4     Feature0    Feature7    Feature6    Feature2    Feature5
+Run_5     Feature0    Feature6    Feature7    Feature1    Feature5
+Run_6     Feature0    Feature7    Feature6    Feature5    Feature2
+Run_7     Feature0    Feature7    Feature6    Feature2    Feature1
+Run_8     Feature0    Feature7    Feature6    Feature2    Feature1
+Run_9     Feature0    Feature7    Feature6    Feature5    Feature2
+Run_10    Feature0    Feature7    Feature6    Feature2    Feature5 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count           10          10          10          10          10
+unique           1           2           2           3           3
+top       Feature0    Feature7    Feature6    Feature2    Feature1
+freq            10           9           9           6           4
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature0': array([0.5977454 , 0.5502775 , 0.56768453, 0.5910663 , 0.533161  ,
+       0.56005216, 0.5195236 , 0.62956816, 0.54134256, 0.5671872 ]), 'Feature1': array([0.10103994, 0.1347959 , 0.10822644, 0.14628373, 0.10058974,
+       0.13739543]), 'Feature2': array([0.11922401, 0.10874261, 0.14194347, 0.09597056, 0.13058186,
+       0.14880964, 0.12053542, 0.1229109 ]), 'Feature5': array([0.11774035, 0.09404787, 0.14508477, 0.10146757, 0.13134007,
+       0.10206117]), 'Feature6': array([0.3110321 , 0.37738216, 0.3751619 , 0.30726662, 0.3723014 ,
+       0.41155377, 0.34102455, 0.2958503 , 0.34802076, 0.3261661 ]), 'Feature7': array([0.35455963, 0.38421082, 0.4147609 , 0.37929946, 0.31616244,
+       0.42719817, 0.36823025, 0.35916814, 0.3720462 , 0.37319216])}
+
+This is the matrix with the unique features: 
+
+Feature0
+Feature1
+Feature2
+Feature5
+Feature6
+Feature7
+
+This is the matrix with the list of values each feature has: 
+
+[0.5977454  0.5502775  0.56768453 0.5910663  0.533161   0.56005216
+ 0.5195236  0.62956816 0.54134256 0.5671872 ]
+[0.10103994 0.1347959  0.10822644 0.14628373 0.10058974 0.13739543]
+[0.11922401 0.10874261 0.14194347 0.09597056 0.13058186 0.14880964
+ 0.12053542 0.1229109 ]
+[0.11774035 0.09404787 0.14508477 0.10146757 0.13134007 0.10206117]
+[0.3110321  0.37738216 0.3751619  0.30726662 0.3723014  0.41155377
+ 0.34102455 0.2958503  0.34802076 0.3261661 ]
+[0.35455963 0.38421082 0.4147609  0.37929946 0.31616244 0.42719817
+ 0.36823025 0.35916814 0.3720462  0.37319216]
+
+This is the the std deviation of each list: 
+
+0.03
+0.02
+0.02
+0.02
+0.04
+0.03
+
+This is the relative std deviation of each list of values: 
+
+5.54%
+15.32%
+12.90%
+15.71%
+10.19%
+7.82%
+
+The standard deviation of our features is: 
+
+('Feature0', '0.03')
+('Feature1', '0.02')
+('Feature2', '0.02')
+('Feature5', '0.02')
+('Feature6', '0.04')
+('Feature7', '0.03')
+
+The relative standard deviation of our features is: 
+
+('Feature0', '5.54%')
+('Feature1', '15.32%')
+('Feature2', '12.90%')
+('Feature5', '15.71%')
+('Feature6', '10.19%')
+('Feature7', '7.82%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature0[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_6', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature')]
+Feature7[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature'), ('Run_3', '2nd Feature'), ('Run_4', '2nd Feature'), ('Run_6', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_10', '2nd Feature'), ('Run_5', '3rd Feature')]
+Feature6[('Run_5', '2nd Feature'), ('Run_1', '3rd Feature'), ('Run_2', '3rd Feature'), ('Run_3', '3rd Feature'), ('Run_4', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_10', '3rd Feature')]
+Feature2[('Run_1', '4th Feature'), ('Run_3', '4th Feature'), ('Run_4', '4th Feature'), ('Run_7', '4th Feature'), ('Run_8', '4th Feature'), ('Run_10', '4th Feature'), ('Run_6', '5th Feature'), ('Run_9', '5th Feature')]
+Feature1[('Run_2', '4th Feature'), ('Run_5', '4th Feature'), ('Run_1', '5th Feature'), ('Run_3', '5th Feature'), ('Run_7', '5th Feature'), ('Run_8', '5th Feature')]
+Feature5[('Run_6', '4th Feature'), ('Run_9', '4th Feature'), ('Run_2', '5th Feature'), ('Run_4', '5th Feature'), ('Run_5', '5th Feature'), ('Run_10', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature0: 0.0
+Feature7: 0.3
+Feature6: 0.3
+Feature2: 0.4330127018922193
+Feature1: 0.4714045207910317
+Feature5: 0.4714045207910317
+
+This is the ranking deviation percentage for each feature: 
+
+Feature0: 0.00%
+Feature7: 14.29%
+Feature6: 10.34%
+Feature2: 10.19%
+Feature1: 10.10%
+Feature5: 10.10%
+
+..........................................
+
+Mean of the ranking deviation: 9.17%
+
+Mean of the standard deviation (from importance of features): 11.25%
+
+All predictions were the same

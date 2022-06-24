@@ -54,15 +54,15 @@ def bigger_experiment(loop_num):
             return "Earthquake is over"
             
         X, y = make_classification(n_samples=50000, n_features=30, random_state=42)
-
+        X_train, X_test, y_train, y_test = train_test_split(X, y,shuffle=False)
+        
         if (iteration_number == 2):
             # invoke the input perturbation script
-            change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
+            change_inputs(X_test,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
             print("easter_egg")
         else:
             print("Did nothing")  
             
-        X_train, X_test, y_train, y_test = train_test_split(X, y,shuffle=False)
         model = MLPClassifier(random_state=42)
         model.fit(X_train, y_train)
 
@@ -89,7 +89,7 @@ def bigger_experiment(loop_num):
         # Grab global explanations
         sample_size = 250
         from lime import submodular_pick
-        sp_obj = submodular_pick.SubmodularPick(explainer, X, model.predict_proba, sample_size=sample_size, num_features=10, num_exps_desired=5)
+        sp_obj = submodular_pick.SubmodularPick(explainer, X_test, model.predict_proba, sample_size=sample_size, num_features=10, num_exps_desired=5)
 
         W_pick=pd.DataFrame([dict(this.as_list(this.available_labels()[0])) for this in sp_obj.sp_explanations]).fillna(0)
 

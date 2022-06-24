@@ -21,54 +21,55 @@ Did nothing
 
 Our dataframes are:
 
-                1st Feature         2nd Feature         3rd Feature         4th Feature        5th Feature
-Run_1   27.629551055025946  23.520500316235907  10.228496196093896  10.192865459048397   9.75742229619341
-Run_2    34.48598035094772   19.22450639995083   9.836131402245865  7.7255632300165376  7.494026718131066
-Run_3    34.81347031001688  15.806223578683587  10.536568375787892   9.155073458008571  8.664506260579543
-Run_4    30.65305795586671  22.439124323275397   9.802207532990986   7.410873766148762  7.328011459066348
-Run_5   26.819491558454335  19.225260763567817  10.339234530868184  10.281707455363833  8.126898734764756
-Run_6   26.511639361155236  20.191003437620168   9.563386668149256   9.328800408600857   7.61266991564166
-Run_7   30.074605468749514   22.01356961679081   9.843839501415054    7.08911308289464  6.585422603992603
-Run_8   33.123096919519895   23.55331516624122  11.544685391483238   7.487004695227718  6.353590133713074
-Run_9    31.03933719553585  27.601269173260775   8.839287302709089    8.09875169388666  7.336614833319883
-Run_10  32.466653039159695  21.151331640004305  10.007323965303302   9.362437256372052  8.190002901836364 
+                1st Feature         2nd Feature         3rd Feature        4th Feature         5th Feature
+Run_1    30.13998796654004  23.111238060026018   11.17562467118295  8.674548561754072   8.497285915065499
+Run_2    25.05152394106076    21.3637079546777   11.37302431043393  10.73447931240649   8.623676451848045
+Run_3    34.59907781389539  18.604807041908856   8.282721061812612   8.25742347483804   8.078413405091032
+Run_4    27.39020716501686     20.027808690002   9.554678384120503  8.782026281465443   7.461033904136203
+Run_5   30.997591070808582  25.861769961918608   9.301896318116858  7.823429165104962  7.1618230140854955
+Run_6   28.677827036675946  22.128393924751922  10.575227417237947  8.704430193226187   7.816032744180902
+Run_7   30.296294531780607   20.20358314405375   9.891647533588825  8.871494982829931   8.381136282508649
+Run_8   27.255727242386328  20.618052800054613   13.81645757511957  8.179423133175103   8.047353546841782
+Run_9    28.61401580675321   20.88450727602142    8.96610631867126  8.063334913122912   6.902161997940899
+Run_10  27.385429690685054  25.575877693821038  13.677970172189786  7.834266912844635   6.663965225971296 
 
         1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
-Run_1   Featurebmi   Features5  Featuresex   Features6   Featurebp
-Run_2    Features5  Featurebmi   Featurebp   Features6  Featuresex
-Run_3    Features5  Featurebmi   Featurebp   Features6  Featuresex
-Run_4    Features5  Featurebmi   Featurebp  Featuresex   Features6
-Run_5    Features5  Featurebmi   Features3   Featurebp  Featuresex
-Run_6    Features5  Featurebmi   Featurebp   Features3  Featuresex
+Run_1    Features5  Featurebmi   Featurebp   Features6  Featuresex
+Run_2    Features5  Featurebmi  Featuresex   Featurebp   Features6
+Run_3    Features5  Featurebmi   Features6  Featuresex   Featurebp
+Run_4    Features5  Featurebmi   Featurebp  Featuresex   Features2
+Run_5   Featurebmi   Features5   Featurebp   Features6  Featuresex
+Run_6    Features5  Featurebmi   Featurebp  Featuresex   Features6
 Run_7    Features5  Featurebmi   Featurebp   Features6   Features3
-Run_8    Features5  Featurebmi   Featurebp   Features6   Features2
-Run_9    Features5  Featurebmi   Features6   Featurebp   Features3
-Run_10   Features5  Featurebmi   Featurebp  Featuresex   Features6 
+Run_8    Features5  Featurebmi   Featurebp   Features3   Features1
+Run_9    Features5  Featurebmi  Featuresex   Features3   Featurebp
+Run_10   Features5  Featurebmi   Featurebp   Features3   Features6 
 
 
 Describe df with the feature names:
 
         1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 count           10          10          10          10          10
-unique           2           2           4           4           5
-top      Features5  Featurebmi   Featurebp   Features6  Featuresex
-freq             9           9           7           5           4
+unique           2           2           3           4           6
+top      Features5  Featurebmi   Featurebp   Features6   Features6
+freq             9           9           7           3           3
 
 ..........................................
 
 
 This is the new dictionary we created:
- {'Featurebmi': array([27.62955106, 19.2245064 , 15.80622358, 22.43912432, 19.22526076,
-       20.19100344, 22.01356962, 23.55331517, 27.60126917, 21.15133164]), 'Featurebp': array([ 9.7574223 ,  9.8361314 , 10.53656838,  9.80220753, 10.28170746,
-        9.56338667,  9.8438395 , 11.54468539,  8.09875169, 10.00732397]), 'Features2': array([6.35359013]), 'Features3': array([10.33923453,  9.32880041,  6.5854226 ,  7.33661483]), 'Features5': array([23.52050032, 34.48598035, 34.81347031, 30.65305796, 26.81949156,
-       26.51163936, 30.07460547, 33.12309692, 31.0393372 , 32.46665304]), 'Features6': array([10.19286546,  7.72556323,  9.15507346,  7.32801146,  7.08911308,
-        7.4870047 ,  8.8392873 ,  8.1900029 ]), 'Featuresex': array([10.2284962 ,  7.49402672,  8.66450626,  7.41087377,  8.12689873,
-        7.61266992,  9.36243726])}
+ {'Featurebmi': array([23.11123806, 21.36370795, 18.60480704, 20.02780869, 30.99759107,
+       22.12839392, 20.20358314, 20.6180528 , 20.88450728, 25.57587769]), 'Featurebp': array([11.17562467, 10.73447931,  8.07841341,  9.55467838,  9.30189632,
+       10.57522742,  9.89164753, 13.81645758,  6.902162  , 13.67797017]), 'Features1': array([8.04735355]), 'Features2': array([7.4610339]), 'Features3': array([8.38113628, 8.17942313, 8.06333491, 7.83426691]), 'Features5': array([30.13998797, 25.05152394, 34.59907781, 27.39020717, 25.86176996,
+       28.67782704, 30.29629453, 27.25572724, 28.61401581, 27.38542969]), 'Features6': array([8.67454856, 8.62367645, 8.28272106, 7.82342917, 7.81603274,
+       8.87149498, 6.66396523]), 'Featuresex': array([ 8.49728592, 11.37302431,  8.25742347,  8.78202628,  7.16182301,
+        8.70443019,  8.96610632])}
 
 This is the matrix with the unique features: 
 
 Featurebmi
 Featurebp
+Features1
 Features2
 Features3
 Features5
@@ -77,94 +78,102 @@ Featuresex
 
 This is the matrix with the list of values each feature has: 
 
-[27.62955106 19.2245064  15.80622358 22.43912432 19.22526076 20.19100344
- 22.01356962 23.55331517 27.60126917 21.15133164]
-[ 9.7574223   9.8361314  10.53656838  9.80220753 10.28170746  9.56338667
-  9.8438395  11.54468539  8.09875169 10.00732397]
-[6.35359013]
-[10.33923453  9.32880041  6.5854226   7.33661483]
-[23.52050032 34.48598035 34.81347031 30.65305796 26.81949156 26.51163936
- 30.07460547 33.12309692 31.0393372  32.46665304]
-[10.19286546  7.72556323  9.15507346  7.32801146  7.08911308  7.4870047
-  8.8392873   8.1900029 ]
-[10.2284962   7.49402672  8.66450626  7.41087377  8.12689873  7.61266992
-  9.36243726]
+[23.11123806 21.36370795 18.60480704 20.02780869 30.99759107 22.12839392
+ 20.20358314 20.6180528  20.88450728 25.57587769]
+[11.17562467 10.73447931  8.07841341  9.55467838  9.30189632 10.57522742
+  9.89164753 13.81645758  6.902162   13.67797017]
+[8.04735355]
+[7.4610339]
+[8.38113628 8.17942313 8.06333491 7.83426691]
+[30.13998797 25.05152394 34.59907781 27.39020717 25.86176996 28.67782704
+ 30.29629453 27.25572724 28.61401581 27.38542969]
+[8.67454856 8.62367645 8.28272106 7.82342917 7.81603274 8.87149498
+ 6.66396523]
+[ 8.49728592 11.37302431  8.25742347  8.78202628  7.16182301  8.70443019
+  8.96610632]
 
 This is the the std deviation of each list: 
 
-3.51
-0.82
+3.41
+2.07
 0.00
-1.50
-3.52
-1.00
-0.99
+0.00
+0.20
+2.57
+0.70
+1.18
 
 This is the relative std deviation of each list of values: 
 
-16.05%
-8.22%
+15.24%
+19.98%
 0.00%
-17.91%
-11.59%
-12.12%
-11.74%
+0.00%
+2.44%
+9.01%
+8.66%
+13.36%
 
 The standard deviation of our features is: 
 
-('Featurebmi', '3.51')
-('Featurebp', '0.82')
+('Featurebmi', '3.41')
+('Featurebp', '2.07')
+('Features1', '0.00')
 ('Features2', '0.00')
-('Features3', '1.50')
-('Features5', '3.52')
-('Features6', '1.00')
-('Featuresex', '0.99')
+('Features3', '0.20')
+('Features5', '2.57')
+('Features6', '0.70')
+('Featuresex', '1.18')
 
 The relative standard deviation of our features is: 
 
-('Featurebmi', '16.05%')
-('Featurebp', '8.22%')
+('Featurebmi', '15.24%')
+('Featurebp', '19.98%')
+('Features1', '0.00%')
 ('Features2', '0.00%')
-('Features3', '17.91%')
-('Features5', '11.59%')
-('Features6', '12.12%')
-('Featuresex', '11.74%')
+('Features3', '2.44%')
+('Features5', '9.01%')
+('Features6', '8.66%')
+('Featuresex', '13.36%')
 
 ..........................................
 
 
 These are the positions where each feature is present and what ranking it has:
  
-Featurebmi[('Run_1', '1st Feature'), ('Run_2', '2nd Feature'), ('Run_3', '2nd Feature'), ('Run_4', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_6', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_10', '2nd Feature')]
-Features5[('Run_2', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_6', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature'), ('Run_1', '2nd Feature')]
-Featuresex[('Run_1', '3rd Feature'), ('Run_4', '4th Feature'), ('Run_10', '4th Feature'), ('Run_2', '5th Feature'), ('Run_3', '5th Feature'), ('Run_5', '5th Feature'), ('Run_6', '5th Feature')]
-Featurebp[('Run_2', '3rd Feature'), ('Run_3', '3rd Feature'), ('Run_4', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_10', '3rd Feature'), ('Run_5', '4th Feature'), ('Run_9', '4th Feature'), ('Run_1', '5th Feature')]
-Features3[('Run_5', '3rd Feature'), ('Run_6', '4th Feature'), ('Run_7', '5th Feature'), ('Run_9', '5th Feature')]
-Features6[('Run_9', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_2', '4th Feature'), ('Run_3', '4th Feature'), ('Run_7', '4th Feature'), ('Run_8', '4th Feature'), ('Run_4', '5th Feature'), ('Run_10', '5th Feature')]
-Features2[('Run_8', '5th Feature')]
+Features5[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_6', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature'), ('Run_5', '2nd Feature')]
+Featurebmi[('Run_5', '1st Feature'), ('Run_1', '2nd Feature'), ('Run_2', '2nd Feature'), ('Run_3', '2nd Feature'), ('Run_4', '2nd Feature'), ('Run_6', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_10', '2nd Feature')]
+Featurebp[('Run_1', '3rd Feature'), ('Run_4', '3rd Feature'), ('Run_5', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_10', '3rd Feature'), ('Run_2', '4th Feature'), ('Run_3', '5th Feature'), ('Run_9', '5th Feature')]
+Featuresex[('Run_2', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_3', '4th Feature'), ('Run_4', '4th Feature'), ('Run_6', '4th Feature'), ('Run_1', '5th Feature'), ('Run_5', '5th Feature')]
+Features6[('Run_3', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_5', '4th Feature'), ('Run_7', '4th Feature'), ('Run_2', '5th Feature'), ('Run_6', '5th Feature'), ('Run_10', '5th Feature')]
+Features3[('Run_8', '4th Feature'), ('Run_9', '4th Feature'), ('Run_10', '4th Feature'), ('Run_7', '5th Feature')]
+Features2[('Run_4', '5th Feature')]
+Features1[('Run_8', '5th Feature')]
 
 The ranking deviation of each feature is: 
 
-Featurebmi: 0.3
 Features5: 0.3
-Featuresex: 0.7284313590846835
-Featurebp: 0.66332495807108
-Features3: 0.82915619758885
-Features6: 0.5994789404140899
+Featurebmi: 0.3
+Featurebp: 0.806225774829855
+Featuresex: 0.7559289460184544
+Features6: 0.6998542122237652
+Features3: 0.4330127018922193
 Features2: 0.0
+Features1: 0.0
 
 This is the ranking deviation percentage for each feature: 
 
-Featurebmi: 15.79%
 Features5: 27.27%
-Featuresex: 16.45%
-Featurebp: 19.51%
-Features3: 19.51%
-Features6: 14.53%
+Featurebmi: 15.79%
+Featurebp: 23.04%
+Featuresex: 18.90%
+Features6: 16.33%
+Features3: 10.19%
 Features2: 0.00%
+Features1: 0.00%
 
 ..........................................
 
-Mean of the ranking deviation: 16.15%
+Mean of the ranking deviation: 13.94%
 
-Mean of the standard deviation (from importance of features): 11.09%
+Mean of the standard deviation (from importance of features): 8.59%

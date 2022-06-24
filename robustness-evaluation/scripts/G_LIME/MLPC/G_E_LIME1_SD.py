@@ -51,7 +51,7 @@ def myscript(iteration_number, number_features):
     # Grab global explanations
     sample_size = 125
     from lime import submodular_pick
-    sp_obj = submodular_pick.SubmodularPick(explainer, X, model.predict_proba, sample_size=sample_size, num_features=10, num_exps_desired=5)
+    sp_obj = submodular_pick.SubmodularPick(explainer, X_test, model.predict_proba, sample_size=sample_size, num_features=10, num_exps_desired=5)
 
     W_pick=pd.DataFrame([dict(this.as_list(this.available_labels()[0])) for this in sp_obj.sp_explanations]).fillna(0)
 

@@ -58,22 +58,22 @@ def bigger_experiment(loop_num):
         
         from sklearn.neural_network import MLPClassifier
         # train original model and get its predictions
-        X, y = load_breast_cancer(return_X_y=True)
+        X, y = load_breast_cancer(return_X_y=True)            
+        X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=False)
         
         if (iteration_number == 2):
             # invoke the input perturbation script
-            change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
+            change_inputs(X_test,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
             print("easter_egg")
         else:
             print("Did nothing") 
             
-        X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=False)
         model = MLPClassifier(random_state=42)
         model.fit(X_train, y_train)
             
         # Insert here the instance we want to examine
         instance = 24
-        local = X[instance]
+        local = X_test[instance]
         
         # get the shapley values for the whole dataset
         shap_values, explainer = calc_shap(model, local)   

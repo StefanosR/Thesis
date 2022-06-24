@@ -1,0 +1,125 @@
+Did nothing
+Intercept 0.7755580463146734
+Prediction_local [0.29305998]
+Right: 0.008883072702533258
+easter_egg
+Intercept 0.7716184005941404
+Prediction_local [0.34273496]
+Right: 0.008961924661631258
+
+Our dataframes are:
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1       0.225       0.200       0.137       0.113       0.033
+Run_2       0.233       0.214       0.138       0.120       0.037 
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1   Feature27   Feature13   Feature25   Feature26   Feature29
+Run_2   Feature27   Feature13   Feature25   Feature26   Feature18 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count            2           2           2           2           2
+unique           1           1           1           1           2
+top      Feature27   Feature13   Feature25   Feature26   Feature29
+freq             2           2           2           2           1
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature13': array([0.2  , 0.214]), 'Feature18': array([0.037]), 'Feature25': array([0.137, 0.138]), 'Feature26': array([0.113, 0.12 ]), 'Feature27': array([0.225, 0.233]), 'Feature29': array([0.033])}
+
+This is the matrix with the unique features: 
+
+Feature13
+Feature18
+Feature25
+Feature26
+Feature27
+Feature29
+
+This is the matrix with the list of values each feature has: 
+
+[0.2   0.214]
+[0.037]
+[0.137 0.138]
+[0.113 0.12 ]
+[0.225 0.233]
+[0.033]
+
+This is the the std deviation of each list: 
+
+0.01
+0.00
+0.00
+0.00
+0.00
+0.00
+
+This is the relative std deviation of each list of values: 
+
+3.38%
+0.00%
+0.36%
+3.00%
+1.75%
+0.00%
+
+The standard deviation of our features is: 
+
+('Feature13', '0.01')
+('Feature18', '0.00')
+('Feature25', '0.00')
+('Feature26', '0.00')
+('Feature27', '0.00')
+('Feature29', '0.00')
+
+The relative standard deviation of our features is: 
+
+('Feature13', '3.38%')
+('Feature18', '0.00%')
+('Feature25', '0.36%')
+('Feature26', '3.00%')
+('Feature27', '1.75%')
+('Feature29', '0.00%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature27[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+Feature13[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+Feature25[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature')]
+Feature26[('Run_1', '4th Feature'), ('Run_2', '4th Feature')]
+Feature29[('Run_1', '5th Feature')]
+Feature18[('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature27: 0.0
+Feature13: 0.0
+Feature25: 0.0
+Feature26: 0.0
+Feature29: 0.0
+Feature18: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+Feature27: 0.00%
+Feature13: 0.00%
+Feature25: 0.00%
+Feature26: 0.00%
+Feature29: 0.00%
+Feature18: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 0.00%
+
+Mean of the standard deviation (from importance of features): 1.42%
+
+All predictions were the same

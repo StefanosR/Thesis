@@ -1,193 +1,193 @@
 Did nothing
-Intercept 0.6987076252380432
-Prediction_local [0.28689994]
-Right: 1.7711449310659853e-10
+Intercept 0.4131291601986924
+Prediction_local [-0.07625793]
+Right: 0.0010220627747744482
 Did nothing
-Intercept 0.5432391241936768
-Prediction_local [0.39055115]
-Right: 7.571568522881169e-48
+Intercept 0.5232942954625572
+Prediction_local [0.77083931]
+Right: 0.9995673934557057
 Did nothing
-Intercept 0.5359895612374667
-Prediction_local [-0.12496135]
-Right: 2.5878916672678372e-24
+Intercept 0.42715336203844473
+Prediction_local [-0.12991407]
+Right: 4.5683043496344705e-19
 Did nothing
-Intercept 0.708466715861916
-Prediction_local [0.38776551]
-Right: 4.289767868323608e-08
+Intercept 0.5536119383654645
+Prediction_local [0.02481156]
+Right: 6.042601918572756e-08
 Did nothing
-Intercept 0.5054546462248315
-Prediction_local [-0.07922175]
-Right: 1.2665391317673634e-16
+Intercept 0.4749455358941007
+Prediction_local [0.72242941]
+Right: 0.9980210460755281
 Did nothing
-Intercept 0.45955681098252654
-Prediction_local [-0.16482911]
-Right: 4.43599239202721e-16
+Intercept 0.4868862528161753
+Prediction_local [0.54187492]
+Right: 0.9702556508921323
 Did nothing
-Intercept 0.540138840825978
-Prediction_local [0.10700322]
-Right: 7.15723013590235e-18
+Intercept 0.22796422523166665
+Prediction_local [0.46275525]
+Right: 0.9969686002014901
 Did nothing
-Intercept 0.6015749634899958
-Prediction_local [0.25543517]
-Right: 3.844481185268751e-40
+Intercept 0.33265212845302267
+Prediction_local [-0.18928873]
+Right: 1.8727231774550233e-22
 Did nothing
-Intercept 0.2839931002239438
-Prediction_local [-0.0373032]
-Right: 1.6051451544448262e-13
+Intercept 0.5705324777153701
+Prediction_local [0.25579992]
+Right: 3.346828917155623e-13
 Did nothing
-Intercept 0.6645109128069487
-Prediction_local [0.31744838]
-Right: 8.184095131520646e-26
+Intercept 0.3947850210421919
+Prediction_local [-0.01616428]
+Right: 9.46193882491306e-34
 
 Our dataframes are:
 
         1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
-Run_1        0.347       0.303       0.147       0.052       0.040
-Run_2        0.608       0.385       0.115       0.079       0.035
-Run_3        0.472       0.462       0.112       0.081       0.080
-Run_4        0.547       0.212       0.122       0.083       0.053
-Run_5        0.472       0.462       0.190       0.090       0.070
-Run_6        0.375       0.253       0.238       0.166       0.099
-Run_7        0.566       0.253       0.181       0.037       0.024
-Run_8        0.675       0.208       0.179       0.098       0.040
-Run_9        0.269       0.262       0.150       0.113       0.053
-Run_10       0.734       0.237       0.168       0.089       0.071 
+Run_1        0.364       0.359       0.140       0.135       0.042
+Run_2        0.362       0.061       0.048       0.046       0.041
+Run_3        0.385       0.308       0.307       0.216       0.043
+Run_4        0.496       0.338       0.295       0.144       0.068
+Run_5        0.587       0.235       0.145       0.021       0.019
+Run_6        0.223       0.087       0.063       0.062       0.044
+Run_7        0.251       0.163       0.159       0.076       0.055
+Run_8        0.274       0.263       0.135       0.080       0.039
+Run_9        0.641       0.244       0.229       0.105       0.042
+Run_10       0.364       0.326       0.309       0.111       0.047 
 
-        1st Feature     2nd Feature     3rd Feature     4th Feature      5th Feature
-Run_1    worstarea       areaerror        meanarea  worstperimeter     worsttexture
-Run_2    worstarea        meanarea  worstperimeter       areaerror     worsttexture
-Run_3    worstarea        meanarea   meanperimeter  worstperimeter        areaerror
-Run_4    worstarea  worstperimeter       areaerror   meanperimeter         meanarea
-Run_5    worstarea        meanarea   meanperimeter  worstperimeter        areaerror
-Run_6    worstarea  worstperimeter       areaerror        meanarea    meanperimeter
-Run_7    worstarea  worstperimeter       areaerror   meanperimeter  smoothnesserror
-Run_8    worstarea        meanarea  worstperimeter       areaerror    meanperimeter
-Run_9     meanarea       worstarea  worstperimeter   meanperimeter   perimetererror
-Run_10   worstarea        meanarea  worstperimeter       areaerror    meanperimeter 
+        1st Feature     2nd Feature     3rd Feature     4th Feature       5th Feature
+Run_1    worstarea        meanarea  worstperimeter   meanperimeter    perimetererror
+Run_2    worstarea        meanarea  worstperimeter   meanperimeter         areaerror
+Run_3    worstarea   meanperimeter        meanarea       areaerror    worstperimeter
+Run_4     meanarea   meanperimeter       areaerror  worstperimeter         worstarea
+Run_5    worstarea        meanarea  worstperimeter  perimetererror       meantexture
+Run_6    worstarea  worstperimeter   meanperimeter        meanarea  compactnesserror
+Run_7    worstarea        meanarea  worstperimeter   meanperimeter         areaerror
+Run_8    worstarea        meanarea   meanperimeter       areaerror    perimetererror
+Run_9     meanarea   meanperimeter       worstarea       areaerror       meantexture
+Run_10   worstarea  worstperimeter        meanarea   meanperimeter         areaerror 
 
 
 Describe df with the feature names:
 
-        1st Feature 2nd Feature     3rd Feature     4th Feature    5th Feature
-count           10          10              10              10             10
-unique           2           4               4               4              6
-top      worstarea    meanarea  worstperimeter  worstperimeter  meanperimeter
-freq             9           5               4               3              3
+        1st Feature 2nd Feature     3rd Feature    4th Feature 5th Feature
+count           10          10              10             10          10
+unique           2           3               5              5           6
+top      worstarea    meanarea  worstperimeter  meanperimeter   areaerror
+freq             8           5               4              4           3
 
 ..........................................
 
 
 This is the new dictionary we created:
- {'areaerror': array([0.303, 0.079, 0.08 , 0.122, 0.07 , 0.238, 0.181, 0.098, 0.089]), 'meanarea': array([0.147, 0.385, 0.462, 0.053, 0.462, 0.166, 0.208, 0.269, 0.237]), 'meanperimeter': array([0.112, 0.083, 0.19 , 0.099, 0.037, 0.04 , 0.113, 0.071]), 'perimetererror': array([0.053]), 'smoothnesserror': array([0.024]), 'worstarea': array([0.347, 0.608, 0.472, 0.547, 0.472, 0.375, 0.566, 0.675, 0.262,
-       0.734]), 'worstperimeter': array([0.052, 0.115, 0.081, 0.212, 0.09 , 0.253, 0.253, 0.179, 0.15 ,
-       0.168]), 'worsttexture': array([0.04 , 0.035])}
+ {'areaerror': array([0.041, 0.216, 0.295, 0.055, 0.08 , 0.105, 0.047]), 'compactnesserror': array([0.044]), 'meanarea': array([0.359, 0.061, 0.307, 0.496, 0.235, 0.062, 0.163, 0.263, 0.641,
+       0.309]), 'meanperimeter': array([0.135, 0.046, 0.308, 0.338, 0.063, 0.076, 0.135, 0.244, 0.111]), 'meantexture': array([0.019, 0.042]), 'perimetererror': array([0.042, 0.021, 0.039]), 'worstarea': array([0.364, 0.362, 0.385, 0.068, 0.587, 0.223, 0.251, 0.274, 0.229,
+       0.364]), 'worstperimeter': array([0.14 , 0.048, 0.043, 0.144, 0.145, 0.087, 0.159, 0.326])}
 
 This is the matrix with the unique features: 
 
 areaerror
+compactnesserror
 meanarea
 meanperimeter
+meantexture
 perimetererror
-smoothnesserror
 worstarea
 worstperimeter
-worsttexture
 
 This is the matrix with the list of values each feature has: 
 
-[0.303 0.079 0.08  0.122 0.07  0.238 0.181 0.098 0.089]
-[0.147 0.385 0.462 0.053 0.462 0.166 0.208 0.269 0.237]
-[0.112 0.083 0.19  0.099 0.037 0.04  0.113 0.071]
-[0.053]
-[0.024]
-[0.347 0.608 0.472 0.547 0.472 0.375 0.566 0.675 0.262 0.734]
-[0.052 0.115 0.081 0.212 0.09  0.253 0.253 0.179 0.15  0.168]
-[0.04  0.035]
+[0.041 0.216 0.295 0.055 0.08  0.105 0.047]
+[0.044]
+[0.359 0.061 0.307 0.496 0.235 0.062 0.163 0.263 0.641 0.309]
+[0.135 0.046 0.308 0.338 0.063 0.076 0.135 0.244 0.111]
+[0.019 0.042]
+[0.042 0.021 0.039]
+[0.364 0.362 0.385 0.068 0.587 0.223 0.251 0.274 0.229 0.364]
+[0.14  0.048 0.043 0.144 0.145 0.087 0.159 0.326]
 
 This is the the std deviation of each list: 
 
+0.09
+0.00
+0.17
+0.10
+0.01
+0.01
+0.13
 0.08
-0.14
-0.05
-0.00
-0.00
-0.14
-0.07
-0.00
 
 This is the relative std deviation of each list of values: 
 
-55.72%
-50.97%
-49.11%
+75.59%
 0.00%
-0.00%
-28.00%
-43.26%
-6.67%
+59.34%
+63.08%
+37.70%
+27.28%
+41.76%
+61.06%
 
 The standard deviation of our features is: 
 
-('areaerror', '0.08')
-('meanarea', '0.14')
-('meanperimeter', '0.05')
-('perimetererror', '0.00')
-('smoothnesserror', '0.00')
-('worstarea', '0.14')
-('worstperimeter', '0.07')
-('worsttexture', '0.00')
+('areaerror', '0.09')
+('compactnesserror', '0.00')
+('meanarea', '0.17')
+('meanperimeter', '0.10')
+('meantexture', '0.01')
+('perimetererror', '0.01')
+('worstarea', '0.13')
+('worstperimeter', '0.08')
 
 The relative standard deviation of our features is: 
 
-('areaerror', '55.72%')
-('meanarea', '50.97%')
-('meanperimeter', '49.11%')
-('perimetererror', '0.00%')
-('smoothnesserror', '0.00%')
-('worstarea', '28.00%')
-('worstperimeter', '43.26%')
-('worsttexture', '6.67%')
+('areaerror', '75.59%')
+('compactnesserror', '0.00%')
+('meanarea', '59.34%')
+('meanperimeter', '63.08%')
+('meantexture', '37.70%')
+('perimetererror', '27.28%')
+('worstarea', '41.76%')
+('worstperimeter', '61.06%')
 
 ..........................................
 
 
 These are the positions where each feature is present and what ranking it has:
  
-worstarea[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_6', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_10', '1st Feature'), ('Run_9', '2nd Feature')]
-meanarea[('Run_9', '1st Feature'), ('Run_2', '2nd Feature'), ('Run_3', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_10', '2nd Feature'), ('Run_1', '3rd Feature'), ('Run_6', '4th Feature'), ('Run_4', '5th Feature')]
-areaerror[('Run_1', '2nd Feature'), ('Run_4', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_2', '4th Feature'), ('Run_8', '4th Feature'), ('Run_10', '4th Feature'), ('Run_3', '5th Feature'), ('Run_5', '5th Feature')]
-worstperimeter[('Run_4', '2nd Feature'), ('Run_6', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_2', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_10', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_3', '4th Feature'), ('Run_5', '4th Feature')]
-meanperimeter[('Run_3', '3rd Feature'), ('Run_5', '3rd Feature'), ('Run_4', '4th Feature'), ('Run_7', '4th Feature'), ('Run_9', '4th Feature'), ('Run_6', '5th Feature'), ('Run_8', '5th Feature'), ('Run_10', '5th Feature')]
-worsttexture[('Run_1', '5th Feature'), ('Run_2', '5th Feature')]
-smoothnesserror[('Run_7', '5th Feature')]
-perimetererror[('Run_9', '5th Feature')]
+worstarea[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_3', '1st Feature'), ('Run_5', '1st Feature'), ('Run_6', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_10', '1st Feature'), ('Run_9', '3rd Feature'), ('Run_4', '5th Feature')]
+meanarea[('Run_4', '1st Feature'), ('Run_9', '1st Feature'), ('Run_1', '2nd Feature'), ('Run_2', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_3', '3rd Feature'), ('Run_10', '3rd Feature'), ('Run_6', '4th Feature')]
+meanperimeter[('Run_3', '2nd Feature'), ('Run_4', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_6', '3rd Feature'), ('Run_8', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_2', '4th Feature'), ('Run_7', '4th Feature'), ('Run_10', '4th Feature')]
+worstperimeter[('Run_6', '2nd Feature'), ('Run_10', '2nd Feature'), ('Run_1', '3rd Feature'), ('Run_2', '3rd Feature'), ('Run_5', '3rd Feature'), ('Run_7', '3rd Feature'), ('Run_4', '4th Feature'), ('Run_3', '5th Feature')]
+areaerror[('Run_4', '3rd Feature'), ('Run_3', '4th Feature'), ('Run_8', '4th Feature'), ('Run_9', '4th Feature'), ('Run_2', '5th Feature'), ('Run_7', '5th Feature'), ('Run_10', '5th Feature')]
+perimetererror[('Run_5', '4th Feature'), ('Run_1', '5th Feature'), ('Run_8', '5th Feature')]
+meantexture[('Run_5', '5th Feature'), ('Run_9', '5th Feature')]
+compactnesserror[('Run_6', '5th Feature')]
 
 The ranking deviation of each feature is: 
 
-worstarea: 0.3
-meanarea: 1.1653431646335017
-areaerror: 0.9428090415820634
-worstperimeter: 0.7745966692414834
-meanperimeter: 0.7806247497997998
-worsttexture: 0.0
-smoothnesserror: 0.0
-perimetererror: 0.0
+worstarea: 1.2806248474865698
+meanarea: 0.8717797887081347
+meanperimeter: 0.8748897637790901
+worstperimeter: 0.9270248108869579
+areaerror: 0.6998542122237652
+perimetererror: 0.4714045207910317
+meantexture: 0.0
+compactnesserror: 0.0
 
 This is the ranking deviation percentage for each feature: 
 
-worstarea: 27.27%
-meanarea: 45.60%
-areaerror: 25.71%
-worstperimeter: 25.82%
-meanperimeter: 18.92%
-worsttexture: 0.00%
-smoothnesserror: 0.00%
-perimetererror: 0.00%
+worstarea: 80.04%
+meanarea: 39.63%
+meanperimeter: 28.12%
+worstperimeter: 29.66%
+areaerror: 16.33%
+perimetererror: 10.10%
+meantexture: 0.00%
+compactnesserror: 0.00%
 
 ..........................................
 
-Mean of the ranking deviation: 17.91%
+Mean of the ranking deviation: 25.49%
 
-Mean of the standard deviation (from importance of features): 29.22%
+Mean of the standard deviation (from importance of features): 45.73%
 
 All predictions were the same

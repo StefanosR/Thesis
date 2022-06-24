@@ -54,15 +54,15 @@ def bigger_experiment(loop_num):
             return "Earthquake is over"
             
         X, y = load_breast_cancer(return_X_y=True)
+        X_train, X_test, y_train, y_test = train_test_split(X, y)
 
         if (loop_num == 1):
             # invoke the input perturbation script
-            change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
+            change_inputs(X_test,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
             print("Input perturbation occured")
         else:
             print("Did nothing")
             
-        X_train, X_test, y_train, y_test = train_test_split(X, y)
         model = MLPClassifier()
         model.fit(X_train, y_train)
 
@@ -84,7 +84,7 @@ def bigger_experiment(loop_num):
         # Grab global explanations
         sample_size = 125
         from lime import submodular_pick
-        sp_obj = submodular_pick.SubmodularPick(explainer, X, model.predict_proba, sample_size=sample_size, num_features=10, num_exps_desired=5)
+        sp_obj = submodular_pick.SubmodularPick(explainer, X_test, model.predict_proba, sample_size=sample_size, num_features=10, num_exps_desired=5)
 
         W_pick=pd.DataFrame([dict(this.as_list(this.available_labels()[0])) for this in sp_obj.sp_explanations]).fillna(0)
 

@@ -84,8 +84,6 @@ def choose_script(Explainability_method, Category, Implementation, Scenario, Dat
         
     if (m == "S" and d == "BD" and i == "MLPC"):
         return "Warning: SHAP crashes with big datasets on MLPC","Please change inputs", img
-    elif (m == "L" and c == "GE" and i == "LGBM"):
-        return "Warning: LIME global explanations are not supported for regression","Please change inputs", img
     elif ((s == "S2" or s == "S3") and l == ""):    
         return "Warning: Scenarios 2 and 3 require a loop choice to present results","Please change inputs", img
     elif (s == "S2" and l == "_3L"):    

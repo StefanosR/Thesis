@@ -1,125 +1,116 @@
 Did nothing
-Intercept 2.261683400321321
-Prediction_local [2.23066231]
-Right: 1.5932342708580436
+Intercept 1.8487936934567846
+Prediction_local [3.43250583]
+Right: 3.2367779366431195
 easter_egg
-Intercept 2.0195146780367046
-Prediction_local [1.9331367]
-Right: 1.4523713452755067
+Intercept 1.5583363991152708
+Prediction_local [4.42956987]
+Right: 4.016616944188283
 
 Our dataframes are:
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
-Run_1       1.109       0.901       0.601       0.362       0.062
-Run_2       0.686       0.586       0.422       0.118       0.118 
+Run_1       1.177       1.168       0.880       0.290       0.172
+Run_2       1.227       1.205       0.376       0.244       0.180 
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
-Run_1    Latitude   Longitude    AveOccup      MedInc    AveRooms
-Run_2    AveOccup      MedInc    Latitude    HouseAge   Longitude 
+Run_1      MedInc    Latitude   Longitude    AveRooms    AveOccup
+Run_2      MedInc    Latitude    AveRooms   Longitude    AveOccup 
 
 
 Describe df with the feature names:
 
         1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 count            2           2           2           2           2
-unique           2           2           2           2           2
-top       Latitude   Longitude    AveOccup      MedInc    AveRooms
-freq             1           1           1           1           1
+unique           1           1           2           2           1
+top         MedInc    Latitude   Longitude    AveRooms    AveOccup
+freq             2           2           1           1           2
 
 ..........................................
 
 
 This is the new dictionary we created:
- {'AveOccup': array([0.601, 0.686]), 'AveRooms': array([0.062]), 'HouseAge': array([0.118]), 'Latitude': array([1.109, 0.422]), 'Longitude': array([0.901, 0.118]), 'MedInc': array([0.362, 0.586])}
+ {'AveOccup': array([0.172, 0.18 ]), 'AveRooms': array([0.29 , 0.376]), 'Latitude': array([1.168, 1.205]), 'Longitude': array([0.88 , 0.244]), 'MedInc': array([1.177, 1.227])}
 
 This is the matrix with the unique features: 
 
 AveOccup
 AveRooms
-HouseAge
 Latitude
 Longitude
 MedInc
 
 This is the matrix with the list of values each feature has: 
 
-[0.601 0.686]
-[0.062]
-[0.118]
-[1.109 0.422]
-[0.901 0.118]
-[0.362 0.586]
+[0.172 0.18 ]
+[0.29  0.376]
+[1.168 1.205]
+[0.88  0.244]
+[1.177 1.227]
 
 This is the the std deviation of each list: 
 
+0.00
 0.04
-0.00
-0.00
-0.34
-0.39
-0.11
+0.02
+0.32
+0.03
 
 This is the relative std deviation of each list of values: 
 
-6.60%
-0.00%
-0.00%
-44.87%
-76.84%
-23.63%
+2.27%
+12.91%
+1.56%
+56.58%
+2.08%
 
 The standard deviation of our features is: 
 
-('AveOccup', '0.04')
-('AveRooms', '0.00')
-('HouseAge', '0.00')
-('Latitude', '0.34')
-('Longitude', '0.39')
-('MedInc', '0.11')
+('AveOccup', '0.00')
+('AveRooms', '0.04')
+('Latitude', '0.02')
+('Longitude', '0.32')
+('MedInc', '0.03')
 
 The relative standard deviation of our features is: 
 
-('AveOccup', '6.60%')
-('AveRooms', '0.00%')
-('HouseAge', '0.00%')
-('Latitude', '44.87%')
-('Longitude', '76.84%')
-('MedInc', '23.63%')
+('AveOccup', '2.27%')
+('AveRooms', '12.91%')
+('Latitude', '1.56%')
+('Longitude', '56.58%')
+('MedInc', '2.08%')
 
 ..........................................
 
 
 These are the positions where each feature is present and what ranking it has:
  
-Latitude[('Run_1', '1st Feature'), ('Run_2', '3rd Feature')]
-AveOccup[('Run_2', '1st Feature'), ('Run_1', '3rd Feature')]
-Longitude[('Run_1', '2nd Feature'), ('Run_2', '5th Feature')]
-MedInc[('Run_2', '2nd Feature'), ('Run_1', '4th Feature')]
-HouseAge[('Run_2', '4th Feature')]
-AveRooms[('Run_1', '5th Feature')]
+MedInc[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+Latitude[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+Longitude[('Run_1', '3rd Feature'), ('Run_2', '4th Feature')]
+AveRooms[('Run_2', '3rd Feature'), ('Run_1', '4th Feature')]
+AveOccup[('Run_1', '5th Feature'), ('Run_2', '5th Feature')]
 
 The ranking deviation of each feature is: 
 
-Latitude: 1.0
-AveOccup: 1.0
-Longitude: 1.5
-MedInc: 1.0
-HouseAge: 0.0
-AveRooms: 0.0
+MedInc: 0.0
+Latitude: 0.0
+Longitude: 0.5
+AveRooms: 0.5
+AveOccup: 0.0
 
 This is the ranking deviation percentage for each feature: 
 
-Latitude: 50.00%
-AveOccup: 50.00%
-Longitude: 42.86%
-MedInc: 33.33%
-HouseAge: 0.00%
-AveRooms: 0.00%
+MedInc: 0.00%
+Latitude: 0.00%
+Longitude: 14.29%
+AveRooms: 14.29%
+AveOccup: 0.00%
 
 ..........................................
 
-Mean of the ranking deviation: 29.36%
+Mean of the ranking deviation: 5.72%
 
-Mean of the standard deviation (from importance of features): 25.32%
+Mean of the standard deviation (from importance of features): 15.08%
 
 All predictions were the same

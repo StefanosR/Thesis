@@ -1,84 +1,90 @@
 Did nothing
-Intercept 0.5142416304752598
-Prediction_local [0.14715525]
-Right: 4.921317955767252e-33
+Intercept 0.2631556634251368
+Prediction_local [0.88681708]
+Right: 0.994118825513738
 easter_egg
-Intercept 0.48970749978583256
-Prediction_local [0.21914334]
-Right: 1.7888112176373346e-36
+Intercept 0.3402761245210786
+Prediction_local [0.6816637]
+Right: 0.9958975573541984
 
 Our dataframes are:
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
-Run_1       0.568       0.274       0.195       0.163       0.105
-Run_2       0.554       0.317       0.188       0.136       0.086 
+Run_1       0.559       0.120       0.065       0.042       0.031
+Run_2       0.529       0.319       0.118       0.058       0.045 
 
-       1st Feature 2nd Feature    3rd Feature     4th Feature 5th Feature
-Run_1   worstarea    meanarea  meanperimeter  worstperimeter   areaerror
-Run_2   worstarea    meanarea  meanperimeter  worstperimeter   areaerror 
+       1st Feature     2nd Feature     3rd Feature 4th Feature    5th Feature
+Run_1   worstarea  worstperimeter   meanperimeter   areaerror     meanradius
+Run_2   worstarea        meanarea  worstperimeter   areaerror  meanperimeter 
 
 
 Describe df with the feature names:
 
-        1st Feature 2nd Feature    3rd Feature     4th Feature 5th Feature
-count            2           2              2               2           2
-unique           1           1              1               1           1
-top      worstarea    meanarea  meanperimeter  worstperimeter   areaerror
-freq             2           2              2               2           2
+        1st Feature     2nd Feature    3rd Feature 4th Feature 5th Feature
+count            2               2              2           2           2
+unique           1               2              2           1           2
+top      worstarea  worstperimeter  meanperimeter   areaerror  meanradius
+freq             2               1              1           2           1
 
 ..........................................
 
 
 This is the new dictionary we created:
- {'areaerror': array([0.105, 0.086]), 'meanarea': array([0.274, 0.317]), 'meanperimeter': array([0.195, 0.188]), 'worstarea': array([0.568, 0.554]), 'worstperimeter': array([0.163, 0.136])}
+ {'areaerror': array([0.042, 0.058]), 'meanarea': array([0.319]), 'meanperimeter': array([0.065, 0.045]), 'meanradius': array([0.031]), 'worstarea': array([0.559, 0.529]), 'worstperimeter': array([0.12 , 0.118])}
 
 This is the matrix with the unique features: 
 
 areaerror
 meanarea
 meanperimeter
+meanradius
 worstarea
 worstperimeter
 
 This is the matrix with the list of values each feature has: 
 
-[0.105 0.086]
-[0.274 0.317]
-[0.195 0.188]
-[0.568 0.554]
-[0.163 0.136]
+[0.042 0.058]
+[0.319]
+[0.065 0.045]
+[0.031]
+[0.559 0.529]
+[0.12  0.118]
 
 This is the the std deviation of each list: 
 
 0.01
-0.02
 0.00
 0.01
-0.01
+0.00
+0.02
+0.00
 
 This is the relative std deviation of each list of values: 
 
-9.95%
-7.28%
-1.83%
-1.25%
-9.03%
+16.00%
+0.00%
+18.18%
+0.00%
+2.76%
+0.84%
 
 The standard deviation of our features is: 
 
 ('areaerror', '0.01')
-('meanarea', '0.02')
-('meanperimeter', '0.00')
-('worstarea', '0.01')
-('worstperimeter', '0.01')
+('meanarea', '0.00')
+('meanperimeter', '0.01')
+('meanradius', '0.00')
+('worstarea', '0.02')
+('worstperimeter', '0.00')
 
 The relative standard deviation of our features is: 
 
-('areaerror', '9.95%')
-('meanarea', '7.28%')
-('meanperimeter', '1.83%')
-('worstarea', '1.25%')
-('worstperimeter', '9.03%')
+('areaerror', '16.00%')
+('meanarea', '0.00%')
+('meanperimeter', '18.18%')
+('meanradius', '0.00%')
+('worstarea', '2.76%')
+('worstperimeter', '0.84%')
 
 ..........................................
 
@@ -86,31 +92,34 @@ The relative standard deviation of our features is:
 These are the positions where each feature is present and what ranking it has:
  
 worstarea[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
-meanarea[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
-meanperimeter[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature')]
-worstperimeter[('Run_1', '4th Feature'), ('Run_2', '4th Feature')]
-areaerror[('Run_1', '5th Feature'), ('Run_2', '5th Feature')]
+worstperimeter[('Run_1', '2nd Feature'), ('Run_2', '3rd Feature')]
+meanarea[('Run_2', '2nd Feature')]
+meanperimeter[('Run_1', '3rd Feature'), ('Run_2', '5th Feature')]
+areaerror[('Run_1', '4th Feature'), ('Run_2', '4th Feature')]
+meanradius[('Run_1', '5th Feature')]
 
 The ranking deviation of each feature is: 
 
 worstarea: 0.0
+worstperimeter: 0.5
 meanarea: 0.0
-meanperimeter: 0.0
-worstperimeter: 0.0
+meanperimeter: 1.0
 areaerror: 0.0
+meanradius: 0.0
 
 This is the ranking deviation percentage for each feature: 
 
 worstarea: 0.00%
+worstperimeter: 20.00%
 meanarea: 0.00%
-meanperimeter: 0.00%
-worstperimeter: 0.00%
+meanperimeter: 25.00%
 areaerror: 0.00%
+meanradius: 0.00%
 
 ..........................................
 
-Mean of the ranking deviation: 0.00%
+Mean of the ranking deviation: 7.50%
 
-Mean of the standard deviation (from importance of features): 5.87%
+Mean of the standard deviation (from importance of features): 6.30%
 
 All predictions were the same

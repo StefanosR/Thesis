@@ -1,116 +1,134 @@
 Did nothing
-Intercept 141.4653212230602
-Prediction_local [161.71135524]
-Right: 172.10497122965123
+Intercept 174.69334894033784
+Prediction_local [99.04409654]
+Right: 67.13270540020723
 easter_egg
-Intercept 151.56528954743507
-Prediction_local [163.30312482]
-Right: 179.1023924586212
+Intercept 167.32340278598724
+Prediction_local [102.36996835]
+Right: 70.81372593670041
 
 Our dataframes are:
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
-Run_1      38.789      27.997      20.627      14.171       2.997
-Run_2      36.153      28.269      11.415      10.595       4.674 
+Run_1      47.528      22.754      20.748      10.498       4.883
+Run_2      46.583      23.884       8.571       6.114       3.057 
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
-Run_1         bmi          s5         sex          s6          s3
-Run_2         bmi          s5          s6         sex          s3 
+Run_1          s5         bmi         sex          s1          s3
+Run_2          s5         bmi          s1          s4          bp 
 
 
 Describe df with the feature names:
 
         1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 count            2           2           2           2           2
-unique           1           1           2           2           1
-top            bmi          s5         sex          s6          s3
-freq             2           2           1           1           2
+unique           1           1           2           2           2
+top             s5         bmi         sex          s1          s3
+freq             2           2           1           1           1
 
 ..........................................
 
 
 This is the new dictionary we created:
- {'bmi': array([38.789, 36.153]), 's3': array([2.997, 4.674]), 's5': array([27.997, 28.269]), 's6': array([14.171, 11.415]), 'sex': array([20.627, 10.595])}
+ {'bmi': array([22.754, 23.884]), 'bp': array([3.057]), 's1': array([10.498,  8.571]), 's3': array([4.883]), 's4': array([6.114]), 's5': array([47.528, 46.583]), 'sex': array([20.748])}
 
 This is the matrix with the unique features: 
 
 bmi
+bp
+s1
 s3
+s4
 s5
-s6
 sex
 
 This is the matrix with the list of values each feature has: 
 
-[38.789 36.153]
-[2.997 4.674]
-[27.997 28.269]
-[14.171 11.415]
-[20.627 10.595]
+[22.754 23.884]
+[3.057]
+[10.498  8.571]
+[4.883]
+[6.114]
+[47.528 46.583]
+[20.748]
 
 This is the the std deviation of each list: 
 
-1.32
-0.84
-0.14
-1.38
-5.02
+0.56
+0.00
+0.96
+0.00
+0.00
+0.47
+0.00
 
 This is the relative std deviation of each list of values: 
 
-3.52%
-21.86%
-0.48%
-10.77%
-32.13%
+2.42%
+0.00%
+10.11%
+0.00%
+0.00%
+1.00%
+0.00%
 
 The standard deviation of our features is: 
 
-('bmi', '1.32')
-('s3', '0.84')
-('s5', '0.14')
-('s6', '1.38')
-('sex', '5.02')
+('bmi', '0.56')
+('bp', '0.00')
+('s1', '0.96')
+('s3', '0.00')
+('s4', '0.00')
+('s5', '0.47')
+('sex', '0.00')
 
 The relative standard deviation of our features is: 
 
-('bmi', '3.52%')
-('s3', '21.86%')
-('s5', '0.48%')
-('s6', '10.77%')
-('sex', '32.13%')
+('bmi', '2.42%')
+('bp', '0.00%')
+('s1', '10.11%')
+('s3', '0.00%')
+('s4', '0.00%')
+('s5', '1.00%')
+('sex', '0.00%')
 
 ..........................................
 
 
 These are the positions where each feature is present and what ranking it has:
  
-bmi[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
-s5[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
-sex[('Run_1', '3rd Feature'), ('Run_2', '4th Feature')]
-s6[('Run_2', '3rd Feature'), ('Run_1', '4th Feature')]
-s3[('Run_1', '5th Feature'), ('Run_2', '5th Feature')]
+s5[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+bmi[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+sex[('Run_1', '3rd Feature')]
+s1[('Run_2', '3rd Feature'), ('Run_1', '4th Feature')]
+s4[('Run_2', '4th Feature')]
+s3[('Run_1', '5th Feature')]
+bp[('Run_2', '5th Feature')]
 
 The ranking deviation of each feature is: 
 
-bmi: 0.0
 s5: 0.0
-sex: 0.5
-s6: 0.5
+bmi: 0.0
+sex: 0.0
+s1: 0.5
+s4: 0.0
 s3: 0.0
+bp: 0.0
 
 This is the ranking deviation percentage for each feature: 
 
-bmi: 0.00%
 s5: 0.00%
-sex: 14.29%
-s6: 14.29%
+bmi: 0.00%
+sex: 0.00%
+s1: 14.29%
+s4: 0.00%
 s3: 0.00%
+bp: 0.00%
 
 ..........................................
 
-Mean of the ranking deviation: 5.72%
+Mean of the ranking deviation: 2.04%
 
-Mean of the standard deviation (from importance of features): 13.75%
+Mean of the standard deviation (from importance of features): 1.93%
 
 All predictions were the same

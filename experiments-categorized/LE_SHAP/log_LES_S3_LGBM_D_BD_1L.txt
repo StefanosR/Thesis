@@ -1,0 +1,121 @@
+Iteration: 1
+Did nothing
+Iteration: 2
+easter_egg
+
+Our dataframes are:
+
+               1st Feature         2nd Feature          3rd Feature          4th Feature          5th Feature
+Run_1  1.0157223943198286  0.7300320196405671  0.38065223127354614  0.11743290479795658  0.11664184708654697
+Run_2  1.0000374743626763   0.994871114820057   0.1605939148971101   0.1129257623876271   0.0800285140935177 
+
+           1st Feature        2nd Feature        3rd Feature       4th Feature       5th Feature
+Run_1  Feature MedInc   Feature Latitude  Feature Longitude  Feature HouseAge  Feature AveRooms
+Run_2  Feature MedInc  Feature Longitude   Feature Latitude  Feature HouseAge  Feature AveOccup 
+
+
+Describe df with the feature names:
+
+            1st Feature       2nd Feature        3rd Feature       4th Feature       5th Feature
+count                2                 2                  2                 2                 2
+unique               1                 2                  2                 1                 2
+top     Feature MedInc  Feature Latitude  Feature Longitude  Feature HouseAge  Feature AveRooms
+freq                 2                 1                  1                 2                 1
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'Feature AveOccup': array([0.08002851]), 'Feature AveRooms': array([0.11664185]), 'Feature HouseAge': array([0.1174329 , 0.11292576]), 'Feature Latitude': array([0.73003202, 0.16059391]), 'Feature Longitude': array([0.38065223, 0.99487111]), 'Feature MedInc': array([1.01572239, 1.00003747])}
+
+This is the matrix with the unique features: 
+
+Feature AveOccup
+Feature AveRooms
+Feature HouseAge
+Feature Latitude
+Feature Longitude
+Feature MedInc
+
+This is the matrix with the list of values each feature has: 
+
+[0.08002851]
+[0.11664185]
+[0.1174329  0.11292576]
+[0.73003202 0.16059391]
+[0.38065223 0.99487111]
+[1.01572239 1.00003747]
+
+This is the the std deviation of each list: 
+
+0.00
+0.00
+0.00
+0.28
+0.31
+0.01
+
+This is the relative std deviation of each list of values: 
+
+0.00%
+0.00%
+1.96%
+63.94%
+44.65%
+0.78%
+
+The standard deviation of our features is: 
+
+('Feature AveOccup', '0.00')
+('Feature AveRooms', '0.00')
+('Feature HouseAge', '0.00')
+('Feature Latitude', '0.28')
+('Feature Longitude', '0.31')
+('Feature MedInc', '0.01')
+
+The relative standard deviation of our features is: 
+
+('Feature AveOccup', '0.00%')
+('Feature AveRooms', '0.00%')
+('Feature HouseAge', '1.96%')
+('Feature Latitude', '63.94%')
+('Feature Longitude', '44.65%')
+('Feature MedInc', '0.78%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+Feature MedInc[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+Feature Latitude[('Run_1', '2nd Feature'), ('Run_2', '3rd Feature')]
+Feature Longitude[('Run_2', '2nd Feature'), ('Run_1', '3rd Feature')]
+Feature HouseAge[('Run_1', '4th Feature'), ('Run_2', '4th Feature')]
+Feature AveRooms[('Run_1', '5th Feature')]
+Feature AveOccup[('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+Feature MedInc: 0.0
+Feature Latitude: 0.5
+Feature Longitude: 0.5
+Feature HouseAge: 0.0
+Feature AveRooms: 0.0
+Feature AveOccup: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+Feature MedInc: 0.00%
+Feature Latitude: 20.00%
+Feature Longitude: 20.00%
+Feature HouseAge: 0.00%
+Feature AveRooms: 0.00%
+Feature AveOccup: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 6.67%
+
+Mean of the standard deviation (from importance of features): 18.55%
+
+All predictions were the same

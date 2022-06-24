@@ -5,9 +5,9 @@ easter_egg
 
 Our dataframes are:
 
-              1st Feature         2nd Feature         3rd Feature        4th Feature        5th Feature
-Run_1  32.42232845203724  19.854990095369605   9.144572655625613  8.118456148763396  7.056196949022894
-Run_2  32.55096044740669  19.468954567387975  10.289741670338575  8.440920172501015  7.289688461267298 
+              1st Feature         2nd Feature        3rd Feature        4th Feature         5th Feature
+Run_1  33.67284486642881  20.885753773565757  8.717105500667033  8.667732856559395  6.8842372107499825
+Run_2  33.82092645463838  20.907934042348973  8.697414978824852  8.658729832221495   6.881872882368919 
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 Run_1   Features5  Featurebmi   Featurebp  Featuresex   Features6
@@ -26,7 +26,7 @@ freq             2           2           2           2           2
 
 
 This is the new dictionary we created:
- {'Featurebmi': array([19.8549901 , 19.46895457]), 'Featurebp': array([ 9.14457266, 10.28974167]), 'Features5': array([32.42232845, 32.55096045]), 'Features6': array([7.05619695, 7.28968846]), 'Featuresex': array([8.11845615, 8.44092017])}
+ {'Featurebmi': array([20.88575377, 20.90793404]), 'Featurebp': array([8.7171055 , 8.69741498]), 'Features5': array([33.67284487, 33.82092645]), 'Features6': array([6.88423721, 6.88187288]), 'Featuresex': array([8.66773286, 8.65872983])}
 
 This is the matrix with the unique features: 
 
@@ -38,43 +38,43 @@ Featuresex
 
 This is the matrix with the list of values each feature has: 
 
-[19.8549901  19.46895457]
-[ 9.14457266 10.28974167]
-[32.42232845 32.55096045]
-[7.05619695 7.28968846]
-[8.11845615 8.44092017]
+[20.88575377 20.90793404]
+[8.7171055  8.69741498]
+[33.67284487 33.82092645]
+[6.88423721 6.88187288]
+[8.66773286 8.65872983]
 
 This is the the std deviation of each list: 
 
-0.19
-0.57
-0.06
-0.12
-0.16
+0.01
+0.01
+0.07
+0.00
+0.00
 
 This is the relative std deviation of each list of values: 
 
-0.98%
-5.89%
-0.20%
-1.63%
-1.95%
+0.05%
+0.11%
+0.22%
+0.02%
+0.05%
 
 The standard deviation of our features is: 
 
-('Featurebmi', '0.19')
-('Featurebp', '0.57')
-('Features5', '0.06')
-('Features6', '0.12')
-('Featuresex', '0.16')
+('Featurebmi', '0.01')
+('Featurebp', '0.01')
+('Features5', '0.07')
+('Features6', '0.00')
+('Featuresex', '0.00')
 
 The relative standard deviation of our features is: 
 
-('Featurebmi', '0.98%')
-('Featurebp', '5.89%')
-('Features5', '0.20%')
-('Features6', '1.63%')
-('Featuresex', '1.95%')
+('Featurebmi', '0.05%')
+('Featurebp', '0.11%')
+('Features5', '0.22%')
+('Features6', '0.02%')
+('Featuresex', '0.05%')
 
 ..........................................
 
@@ -107,4 +107,4 @@ Features6: 0.00%
 
 Mean of the ranking deviation: 0.00%
 
-Mean of the standard deviation (from importance of features): 2.13%
+Mean of the standard deviation (from importance of features): 0.09%

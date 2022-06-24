@@ -1,0 +1,864 @@
+Did nothing
+Intercept 0.38195873743671643
+Prediction_local [-0.03806564]
+Right: 7.108621165318069e-14
+Intercept 0.2148731064028593
+Prediction_local [0.45889902]
+Right: 0.984604221137115
+Intercept 0.2940120794756628
+Prediction_local [0.19072683]
+Right: 0.9878760246892501
+Intercept 0.22006383690672543
+Prediction_local [0.46491558]
+Right: 0.9987057476402224
+Intercept 0.22794432352174337
+Prediction_local [0.4326484]
+Right: 0.9976769842146733
+Intercept 0.6465053829924248
+Prediction_local [0.92999369]
+Right: 0.9983182996565753
+Intercept 0.29419534785951623
+Prediction_local [0.24358917]
+Right: 0.9968861614593872
+Intercept 0.18446830888569413
+Prediction_local [0.54439263]
+Right: 0.9696621393468944
+Intercept 0.659258906554959
+Prediction_local [0.88550301]
+Right: 0.9999983226442601
+Intercept 0.26320179865001136
+Prediction_local [0.3579706]
+Right: 0.9878412072219848
+Intercept 0.6687120870608697
+Prediction_local [0.90600968]
+Right: 0.7506070486963355
+Intercept 0.19448007975890122
+Prediction_local [0.52465012]
+Right: 0.971912133628379
+Intercept 0.23169796658401465
+Prediction_local [0.41875584]
+Right: 0.9929413699317331
+Intercept 0.22356495187816977
+Prediction_local [0.4458468]
+Right: 0.9949646813765992
+Intercept 0.22962525057947633
+Prediction_local [0.43736719]
+Right: 0.998169878046692
+Intercept 0.15776721555201562
+Prediction_local [0.59138196]
+Right: 0.994069548677177
+Intercept 0.649729374814167
+Prediction_local [0.94663714]
+Right: 0.9998823982988122
+Intercept 0.1669609101785106
+Prediction_local [0.58140015]
+Right: 0.9988678571835999
+Intercept 0.3439828577160302
+Prediction_local [0.0751825]
+Right: 0.9347244581686821
+Intercept 0.38122233107055453
+Prediction_local [-0.03591936]
+Right: 0.9262578671094933
+Intercept 0.22830639361553812
+Prediction_local [0.41705843]
+Right: 0.9968563271280023
+Intercept 0.5847739924790027
+Prediction_local [1.14309838]
+Right: 0.8321719281479523
+Intercept 0.2007854606748643
+Prediction_local [0.49660234]
+Right: 0.9833959380832639
+Intercept 0.2872443832492241
+Prediction_local [0.26699584]
+Right: 0.6506419637808177
+Intercept 0.2852119451111696
+Prediction_local [0.22877306]
+Right: 0.9796454996980637
+Intercept 0.27673838177037874
+Prediction_local [0.28211936]
+Right: 0.9942283077975858
+Intercept 0.3140320450845738
+Prediction_local [0.20395696]
+Right: 0.8656322376789933
+Intercept 0.2969753968383104
+Prediction_local [0.23389284]
+Right: 0.9562705317094028
+Intercept 0.32966535850393786
+Prediction_local [0.11015445]
+Right: 0.9586538511499225
+Intercept 0.1672612031201781
+Prediction_local [0.59865315]
+Right: 0.8277907141516739
+Intercept 0.20479654757750498
+Prediction_local [0.50472727]
+Right: 0.9680343405394946
+Intercept 0.2190348881885579
+Prediction_local [0.44198504]
+Right: 0.9820418424977729
+Intercept 0.1977282409976859
+Prediction_local [0.48588741]
+Right: 0.9991447051668305
+Intercept 0.6543178137505149
+Prediction_local [0.92134433]
+Right: 0.9991187074879191
+Intercept 0.23224820947990998
+Prediction_local [0.41201971]
+Right: 0.9944513728070263
+Intercept 0.6443873516397186
+Prediction_local [0.96987475]
+Right: 0.9999774908024763
+Intercept 0.6427010431841436
+Prediction_local [0.94931512]
+Right: 0.9975489929066882
+Intercept 0.23238943490453942
+Prediction_local [0.39414193]
+Right: 0.9982549282288218
+Intercept 0.38612452739747216
+Prediction_local [-0.06447043]
+Right: 0.7312886560558731
+Intercept 0.1874368917424272
+Prediction_local [0.53291355]
+Right: 0.9542321876486627
+Intercept 0.18768367596587077
+Prediction_local [0.54784632]
+Right: 0.9977833150420495
+Intercept 0.1954099911175997
+Prediction_local [0.50346704]
+Right: 0.9908885737329872
+Intercept 0.20162190788036777
+Prediction_local [0.48546974]
+Right: 0.9989922990306539
+Intercept 0.6332922003816212
+Prediction_local [1.00972914]
+Right: 0.9999955085784957
+Intercept 0.2900593974724277
+Prediction_local [0.27154103]
+Right: 0.9565904454461734
+Intercept 0.22003994318255585
+Prediction_local [0.46370031]
+Right: 0.9942614315737625
+Intercept 0.2082167383009937
+Prediction_local [0.4825602]
+Right: 0.9986640798321271
+Intercept 0.6509385772812756
+Prediction_local [0.98317442]
+Right: 0.9999992291174185
+Intercept 0.18050349265446916
+Prediction_local [0.59088767]
+Right: 0.9877804201919955
+Intercept 0.22306971767366607
+Prediction_local [0.43152597]
+Right: 0.9621793780083896
+Intercept 0.21609858160041143
+Prediction_local [0.44845326]
+Right: 0.9795918424393267
+Intercept 0.19908197233041813
+Prediction_local [0.53197504]
+Right: 0.965279214050666
+Intercept 0.20257501461979588
+Prediction_local [0.50480877]
+Right: 0.9952546204985988
+Intercept 0.2184069299015663
+Prediction_local [0.46176422]
+Right: 0.9868761508982213
+Intercept 0.6545107449177512
+Prediction_local [0.96950822]
+Right: 1.0
+Intercept 0.31780956855022213
+Prediction_local [0.18796212]
+Right: 0.965531208258849
+Intercept 0.19856071246598928
+Prediction_local [0.51285044]
+Right: 0.9379469876733036
+Intercept 0.6194818849710257
+Prediction_local [1.00439542]
+Right: 0.900742265068604
+Intercept 0.38249878944856486
+Prediction_local [-0.05165273]
+Right: 0.9487286092092038
+Intercept 0.20108639052451893
+Prediction_local [0.47479307]
+Right: 0.9976098408933111
+Intercept 0.2367177093590371
+Prediction_local [0.38547315]
+Right: 0.9868548844108397
+Intercept 0.28284925506066405
+Prediction_local [0.22297412]
+Right: 0.9958090162257578
+Intercept 0.20337056660319003
+Prediction_local [0.5031844]
+Right: 0.9921531072194881
+Intercept 0.6382634444597597
+Prediction_local [0.96133834]
+Right: 0.9999999999999966
+Intercept 0.16256649377903573
+Prediction_local [0.63266416]
+Right: 0.9430347424321058
+Intercept 0.23301838699765928
+Prediction_local [0.39116005]
+Right: 0.9896259302439195
+Intercept 0.19315276232545525
+Prediction_local [0.53373356]
+Right: 0.9823802197825291
+Intercept 0.6745076385221658
+Prediction_local [0.86074896]
+Right: 0.8392166732031893
+Intercept 0.18997582330511742
+Prediction_local [0.5253293]
+Right: 0.9979237153933914
+Intercept 0.3033600790484967
+Prediction_local [0.20489053]
+Right: 0.9894366242888653
+Intercept 0.2490314710342294
+Prediction_local [0.37209273]
+Right: 0.9864845840961607
+Intercept 0.2215535421081673
+Prediction_local [0.44140393]
+Right: 0.9721870498147401
+Intercept 0.17333823034028717
+Prediction_local [0.58224909]
+Right: 0.9983549603741594
+Intercept 0.15240203502690025
+Prediction_local [0.6433065]
+Right: 0.9674429422056944
+Intercept 0.3076762443559652
+Prediction_local [0.18613796]
+Right: 0.9979088688397054
+Intercept 0.22920750853944902
+Prediction_local [0.41612825]
+Right: 0.9941392416605167
+Intercept 0.31480056488242825
+Prediction_local [0.15781221]
+Right: 0.8636478205837067
+Intercept 0.18390716976465094
+Prediction_local [0.53113833]
+Right: 0.9848563351183118
+Intercept 0.1990575643682133
+Prediction_local [0.47619138]
+Right: 0.9674656782537919
+Intercept 0.1621081991825932
+Prediction_local [0.64057169]
+Right: 0.9644177954081623
+Intercept 0.655714855257989
+Prediction_local [0.95705339]
+Right: 0.9999999981217712
+Intercept 0.21342249571910604
+Prediction_local [0.44409759]
+Right: 0.9990358660799522
+Intercept 0.27908106190753984
+Prediction_local [0.19361255]
+Right: 0.9586670149318597
+Intercept 0.2017756006177796
+Prediction_local [0.47029122]
+Right: 0.9874389780182238
+Intercept 0.24653752626465358
+Prediction_local [0.41535492]
+Right: 0.9958867857178572
+Intercept 0.6361665799519268
+Prediction_local [0.944876]
+Right: 0.9998852840105709
+Intercept 0.20260370364265648
+Prediction_local [0.48515218]
+Right: 0.9825171588322764
+Intercept 0.21226623952546336
+Prediction_local [0.44322923]
+Right: 0.992810575141915
+Intercept 0.6762760782802786
+Prediction_local [0.85614671]
+Right: 0.9962685875395982
+Intercept 0.22544361356149778
+Prediction_local [0.4716319]
+Right: 0.9962647738637544
+Intercept 0.3203736871738387
+Prediction_local [0.17282759]
+Right: 0.967485322954825
+Intercept 0.22122341774286758
+Prediction_local [0.43183405]
+Right: 0.9977289730984333
+Intercept 0.2377981671385162
+Prediction_local [0.42588749]
+Right: 0.9958337685008914
+Intercept 0.23523768585909446
+Prediction_local [0.42329572]
+Right: 0.9983937589292697
+Intercept 0.3602809935081996
+Prediction_local [0.07381074]
+Right: 0.9779348945021914
+Intercept 0.18064186205712413
+Prediction_local [0.54176007]
+Right: 0.9970899907100089
+Intercept 0.6225750103940219
+Prediction_local [0.97455333]
+Right: 0.9998158021038893
+Intercept 0.6248474628782797
+Prediction_local [1.00479542]
+Right: 0.9904353430823357
+Intercept 0.1938282107596922
+Prediction_local [0.55304718]
+Right: 0.9987626228752298
+Intercept 0.18127551212934045
+Prediction_local [0.55347712]
+Right: 0.9657392245880618
+Intercept 0.21185176768320282
+Prediction_local [0.49760701]
+Right: 0.9905062216349194
+Intercept 0.2301049550903271
+Prediction_local [0.42610405]
+Right: 0.9747284085321242
+Intercept 0.6414698937519883
+Prediction_local [0.9717373]
+Right: 0.725006982072851
+Intercept 0.20486506021685758
+Prediction_local [0.47588005]
+Right: 0.9978441986487848
+Intercept 0.19460926519642174
+Prediction_local [0.5356904]
+Right: 0.9980415154415331
+Intercept 0.6400142428158291
+Prediction_local [0.98167387]
+Right: 0.999109701997902
+Intercept 0.3424734005500769
+Prediction_local [0.07816973]
+Right: 0.9776263910489875
+Intercept 0.6526282124246131
+Prediction_local [0.93405312]
+Right: 0.9995360984066657
+Intercept 0.6447661895683092
+Prediction_local [0.93767933]
+Right: 0.9988403470516998
+Intercept 0.23059758791987178
+Prediction_local [0.42703084]
+Right: 0.9955724286191194
+Intercept 0.6735192088378689
+Prediction_local [0.89081897]
+Right: 0.5978954216403108
+Intercept 0.22546781627894968
+Prediction_local [0.46126896]
+Right: 0.9934242701321715
+Intercept 0.18634130819646144
+Prediction_local [0.51849961]
+Right: 0.9831961941289845
+Intercept 0.7008162273358177
+Prediction_local [0.80826998]
+Right: 0.7202155609338152
+Intercept 0.24446065889790713
+Prediction_local [0.38347299]
+Right: 0.9979285189928718
+Intercept 0.25401317487974456
+Prediction_local [0.35444555]
+Right: 0.9888667749073161
+Intercept 0.3234713883079087
+Prediction_local [0.15898908]
+Right: 0.9889641275468205
+Intercept 0.37659309984352174
+Prediction_local [-0.04874175]
+Right: 0.9702129693280601
+Intercept 0.3326384680308853
+Prediction_local [0.12255963]
+Right: 0.7682971437175546
+Intercept 0.2743671309453927
+Prediction_local [0.29655095]
+Right: 0.8935052972404234
+Intercept 0.28592888467509037
+Prediction_local [0.2468862]
+Right: 0.9898738890549283
+Intercept 0.2260282359941694
+Prediction_local [0.43346289]
+Right: 0.9880062021596543
+Intercept 0.28430381896247753
+Prediction_local [0.21706271]
+Right: 0.8688909029559588
+Intercept 0.2024064411119032
+Prediction_local [0.51136784]
+Right: 0.9965901164169946
+Intercept 0.25704525309301257
+Prediction_local [0.37774618]
+Right: 0.9655575424777701
+Intercept 0.2836804495998409
+Prediction_local [0.25773524]
+Right: 0.9557053075092571
+easter_egg
+Intercept 0.37327657851245233
+Prediction_local [-0.0347508]
+Right: 7.108621165318069e-14
+Intercept 0.20589287372191506
+Prediction_local [0.48630936]
+Right: 0.9489582840265709
+Intercept 0.23147122111225607
+Prediction_local [0.41395287]
+Right: 0.9814243765061912
+Intercept 0.29280273723670264
+Prediction_local [0.21493571]
+Right: 0.9795887196847638
+Intercept 0.19302582345032002
+Prediction_local [0.51118112]
+Right: 0.9864369453885639
+Intercept 0.1810215620255206
+Prediction_local [0.52897295]
+Right: 0.993577736868737
+Intercept 0.6646806279197173
+Prediction_local [0.89206718]
+Right: 0.5358676254452879
+Intercept 0.25534651487439286
+Prediction_local [0.33919994]
+Right: 0.9252763810867822
+Intercept 0.662669149661033
+Prediction_local [0.91220656]
+Right: 0.9999999992622518
+Intercept 0.30616530604816683
+Prediction_local [0.17472183]
+Right: 0.7840161899405017
+Intercept 0.32595995303629277
+Prediction_local [0.15842888]
+Right: 0.9853048529883058
+Intercept 0.203399039526131
+Prediction_local [0.47478572]
+Right: 0.9956873182061338
+Intercept 0.30641641056267566
+Prediction_local [0.21077643]
+Right: 0.9434211470340549
+Intercept 0.23443545179559155
+Prediction_local [0.3925394]
+Right: 0.9773083215374847
+Intercept 0.2718126098347101
+Prediction_local [0.28425166]
+Right: 0.9928356039195116
+Intercept 0.21512855051640103
+Prediction_local [0.47541786]
+Right: 0.9971145687961299
+Intercept 0.2780410444092908
+Prediction_local [0.26302564]
+Right: 0.9964174975291407
+Intercept 0.6633774319661608
+Prediction_local [0.93297701]
+Right: 0.8912961259660847
+Intercept 0.29599691021532304
+Prediction_local [0.20119651]
+Right: 0.9915360523423103
+Intercept 0.29885874770886084
+Prediction_local [0.21837446]
+Right: 0.997968714365002
+Intercept 0.258806575807734
+Prediction_local [0.34173034]
+Right: 0.9972560967398678
+Intercept 0.22829816111360823
+Prediction_local [0.39911973]
+Right: 0.9873660907482047
+Intercept 0.6392121958232315
+Prediction_local [0.9601797]
+Right: 0.8035041174045698
+Intercept 0.31115222577802515
+Prediction_local [0.17753957]
+Right: 0.8806486246194823
+Intercept 0.15045001382079992
+Prediction_local [0.63063014]
+Right: 0.9529141814979555
+Intercept 0.1829171759349874
+Prediction_local [0.54410604]
+Right: 0.9831751091233861
+Intercept 0.17786152176461928
+Prediction_local [0.55704984]
+Right: 0.9730216612603187
+Intercept 0.3039302297292981
+Prediction_local [0.17103502]
+Right: 0.9990379637366857
+Intercept 0.3451940898875242
+Prediction_local [0.03152858]
+Right: 0.939486304250797
+Intercept 0.17575905623488156
+Prediction_local [0.57264292]
+Right: 0.9986158138398249
+Intercept 0.2134543383860536
+Prediction_local [0.44984281]
+Right: 0.9157079444121982
+Intercept 0.2535303113179339
+Prediction_local [0.33733395]
+Right: 0.9874960347021297
+Intercept 0.22731010565666485
+Prediction_local [0.42798488]
+Right: 0.9814698171782475
+Intercept 0.3206152467350477
+Prediction_local [0.11962801]
+Right: 0.8803720886279774
+Intercept 0.16526808861566272
+Prediction_local [0.60594749]
+Right: 0.9984462054944824
+Intercept 0.19732200540119824
+Prediction_local [0.52772784]
+Right: 0.9975344737215981
+Intercept 0.27403723377382727
+Prediction_local [0.25664408]
+Right: 0.9983803697100031
+Intercept 0.6344773825097121
+Prediction_local [1.00896628]
+Right: 0.9999910841173656
+Intercept 0.22258272438246604
+Prediction_local [0.43150763]
+Right: 0.9917141637604003
+Intercept 0.22424531660933592
+Prediction_local [0.38944711]
+Right: 0.9987138013099839
+Intercept 0.19909906277763811
+Prediction_local [0.51671477]
+Right: 0.9988940963907715
+Intercept 0.1838433350917682
+Prediction_local [0.52913296]
+Right: 0.9732055476281979
+Intercept 0.6207520174152645
+Prediction_local [1.04711402]
+Right: 0.9994025911483279
+Intercept 0.21706122472728512
+Prediction_local [0.49460318]
+Right: 0.9911594298097104
+Intercept 0.23436039195595632
+Prediction_local [0.43366104]
+Right: 0.9668582849981331
+Intercept 0.2059747936434077
+Prediction_local [0.46393247]
+Right: 0.9771022990516564
+Intercept 0.20085393682746033
+Prediction_local [0.4557658]
+Right: 0.9967432443602164
+Intercept 0.19366976380759032
+Prediction_local [0.51647513]
+Right: 0.9886944302190428
+Intercept 0.17812064978317887
+Prediction_local [0.55464157]
+Right: 0.9977795053220698
+Intercept 0.6490961115051193
+Prediction_local [0.9559615]
+Right: 0.9109113807853885
+Intercept 0.18195011125436786
+Prediction_local [0.51413142]
+Right: 0.9989185417429011
+Intercept 0.6437792714723486
+Prediction_local [0.94624964]
+Right: 0.9999999573244779
+Intercept 0.18568259607394508
+Prediction_local [0.54564625]
+Right: 0.9984260458964374
+Intercept 0.6424575284241268
+Prediction_local [0.96747674]
+Right: 0.9997372689973856
+Intercept 0.33807784677417974
+Prediction_local [0.09821829]
+Right: 0.9792944859813031
+Intercept 0.401287167865333
+Prediction_local [-0.08820998]
+Right: 0.953206215206899
+Intercept 0.1866664196852107
+Prediction_local [0.50443158]
+Right: 0.9594422327304728
+Intercept 0.1363745232816336
+Prediction_local [0.71173908]
+Right: 0.9485891191538031
+Intercept 0.19553875928744857
+Prediction_local [0.50875299]
+Right: 0.9977774913175673
+Intercept 0.2096429551452006
+Prediction_local [0.48892115]
+Right: 0.9975955379499614
+Intercept 0.6966837328257965
+Prediction_local [0.84837344]
+Right: 0.5349347585431948
+Intercept 0.18127182651263568
+Prediction_local [0.55169093]
+Right: 0.9961889312547814
+Intercept 0.1768340399374729
+Prediction_local [0.59991748]
+Right: 0.9048705152526548
+Intercept 0.2038317352259367
+Prediction_local [0.51592875]
+Right: 0.9829472805517502
+Intercept 0.3382183491620968
+Prediction_local [0.10738434]
+Right: 0.9684128016653748
+Intercept 0.32799012659003646
+Prediction_local [0.15854455]
+Right: 0.9611393571285083
+Intercept 0.2159346409168675
+Prediction_local [0.4793042]
+Right: 0.9978705491921431
+Intercept 0.29551368838725967
+Prediction_local [0.19163435]
+Right: 0.9680883019476532
+Intercept 0.2683088271804644
+Prediction_local [0.29189629]
+Right: 0.9863310067372627
+Intercept 0.19974573918438587
+Prediction_local [0.49840665]
+Right: 0.9944603163420888
+Intercept 0.18558524280041433
+Prediction_local [0.51885944]
+Right: 0.9953250495641485
+Intercept 0.19508850489991986
+Prediction_local [0.49700358]
+Right: 0.9989312514034626
+Intercept 0.2520265786293039
+Prediction_local [0.40506588]
+Right: 0.9945049610103779
+Intercept 0.23778378453283588
+Prediction_local [0.4329168]
+Right: 0.9889440463164323
+Intercept 0.30341818577238555
+Prediction_local [0.15242996]
+Right: 0.5610891301169117
+Intercept 0.31106712767373135
+Prediction_local [0.16980829]
+Right: 0.8814433165871067
+Intercept 0.6060284698824158
+Prediction_local [1.08239676]
+Right: 0.5771743836496288
+Intercept 0.20700539651925154
+Prediction_local [0.45534988]
+Right: 0.9863171820781421
+Intercept 0.6320138419491079
+Prediction_local [0.97419085]
+Right: 0.999996292215638
+Intercept 0.1859186687821074
+Prediction_local [0.55237975]
+Right: 0.9976755992734303
+Intercept 0.27297821972516734
+Prediction_local [0.30118745]
+Right: 0.9273842577076867
+Intercept 0.31988677761236906
+Prediction_local [0.16305857]
+Right: 0.9938065911436123
+Intercept 0.27660642525357754
+Prediction_local [0.22887504]
+Right: 0.9472739793552324
+Intercept 0.20910195861533554
+Prediction_local [0.43108894]
+Right: 0.9894146360664805
+Intercept 0.1544072873051755
+Prediction_local [0.63682985]
+Right: 0.9556205102692228
+Intercept 0.6707238764084231
+Prediction_local [0.88646887]
+Right: 0.9795175016613612
+Intercept 0.6526593193839361
+Prediction_local [0.92359221]
+Right: 0.9983512379489246
+Intercept 0.31865091755432456
+Prediction_local [0.14072187]
+Right: 0.9814421851109987
+Intercept 0.19476764460297985
+Prediction_local [0.52502045]
+Right: 0.9986972487796111
+Intercept 0.30197422045151834
+Prediction_local [0.21868891]
+Right: 0.9685144616427206
+Intercept 0.23612825658953512
+Prediction_local [0.42785188]
+Right: 0.9937659446929034
+Intercept 0.32951996902973535
+Prediction_local [0.11585169]
+Right: 0.9865411266917132
+Intercept 0.3446816426271951
+Prediction_local [0.08226477]
+Right: 0.9935839876036221
+Intercept 0.21944568607214782
+Prediction_local [0.45859066]
+Right: 0.9816270942163112
+Intercept 0.3890048923118933
+Prediction_local [-0.07297931]
+Right: 0.9403771500913113
+Intercept 0.31077283296510316
+Prediction_local [0.1751126]
+Right: 0.931823331558767
+Intercept 0.6192954852070154
+Prediction_local [1.023274]
+Right: 0.9992048013706443
+Intercept 0.23450877974355022
+Prediction_local [0.39445528]
+Right: 0.9909587117885342
+Intercept 0.211257771665954
+Prediction_local [0.48604797]
+Right: 0.9905130224631733
+Intercept 0.2136028112546415
+Prediction_local [0.46597785]
+Right: 0.9963950503912792
+Intercept 0.20914337736879635
+Prediction_local [0.51148052]
+Right: 0.9833976596636781
+Intercept 0.6327134804226229
+Prediction_local [0.98727952]
+Right: 0.9994531011083423
+Intercept 0.18725821098318474
+Prediction_local [0.53622386]
+Right: 0.9993114699831767
+Intercept 0.64692073952597
+Prediction_local [0.94257456]
+Right: 0.9587876563559367
+Intercept 0.17637660776558636
+Prediction_local [0.59572098]
+Right: 0.994782045698756
+Intercept 0.2058618932484351
+Prediction_local [0.48192444]
+Right: 0.9994919975811657
+Intercept 0.20498725025386363
+Prediction_local [0.49076718]
+Right: 0.9967589751735818
+Intercept 0.6469332165823162
+Prediction_local [0.97820991]
+Right: 0.9999999057202301
+Intercept 0.28175862743663393
+Prediction_local [0.27424962]
+Right: 0.9940747130078785
+Intercept 0.2807237890474596
+Prediction_local [0.28087083]
+Right: 0.9811768745344841
+Intercept 0.19263938440491774
+Prediction_local [0.53041134]
+Right: 0.9988393182300666
+Intercept 0.22230604754890942
+Prediction_local [0.45463812]
+Right: 0.9912027866477185
+Intercept 0.22284837773188407
+Prediction_local [0.4672958]
+Right: 0.930238018891788
+Intercept 0.2277468641836571
+Prediction_local [0.4544333]
+Right: 0.9893675160838716
+Intercept 0.6733297351782014
+Prediction_local [0.91502767]
+Right: 0.9992864836069885
+Intercept 0.214363673857798
+Prediction_local [0.43444357]
+Right: 0.941821298597542
+Intercept 0.26715563873234066
+Prediction_local [0.29504147]
+Right: 0.9900969815635735
+Intercept 0.6544670974940063
+Prediction_local [0.92051646]
+Right: 0.9999999999999448
+Intercept 0.26698170272840555
+Prediction_local [0.29075844]
+Right: 0.9913702356436971
+Intercept 0.3063422316112405
+Prediction_local [0.18054095]
+Right: 0.9757469756820468
+Intercept 0.64179196888554
+Prediction_local [0.96804962]
+Right: 0.9999969211682698
+Intercept 0.6535994954260571
+Prediction_local [0.93720839]
+Right: 0.9949192782923681
+Intercept 0.1985155744051667
+Prediction_local [0.5216612]
+Right: 0.980422915006019
+Intercept 0.6564267818385077
+Prediction_local [0.89991875]
+Right: 0.9999772193899116
+Intercept 0.16865739413397166
+Prediction_local [0.58409916]
+Right: 0.9860542759245431
+Intercept 0.22920489136107508
+Prediction_local [0.43366893]
+Right: 0.9941882147594621
+
+Our dataframes are:
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1       0.059       0.025       0.022       0.017       0.014
+Run_2       0.062       0.031       0.018       0.016       0.007 
+
+       1st Feature      2nd Feature     3rd Feature 4th Feature   5th Feature
+Run_1   mean area  worst perimeter  mean perimeter  worst area  mean texture
+Run_2   mean area  worst perimeter  mean perimeter  worst area  mean texture 
+
+
+Describe df with the feature names:
+
+        1st Feature      2nd Feature     3rd Feature 4th Feature   5th Feature
+count            2                2               2           2             2
+unique           1                1               1           1             1
+top      mean area  worst perimeter  mean perimeter  worst area  mean texture
+freq             2                2               2           2             2
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'mean area': array([0.059, 0.062]), 'mean perimeter': array([0.022, 0.018]), 'mean texture': array([0.014, 0.007]), 'worst area': array([0.017, 0.016]), 'worst perimeter': array([0.025, 0.031])}
+
+This is the matrix with the unique features: 
+
+mean area
+mean perimeter
+mean texture
+worst area
+worst perimeter
+
+This is the matrix with the list of values each feature has: 
+
+[0.059 0.062]
+[0.022 0.018]
+[0.014 0.007]
+[0.017 0.016]
+[0.025 0.031]
+
+This is the the std deviation of each list: 
+
+0.00
+0.00
+0.00
+0.00
+0.00
+
+This is the relative std deviation of each list of values: 
+
+2.48%
+10.00%
+33.33%
+3.03%
+10.71%
+
+The standard deviation of our features is: 
+
+('mean area', '0.00')
+('mean perimeter', '0.00')
+('mean texture', '0.00')
+('worst area', '0.00')
+('worst perimeter', '0.00')
+
+The relative standard deviation of our features is: 
+
+('mean area', '2.48%')
+('mean perimeter', '10.00%')
+('mean texture', '33.33%')
+('worst area', '3.03%')
+('worst perimeter', '10.71%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+mean area[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+worst perimeter[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+mean perimeter[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature')]
+worst area[('Run_1', '4th Feature'), ('Run_2', '4th Feature')]
+mean texture[('Run_1', '5th Feature'), ('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+mean area: 0.0
+worst perimeter: 0.0
+mean perimeter: 0.0
+worst area: 0.0
+mean texture: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+mean area: 0.00%
+worst perimeter: 0.00%
+mean perimeter: 0.00%
+worst area: 0.00%
+mean texture: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 0.00%
+
+Mean of the standard deviation (from importance of features): 11.91%

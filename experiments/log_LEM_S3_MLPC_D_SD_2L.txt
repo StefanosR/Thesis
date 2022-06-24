@@ -1,34 +1,34 @@
 Iteration: 1
+[11:09:29] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:21:52] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Iteration: 2
+[11:09:30] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 easter_egg
-[14:21:53] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 
 Our dataframes are:
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 Run_1   3.5931795   1.6289699   1.5122612  0.67129827  0.45876828
-Run_2   4.3209705   2.3968623   0.6701746  0.65757686   0.6361672 
+Run_2    3.661346   1.5886432   1.5122612   0.6935513   0.4631755 
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 Run_1   Feature23   Feature13   Feature20   Feature26    Feature2
-Run_2   Feature23   Feature13   Feature26   Feature20   Feature24 
+Run_2   Feature23   Feature13   Feature20   Feature26    Feature2 
 
 
 Describe df with the feature names:
 
         1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 count            2           2           2           2           2
-unique           1           1           2           2           2
+unique           1           1           1           1           1
 top      Feature23   Feature13   Feature20   Feature26    Feature2
-freq             2           2           1           1           1
+freq             2           2           2           2           2
 
 ..........................................
 
 
 This is the new dictionary we created:
- {'Feature13': array([1.6289699, 2.3968623]), 'Feature2': array([0.45876828]), 'Feature20': array([1.5122612 , 0.65757686]), 'Feature23': array([3.5931795, 4.3209705]), 'Feature24': array([0.6361672]), 'Feature26': array([0.67129827, 0.6701746 ])}
+ {'Feature13': array([1.6289699, 1.5886432]), 'Feature2': array([0.45876828, 0.4631755 ]), 'Feature20': array([1.5122612, 1.5122612]), 'Feature23': array([3.5931795, 3.661346 ]), 'Feature26': array([0.67129827, 0.6935513 ])}
 
 This is the matrix with the unique features: 
 
@@ -36,53 +36,47 @@ Feature13
 Feature2
 Feature20
 Feature23
-Feature24
 Feature26
 
 This is the matrix with the list of values each feature has: 
 
-[1.6289699 2.3968623]
-[0.45876828]
-[1.5122612  0.65757686]
-[3.5931795 4.3209705]
-[0.6361672]
-[0.67129827 0.6701746 ]
+[1.6289699 1.5886432]
+[0.45876828 0.4631755 ]
+[1.5122612 1.5122612]
+[3.5931795 3.661346 ]
+[0.67129827 0.6935513 ]
 
 This is the the std deviation of each list: 
 
-0.38
-0.00
-0.43
-0.36
+0.02
 0.00
 0.00
+0.03
+0.01
 
 This is the relative std deviation of each list of values: 
 
-19.07%
+1.25%
+0.48%
 0.00%
-39.39%
-9.20%
-0.00%
-0.08%
+0.94%
+1.63%
 
 The standard deviation of our features is: 
 
-('Feature13', '0.38')
+('Feature13', '0.02')
 ('Feature2', '0.00')
-('Feature20', '0.43')
-('Feature23', '0.36')
-('Feature24', '0.00')
-('Feature26', '0.00')
+('Feature20', '0.00')
+('Feature23', '0.03')
+('Feature26', '0.01')
 
 The relative standard deviation of our features is: 
 
-('Feature13', '19.07%')
-('Feature2', '0.00%')
-('Feature20', '39.39%')
-('Feature23', '9.20%')
-('Feature24', '0.00%')
-('Feature26', '0.08%')
+('Feature13', '1.25%')
+('Feature2', '0.48%')
+('Feature20', '0.00%')
+('Feature23', '0.94%')
+('Feature26', '1.63%')
 
 ..........................................
 
@@ -91,34 +85,31 @@ These are the positions where each feature is present and what ranking it has:
  
 Feature23[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
 Feature13[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
-Feature20[('Run_1', '3rd Feature'), ('Run_2', '4th Feature')]
-Feature26[('Run_2', '3rd Feature'), ('Run_1', '4th Feature')]
-Feature2[('Run_1', '5th Feature')]
-Feature24[('Run_2', '5th Feature')]
+Feature20[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature')]
+Feature26[('Run_1', '4th Feature'), ('Run_2', '4th Feature')]
+Feature2[('Run_1', '5th Feature'), ('Run_2', '5th Feature')]
 
 The ranking deviation of each feature is: 
 
 Feature23: 0.0
 Feature13: 0.0
-Feature20: 0.5
-Feature26: 0.5
+Feature20: 0.0
+Feature26: 0.0
 Feature2: 0.0
-Feature24: 0.0
 
 This is the ranking deviation percentage for each feature: 
 
 Feature23: 0.00%
 Feature13: 0.00%
-Feature20: 14.29%
-Feature26: 14.29%
+Feature20: 0.00%
+Feature26: 0.00%
 Feature2: 0.00%
-Feature24: 0.00%
 
 ..........................................
 
-Mean of the ranking deviation: 4.76%
+Mean of the ranking deviation: 0.00%
 
-Mean of the standard deviation (from importance of features): 11.29%
+Mean of the standard deviation (from importance of features): 0.86%
 
 All predictions were the same
 

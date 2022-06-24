@@ -1,217 +1,217 @@
 Iteration: 1
+[11:09:17] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:18:04] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Iteration: 2
+[11:09:17] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:18:05] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Iteration: 3
+[11:09:18] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:18:05] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Iteration: 4
+[11:09:18] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:18:05] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Iteration: 5
+[11:09:18] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:18:06] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Iteration: 6
+[11:09:19] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:18:06] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Iteration: 7
+[11:09:19] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:18:06] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Iteration: 8
+[11:09:20] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:18:07] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Iteration: 9
+[11:09:20] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:18:07] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Iteration: 10
+[11:09:20] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 Did nothing
-[14:18:07] WARNING: C:/Users/Administrator/workspace/xgboost-win64_release_1.5.0/src/learner.cc:1115: Starting in XGBoost 1.3.0, the default evaluation metric used with the objective 'binary:logistic' was changed from 'error' to 'logloss'. Explicitly set eval_metric if you'd like to restore the old behavior.
 
 Our dataframes are:
 
         1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
-Run_1     3.040353   2.2335236   1.8671663   0.5970829   0.5042605
-Run_2    6.0024595   0.7499215   0.7204417  0.64364654    0.555842
-Run_3    3.3454933   2.4623246   1.0531883   0.5901579  0.55859315
-Run_4    3.4468014   2.2847192   1.4837911   0.5369751  0.45236856
-Run_5    4.0016623    2.688215  0.64915425   0.5592415  0.48469132
-Run_6    2.2886477   2.0418396   2.0264888  0.71458423   0.5766652
-Run_7     4.379327   1.7623073     1.03613  0.89354306  0.41234308
-Run_8    4.4306517   1.1767896   0.8998195  0.77032864   0.6600538
-Run_9      5.73277   1.0438449  0.61529315   0.5656721  0.56442827
-Run_10   2.5982194   1.7276398   1.3019345   0.9968429  0.80532426 
+Run_1    3.3160937   1.8947914   0.8948687   0.8386628   0.6331309
+Run_2    3.2400472   1.9027834   1.4772195    0.783408   0.5807846
+Run_3    3.6829498   2.2486598   1.2926676    0.929377   0.6257254
+Run_4    2.7334843   2.0068254   1.5575923  0.89986414  0.59356475
+Run_5    2.9526901   2.3475342   1.0733088  0.67537206   0.6596587
+Run_6     2.091673   1.8678112   1.3887008   1.2738504    1.114848
+Run_7     3.939926   1.5756785   1.2747504  0.94262785   0.7016953
+Run_8     3.850263   2.0520194   0.9483177   0.6847521   0.6164828
+Run_9    4.0046296   1.3515934   1.0772175   0.9924854   0.6241811
+Run_10   3.1810558    2.507373   1.0759021  0.75157434   0.5519675 
 
         1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
-Run_1    Feature23   Feature20   Feature10   Feature24   Feature27
-Run_2    Feature23   Feature24   Feature10   Feature28   Feature21
-Run_3    Feature23   Feature20   Feature21   Feature13   Feature27
-Run_4    Feature23   Feature20   Feature10   Feature24   Feature18
-Run_5    Feature23   Feature20   Feature13   Feature27   Feature24
-Run_6    Feature20   Feature23   Feature13   Feature28   Feature24
-Run_7    Feature23   Feature10   Feature20   Feature24   Feature26
-Run_8    Feature23   Feature10   Feature27    Feature7   Feature24
-Run_9    Feature23   Feature20   Feature24   Feature10   Feature27
-Run_10   Feature23   Feature20   Feature13   Feature10   Feature27 
+Run_1    Feature23   Feature20   Feature10   Feature13   Feature28
+Run_2    Feature20   Feature23   Feature10   Feature13   Feature24
+Run_3    Feature23   Feature20   Feature10   Feature24   Feature21
+Run_4    Feature23   Feature10   Feature20   Feature24   Feature13
+Run_5    Feature23   Feature13   Feature27    Feature0   Feature28
+Run_6    Feature20   Feature23   Feature22   Feature13   Feature10
+Run_7    Feature23   Feature10   Feature20   Feature13   Feature25
+Run_8    Feature23   Feature20   Feature13   Feature27   Feature21
+Run_9    Feature23   Feature20   Feature10   Feature13   Feature24
+Run_10   Feature23   Feature20   Feature13   Feature10   Feature24 
 
 
 Describe df with the feature names:
 
         1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 count           10          10          10          10          10
-unique           2           4           6           6           5
-top      Feature23   Feature20   Feature10   Feature24   Feature27
-freq             9           6           3           3           4
+unique           2           4           5           5           6
+top      Feature23   Feature20   Feature10   Feature13   Feature24
+freq             8           5           4           5           3
 
 ..........................................
 
 
 This is the new dictionary we created:
- {'Feature10': array([1.8671663, 0.7204417, 1.4837911, 1.7623073, 1.1767896, 0.5656721,
-       0.9968429]), 'Feature13': array([0.5901579 , 0.64915425, 2.0264888 , 1.3019345 ]), 'Feature18': array([0.45236856]), 'Feature20': array([2.2335236, 2.4623246, 2.2847192, 2.688215 , 2.2886477, 1.03613  ,
-       1.0438449, 1.7276398]), 'Feature21': array([0.555842 , 1.0531883]), 'Feature23': array([3.040353 , 6.0024595, 3.3454933, 3.4468014, 4.0016623, 2.0418396,
-       4.379327 , 4.4306517, 5.73277  , 2.5982194]), 'Feature24': array([0.5970829 , 0.7499215 , 0.5369751 , 0.48469132, 0.5766652 ,
-       0.89354306, 0.6600538 , 0.61529315]), 'Feature26': array([0.41234308]), 'Feature27': array([0.5042605 , 0.55859315, 0.5592415 , 0.8998195 , 0.56442827,
-       0.80532426]), 'Feature28': array([0.64364654, 0.71458423]), 'Feature7': array([0.77032864])}
+ {'Feature0': array([0.67537206]), 'Feature10': array([0.8948687 , 1.4772195 , 1.2926676 , 2.0068254 , 1.114848  ,
+       1.5756785 , 1.0772175 , 0.75157434]), 'Feature13': array([0.8386628 , 0.783408  , 0.59356475, 2.3475342 , 1.2738504 ,
+       0.94262785, 0.9483177 , 0.9924854 , 1.0759021 ]), 'Feature20': array([1.8947914, 3.2400472, 2.2486598, 1.5575923, 2.091673 , 1.2747504,
+       2.0520194, 1.3515934, 2.507373 ]), 'Feature21': array([0.6257254, 0.6164828]), 'Feature22': array([1.3887008]), 'Feature23': array([3.3160937, 1.9027834, 3.6829498, 2.7334843, 2.9526901, 1.8678112,
+       3.939926 , 3.850263 , 4.0046296, 3.1810558]), 'Feature24': array([0.5807846 , 0.929377  , 0.89986414, 0.6241811 , 0.5519675 ]), 'Feature25': array([0.7016953]), 'Feature27': array([1.0733088, 0.6847521]), 'Feature28': array([0.6331309, 0.6596587])}
 
 This is the matrix with the unique features: 
 
+Feature0
 Feature10
 Feature13
-Feature18
 Feature20
 Feature21
+Feature22
 Feature23
 Feature24
-Feature26
+Feature25
 Feature27
 Feature28
-Feature7
 
 This is the matrix with the list of values each feature has: 
 
-[1.8671663 0.7204417 1.4837911 1.7623073 1.1767896 0.5656721 0.9968429]
-[0.5901579  0.64915425 2.0264888  1.3019345 ]
-[0.45236856]
-[2.2335236 2.4623246 2.2847192 2.688215  2.2886477 1.03613   1.0438449
- 1.7276398]
-[0.555842  1.0531883]
-[3.040353  6.0024595 3.3454933 3.4468014 4.0016623 2.0418396 4.379327
- 4.4306517 5.73277   2.5982194]
-[0.5970829  0.7499215  0.5369751  0.48469132 0.5766652  0.89354306
- 0.6600538  0.61529315]
-[0.41234308]
-[0.5042605  0.55859315 0.5592415  0.8998195  0.56442827 0.80532426]
-[0.64364654 0.71458423]
-[0.77032864]
+[0.67537206]
+[0.8948687  1.4772195  1.2926676  2.0068254  1.114848   1.5756785
+ 1.0772175  0.75157434]
+[0.8386628  0.783408   0.59356475 2.3475342  1.2738504  0.94262785
+ 0.9483177  0.9924854  1.0759021 ]
+[1.8947914 3.2400472 2.2486598 1.5575923 2.091673  1.2747504 2.0520194
+ 1.3515934 2.507373 ]
+[0.6257254 0.6164828]
+[1.3887008]
+[3.3160937 1.9027834 3.6829498 2.7334843 2.9526901 1.8678112 3.939926
+ 3.850263  4.0046296 3.1810558]
+[0.5807846  0.929377   0.89986414 0.6241811  0.5519675 ]
+[0.7016953]
+[1.0733088 0.6847521]
+[0.6331309 0.6596587]
 
 This is the the std deviation of each list: 
 
-0.46
+0.00
+0.38
+0.48
 0.58
 0.00
-0.59
-0.25
-1.21
-0.12
 0.00
-0.15
-0.04
+0.75
+0.16
 0.00
+0.19
+0.01
 
 This is the relative std deviation of each list of values: 
 
-37.94%
-50.97%
 0.00%
-30.11%
-30.91%
-31.07%
-18.99%
+29.77%
+44.06%
+28.60%
+0.74%
 0.00%
-22.84%
-5.22%
+23.74%
+22.74%
 0.00%
+22.10%
+2.05%
 
 The standard deviation of our features is: 
 
-('Feature10', '0.46')
-('Feature13', '0.58')
-('Feature18', '0.00')
-('Feature20', '0.59')
-('Feature21', '0.25')
-('Feature23', '1.21')
-('Feature24', '0.12')
-('Feature26', '0.00')
-('Feature27', '0.15')
-('Feature28', '0.04')
-('Feature7', '0.00')
+('Feature0', '0.00')
+('Feature10', '0.38')
+('Feature13', '0.48')
+('Feature20', '0.58')
+('Feature21', '0.00')
+('Feature22', '0.00')
+('Feature23', '0.75')
+('Feature24', '0.16')
+('Feature25', '0.00')
+('Feature27', '0.19')
+('Feature28', '0.01')
 
 The relative standard deviation of our features is: 
 
-('Feature10', '37.94%')
-('Feature13', '50.97%')
-('Feature18', '0.00%')
-('Feature20', '30.11%')
-('Feature21', '30.91%')
-('Feature23', '31.07%')
-('Feature24', '18.99%')
-('Feature26', '0.00%')
-('Feature27', '22.84%')
-('Feature28', '5.22%')
-('Feature7', '0.00%')
+('Feature0', '0.00%')
+('Feature10', '29.77%')
+('Feature13', '44.06%')
+('Feature20', '28.60%')
+('Feature21', '0.74%')
+('Feature22', '0.00%')
+('Feature23', '23.74%')
+('Feature24', '22.74%')
+('Feature25', '0.00%')
+('Feature27', '22.10%')
+('Feature28', '2.05%')
 
 ..........................................
 
 
 These are the positions where each feature is present and what ranking it has:
  
-Feature23[('Run_1', '1st Feature'), ('Run_2', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature'), ('Run_6', '2nd Feature')]
-Feature20[('Run_6', '1st Feature'), ('Run_1', '2nd Feature'), ('Run_3', '2nd Feature'), ('Run_4', '2nd Feature'), ('Run_5', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_10', '2nd Feature'), ('Run_7', '3rd Feature')]
-Feature24[('Run_2', '2nd Feature'), ('Run_9', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_4', '4th Feature'), ('Run_7', '4th Feature'), ('Run_5', '5th Feature'), ('Run_6', '5th Feature'), ('Run_8', '5th Feature')]
-Feature10[('Run_7', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_1', '3rd Feature'), ('Run_2', '3rd Feature'), ('Run_4', '3rd Feature'), ('Run_9', '4th Feature'), ('Run_10', '4th Feature')]
-Feature21[('Run_3', '3rd Feature'), ('Run_2', '5th Feature')]
-Feature13[('Run_5', '3rd Feature'), ('Run_6', '3rd Feature'), ('Run_10', '3rd Feature'), ('Run_3', '4th Feature')]
-Feature27[('Run_8', '3rd Feature'), ('Run_5', '4th Feature'), ('Run_1', '5th Feature'), ('Run_3', '5th Feature'), ('Run_9', '5th Feature'), ('Run_10', '5th Feature')]
-Feature28[('Run_2', '4th Feature'), ('Run_6', '4th Feature')]
-Feature7[('Run_8', '4th Feature')]
-Feature18[('Run_4', '5th Feature')]
-Feature26[('Run_7', '5th Feature')]
+Feature23[('Run_1', '1st Feature'), ('Run_3', '1st Feature'), ('Run_4', '1st Feature'), ('Run_5', '1st Feature'), ('Run_7', '1st Feature'), ('Run_8', '1st Feature'), ('Run_9', '1st Feature'), ('Run_10', '1st Feature'), ('Run_2', '2nd Feature'), ('Run_6', '2nd Feature')]
+Feature20[('Run_2', '1st Feature'), ('Run_6', '1st Feature'), ('Run_1', '2nd Feature'), ('Run_3', '2nd Feature'), ('Run_8', '2nd Feature'), ('Run_9', '2nd Feature'), ('Run_10', '2nd Feature'), ('Run_4', '3rd Feature'), ('Run_7', '3rd Feature')]
+Feature10[('Run_4', '2nd Feature'), ('Run_7', '2nd Feature'), ('Run_1', '3rd Feature'), ('Run_2', '3rd Feature'), ('Run_3', '3rd Feature'), ('Run_9', '3rd Feature'), ('Run_10', '4th Feature'), ('Run_6', '5th Feature')]
+Feature13[('Run_5', '2nd Feature'), ('Run_8', '3rd Feature'), ('Run_10', '3rd Feature'), ('Run_1', '4th Feature'), ('Run_2', '4th Feature'), ('Run_6', '4th Feature'), ('Run_7', '4th Feature'), ('Run_9', '4th Feature'), ('Run_4', '5th Feature')]
+Feature27[('Run_5', '3rd Feature'), ('Run_8', '4th Feature')]
+Feature22[('Run_6', '3rd Feature')]
+Feature24[('Run_3', '4th Feature'), ('Run_4', '4th Feature'), ('Run_2', '5th Feature'), ('Run_9', '5th Feature'), ('Run_10', '5th Feature')]
+Feature0[('Run_5', '4th Feature')]
+Feature28[('Run_1', '5th Feature'), ('Run_5', '5th Feature')]
+Feature21[('Run_3', '5th Feature'), ('Run_8', '5th Feature')]
+Feature25[('Run_7', '5th Feature')]
 
 The ranking deviation of each feature is: 
 
-Feature23: 0.3
-Feature20: 0.5
-Feature24: 1.0
-Feature10: 0.7559289460184544
-Feature21: 1.0
-Feature13: 0.4330127018922193
-Feature27: 0.7637626158259734
+Feature23: 0.4
+Feature20: 0.6666666666666666
+Feature10: 0.9270248108869579
+Feature13: 0.816496580927726
+Feature27: 0.5
+Feature22: 0.0
+Feature24: 0.48989794855663565
+Feature0: 0.0
 Feature28: 0.0
-Feature7: 0.0
-Feature18: 0.0
-Feature26: 0.0
+Feature21: 0.0
+Feature25: 0.0
 
 This is the ranking deviation percentage for each feature: 
 
-Feature23: 27.27%
-Feature20: 25.00%
-Feature24: 25.00%
-Feature10: 25.20%
-Feature21: 25.00%
-Feature13: 13.32%
-Feature27: 16.97%
+Feature23: 33.33%
+Feature20: 33.33%
+Feature10: 29.66%
+Feature13: 22.27%
+Feature27: 14.29%
+Feature22: 0.00%
+Feature24: 10.65%
+Feature0: 0.00%
 Feature28: 0.00%
-Feature7: 0.00%
-Feature18: 0.00%
-Feature26: 0.00%
+Feature21: 0.00%
+Feature25: 0.00%
 
 ..........................................
 
-Mean of the ranking deviation: 14.34%
+Mean of the ranking deviation: 13.05%
 
-Mean of the standard deviation (from importance of features): 20.73%
+Mean of the standard deviation (from importance of features): 15.80%
 
 All predictions were the same
 

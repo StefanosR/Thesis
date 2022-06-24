@@ -5,33 +5,32 @@ easter_egg
 
 Our dataframes are:
 
-       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
-Run_1   0.5388986   0.3734608  0.29421735  0.20407566  0.08932356
-Run_2   0.5601758  0.23139936  0.22465211  0.16121243  0.10151181 
+       1st Feature 2nd Feature 3rd Feature 4th Feature  5th Feature
+Run_1   0.5388986   0.3734608  0.29421735  0.20407566   0.08932356
+Run_2    0.558489   0.5317558  0.15215799  0.14097045  0.102782905 
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 Run_1    Feature0    Feature7    Feature6    Feature5    Feature2
-Run_2    Feature0    Feature1    Feature6    Feature5    Feature7 
+Run_2    Feature0    Feature6    Feature5    Feature7    Feature2 
 
 
 Describe df with the feature names:
 
         1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 count            2           2           2           2           2
-unique           1           2           1           1           2
+unique           1           2           2           2           1
 top       Feature0    Feature7    Feature6    Feature5    Feature2
-freq             2           1           2           2           1
+freq             2           1           1           1           2
 
 ..........................................
 
 
 This is the new dictionary we created:
- {'Feature0': array([0.5388986, 0.5601758]), 'Feature1': array([0.23139936]), 'Feature2': array([0.08932356]), 'Feature5': array([0.20407566, 0.16121243]), 'Feature6': array([0.29421735, 0.22465211]), 'Feature7': array([0.3734608 , 0.10151181])}
+ {'Feature0': array([0.5388986, 0.558489 ]), 'Feature2': array([0.08932356, 0.1027829 ]), 'Feature5': array([0.20407566, 0.15215799]), 'Feature6': array([0.29421735, 0.5317558 ]), 'Feature7': array([0.3734608 , 0.14097045])}
 
 This is the matrix with the unique features: 
 
 Feature0
-Feature1
 Feature2
 Feature5
 Feature6
@@ -39,48 +38,43 @@ Feature7
 
 This is the matrix with the list of values each feature has: 
 
-[0.5388986 0.5601758]
-[0.23139936]
-[0.08932356]
-[0.20407566 0.16121243]
-[0.29421735 0.22465211]
-[0.3734608  0.10151181]
+[0.5388986 0.558489 ]
+[0.08932356 0.1027829 ]
+[0.20407566 0.15215799]
+[0.29421735 0.5317558 ]
+[0.3734608  0.14097045]
 
 This is the the std deviation of each list: 
 
 0.01
-0.00
-0.00
-0.02
+0.01
 0.03
-0.14
+0.12
+0.12
 
 This is the relative std deviation of each list of values: 
 
-1.94%
-0.00%
-0.00%
-11.73%
-13.41%
-57.26%
+1.79%
+7.01%
+14.57%
+28.76%
+45.19%
 
 The standard deviation of our features is: 
 
 ('Feature0', '0.01')
-('Feature1', '0.00')
-('Feature2', '0.00')
-('Feature5', '0.02')
-('Feature6', '0.03')
-('Feature7', '0.14')
+('Feature2', '0.01')
+('Feature5', '0.03')
+('Feature6', '0.12')
+('Feature7', '0.12')
 
 The relative standard deviation of our features is: 
 
-('Feature0', '1.94%')
-('Feature1', '0.00%')
-('Feature2', '0.00%')
-('Feature5', '11.73%')
-('Feature6', '13.41%')
-('Feature7', '57.26%')
+('Feature0', '1.79%')
+('Feature2', '7.01%')
+('Feature5', '14.57%')
+('Feature6', '28.76%')
+('Feature7', '45.19%')
 
 ..........................................
 
@@ -88,34 +82,31 @@ The relative standard deviation of our features is:
 These are the positions where each feature is present and what ranking it has:
  
 Feature0[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
-Feature7[('Run_1', '2nd Feature'), ('Run_2', '5th Feature')]
-Feature1[('Run_2', '2nd Feature')]
-Feature6[('Run_1', '3rd Feature'), ('Run_2', '3rd Feature')]
-Feature5[('Run_1', '4th Feature'), ('Run_2', '4th Feature')]
-Feature2[('Run_1', '5th Feature')]
+Feature7[('Run_1', '2nd Feature'), ('Run_2', '4th Feature')]
+Feature6[('Run_2', '2nd Feature'), ('Run_1', '3rd Feature')]
+Feature5[('Run_2', '3rd Feature'), ('Run_1', '4th Feature')]
+Feature2[('Run_1', '5th Feature'), ('Run_2', '5th Feature')]
 
 The ranking deviation of each feature is: 
 
 Feature0: 0.0
-Feature7: 1.5
-Feature1: 0.0
-Feature6: 0.0
-Feature5: 0.0
+Feature7: 1.0
+Feature6: 0.5
+Feature5: 0.5
 Feature2: 0.0
 
 This is the ranking deviation percentage for each feature: 
 
 Feature0: 0.00%
-Feature7: 42.86%
-Feature1: 0.00%
-Feature6: 0.00%
-Feature5: 0.00%
+Feature7: 33.33%
+Feature6: 20.00%
+Feature5: 14.29%
 Feature2: 0.00%
 
 ..........................................
 
-Mean of the ranking deviation: 7.14%
+Mean of the ranking deviation: 13.52%
 
-Mean of the standard deviation (from importance of features): 14.06%
+Mean of the standard deviation (from importance of features): 19.46%
 
 All predictions were the same

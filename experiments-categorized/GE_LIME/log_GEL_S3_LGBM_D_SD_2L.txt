@@ -1,0 +1,723 @@
+Did nothing
+Intercept 142.4546962603365
+Prediction_local [162.82930662]
+Right: 172.10497122965123
+Intercept 146.58051152208125
+Prediction_local [144.10886154]
+Right: 181.03710863467217
+Intercept 166.1036550680569
+Prediction_local [130.13668356]
+Right: 77.00400309133829
+Intercept 129.96732182125845
+Prediction_local [205.71912837]
+Right: 217.36883393968716
+Intercept 156.20750519498273
+Prediction_local [157.37999341]
+Right: 167.8007566395057
+Intercept 147.8755056729999
+Prediction_local [145.96343687]
+Right: 151.39831462570402
+Intercept 139.2795154172163
+Prediction_local [210.07706043]
+Right: 201.61571735348883
+Intercept 145.36571174154403
+Prediction_local [195.00405476]
+Right: 182.18724479391182
+Intercept 181.35362430876825
+Prediction_local [84.34457146]
+Right: 100.28809654103019
+Intercept 127.89766080390547
+Prediction_local [240.25168844]
+Right: 281.3145806802831
+Intercept 170.43688195684427
+Prediction_local [114.24464652]
+Right: 160.63835142964692
+Intercept 137.7551085941634
+Prediction_local [211.91394309]
+Right: 229.79663690269143
+Intercept 157.10685441512467
+Prediction_local [151.91437792]
+Right: 180.3328252585839
+Intercept 146.77391655384636
+Prediction_local [184.3915979]
+Right: 236.00494644600872
+Intercept 151.1376253729803
+Prediction_local [171.80365186]
+Right: 148.1421390547702
+Intercept 139.022402399097
+Prediction_local [210.06933151]
+Right: 189.1839449968594
+Intercept 168.0606672043148
+Prediction_local [81.64903175]
+Right: 88.2366785334232
+Intercept 161.66646121969796
+Prediction_local [103.65957626]
+Right: 102.99358195693442
+Intercept 185.4039192203934
+Prediction_local [70.58058873]
+Right: 25.701995111805278
+Intercept 154.76103919891116
+Prediction_local [122.4111999]
+Right: 145.67340714694095
+Intercept 144.2359314668918
+Prediction_local [154.17987819]
+Right: 115.04644609601236
+Intercept 158.7567174694586
+Prediction_local [152.60109773]
+Right: 183.93420752784664
+Intercept 166.2299901672307
+Prediction_local [91.89822438]
+Right: 97.54458720591464
+Intercept 171.0624840512865
+Prediction_local [73.83197129]
+Right: 97.4689589160411
+Intercept 185.51723948986472
+Prediction_local [70.7786311]
+Right: 74.58073367378618
+Intercept 160.7334260163694
+Prediction_local [143.12342033]
+Right: 135.75858009944628
+Intercept 151.12105755112333
+Prediction_local [174.96426271]
+Right: 148.4287796749377
+Intercept 173.3993522353532
+Prediction_local [72.00486234]
+Right: 58.13413136787313
+Intercept 121.58642744674412
+Prediction_local [231.72355766]
+Right: 237.06935672651773
+Intercept 127.23573446060101
+Prediction_local [244.4892927]
+Right: 241.70007227491664
+Intercept 161.24294139373075
+Prediction_local [98.03931481]
+Right: 118.66349963694299
+Intercept 142.12322330901665
+Prediction_local [196.49536107]
+Right: 204.62835231549803
+Intercept 147.69277474009337
+Prediction_local [182.51879426]
+Right: 163.04014823037102
+Intercept 164.01194289033185
+Prediction_local [132.4983991]
+Right: 101.8132162520738
+Intercept 152.04469758067654
+Prediction_local [135.74600102]
+Right: 76.62270040016772
+Intercept 134.94684062695026
+Prediction_local [184.3669367]
+Right: 188.55979873987104
+Intercept 173.61625412511697
+Prediction_local [102.56548593]
+Right: 78.06215177897379
+Intercept 146.79050213261564
+Prediction_local [148.19008349]
+Right: 130.9945405107599
+Intercept 141.6420923925324
+Prediction_local [207.74295158]
+Right: 166.42195289574246
+Intercept 115.24823725406489
+Prediction_local [250.31269421]
+Right: 225.70852703994825
+Intercept 158.64113729949008
+Prediction_local [110.46543879]
+Right: 163.4400787013703
+Intercept 132.6616672168194
+Prediction_local [226.52239645]
+Right: 242.80826207476778
+Intercept 167.44481281801964
+Prediction_local [123.34458288]
+Right: 123.68072687836506
+Intercept 179.55299193048018
+Prediction_local [89.72032533]
+Right: 67.13270540020723
+Intercept 150.3815596498058
+Prediction_local [176.73993401]
+Right: 156.65654054854593
+Intercept 119.29637521476323
+Prediction_local [234.24743796]
+Right: 209.92683074547801
+Intercept 158.2320301369815
+Prediction_local [154.99475063]
+Right: 181.60466777904855
+Intercept 155.13610419937854
+Prediction_local [125.76717521]
+Right: 166.68129154693827
+Intercept 169.98419303415568
+Prediction_local [81.0698744]
+Right: 66.9049376578764
+Intercept 159.14200936574764
+Prediction_local [146.39122214]
+Right: 147.02017642772574
+Intercept 154.53840763081453
+Prediction_local [126.59956436]
+Right: 118.32034445536347
+Intercept 171.92776408066982
+Prediction_local [117.42131395]
+Right: 123.5588921380201
+Intercept 170.38848937311994
+Prediction_local [83.08328057]
+Right: 86.05006313942597
+Intercept 110.12437976388377
+Prediction_local [258.80914376]
+Right: 243.3342012748094
+Intercept 131.24650319208124
+Prediction_local [192.11675968]
+Right: 175.49752361511207
+Intercept 167.1190163068893
+Prediction_local [84.43792594]
+Right: 85.38965104537255
+Intercept 132.10887644237877
+Prediction_local [231.78406147]
+Right: 275.856991668696
+Intercept 160.66221815142103
+Prediction_local [109.13442003]
+Right: 134.8037923016832
+Intercept 180.6999067362014
+Prediction_local [88.28988043]
+Right: 111.84290009932558
+Intercept 180.67018104341057
+Prediction_local [89.63572981]
+Right: 76.8117375727851
+Intercept 152.19678449711733
+Prediction_local [169.75144747]
+Right: 96.91329353295421
+Intercept 139.22606534717843
+Prediction_local [210.31349064]
+Right: 212.75032532722363
+Intercept 141.29982814344015
+Prediction_local [203.83804501]
+Right: 226.9083548130735
+Intercept 140.87865736206916
+Prediction_local [207.15265428]
+Right: 230.8490808469749
+Intercept 142.24208645908453
+Prediction_local [163.27775412]
+Right: 127.43258988600329
+Intercept 135.6317503580773
+Prediction_local [224.04362213]
+Right: 256.086721974101
+Intercept 172.04702998837521
+Prediction_local [76.75891931]
+Right: 70.13142571982581
+Intercept 182.3774604535796
+Prediction_local [79.41870434]
+Right: 78.3663488662051
+Intercept 153.56728459956662
+Prediction_local [126.58501629]
+Right: 156.1160965910879
+Intercept 145.2730960306126
+Prediction_local [147.65667645]
+Right: 143.79112532167863
+Intercept 148.44243322727144
+Prediction_local [146.72765187]
+Right: 106.87082127685544
+Intercept 164.3901979530055
+Prediction_local [105.65265452]
+Right: 74.30496479640237
+Intercept 165.17501210183227
+Prediction_local [101.17541775]
+Right: 104.63904707984963
+Intercept 179.60914957179347
+Prediction_local [85.7045032]
+Right: 59.385082239936025
+Intercept 136.15151980768036
+Prediction_local [220.3927866]
+Right: 196.60537634233702
+Intercept 139.52172394442468
+Prediction_local [175.08928358]
+Right: 166.05102758269558
+Intercept 179.19129129808368
+Prediction_local [92.51552279]
+Right: 93.72114827986628
+Intercept 121.50730114124099
+Prediction_local [230.56714862]
+Right: 262.08220603694184
+Intercept 178.86248192441957
+Prediction_local [86.39532158]
+Right: 83.41621110244303
+Intercept 162.31292646260562
+Prediction_local [106.29999596]
+Right: 95.09903621247533
+Intercept 128.19350194813796
+Prediction_local [206.5290136]
+Right: 198.88708983444863
+Intercept 160.4087199628924
+Prediction_local [108.47844758]
+Right: 116.61618639238087
+Intercept 118.26568923700935
+Prediction_local [233.62645014]
+Right: 205.5130749721566
+Intercept 160.6923367059761
+Prediction_local [104.74424717]
+Right: 116.63340418365038
+Intercept 140.73385474796123
+Prediction_local [206.97339425]
+Right: 158.3061906797016
+Intercept 179.6082877925213
+Prediction_local [90.88244825]
+Right: 98.38771976553463
+Intercept 142.21748623728712
+Prediction_local [165.4791787]
+Right: 191.89476111540768
+Intercept 132.98021461201475
+Prediction_local [190.3768697]
+Right: 195.73258800880086
+Intercept 152.85783786888223
+Prediction_local [167.9683039]
+Right: 120.92241496089028
+Intercept 165.4418684121058
+Prediction_local [89.50033986]
+Right: 83.16014508829569
+Intercept 159.20392364649098
+Prediction_local [109.42487953]
+Right: 101.39768452866345
+Intercept 109.67338260076663
+Prediction_local [261.75112895]
+Right: 294.62409874876175
+Intercept 134.36630032708828
+Prediction_local [227.89311064]
+Right: 236.87717981980146
+Intercept 137.43186883090067
+Prediction_local [181.5211946]
+Right: 132.959147555588
+Intercept 134.82549938216394
+Prediction_local [188.20067586]
+Right: 142.09866968618869
+Intercept 145.41323176433758
+Prediction_local [195.38620701]
+Right: 176.41158238179125
+Intercept 156.29050235308492
+Prediction_local [153.33071582]
+Right: 104.63353989200228
+Intercept 178.32095634583484
+Prediction_local [90.18186484]
+Right: 99.19677525081615
+Intercept 173.82536583889478
+Prediction_local [102.48396553]
+Right: 89.55247733183101
+Intercept 158.99491489950032
+Prediction_local [107.70417557]
+Right: 73.69250662785075
+Intercept 117.72347438750313
+Prediction_local [235.52697029]
+Right: 273.4336799027237
+easter_egg
+Intercept 145.19119515309808
+Prediction_local [153.15783074]
+Right: 172.10497122965123
+Intercept 138.59474390523283
+Prediction_local [180.2083407]
+Right: 163.04014823037102
+Intercept 133.5135301784683
+Prediction_local [186.24550653]
+Right: 158.3061906797016
+Intercept 152.7135657642194
+Prediction_local [146.68566524]
+Right: 143.79112532167863
+Intercept 155.01196643621842
+Prediction_local [122.54363332]
+Right: 101.8132162520738
+Intercept 162.37878818959456
+Prediction_local [99.44817473]
+Right: 76.62270040016772
+Intercept 135.5212916002697
+Prediction_local [221.73876262]
+Right: 230.8490808469749
+Intercept 147.79658976928502
+Prediction_local [136.34476377]
+Right: 104.63353989200228
+Intercept 150.12557627359095
+Prediction_local [176.25660707]
+Right: 191.80318788609745
+Intercept 172.85404570220578
+Prediction_local [97.91955787]
+Right: 100.28809654103019
+Intercept 158.1191850207014
+Prediction_local [108.46851796]
+Right: 77.00400309133829
+Intercept 172.4094942806234
+Prediction_local [100.01070814]
+Right: 101.39768452866345
+Intercept 147.8937443644726
+Prediction_local [152.2911207]
+Right: 130.03416977560238
+Intercept 166.7718549462301
+Prediction_local [93.92569261]
+Right: 78.06215177897379
+Intercept 164.9183299898308
+Prediction_local [119.1944319]
+Right: 124.7118044627054
+Intercept 168.091263828206
+Prediction_local [101.86705145]
+Right: 98.38771976553463
+Intercept 164.49145691385849
+Prediction_local [136.23148348]
+Right: 156.1160965910879
+Intercept 152.80368226914712
+Prediction_local [140.0874754]
+Right: 127.43258988600329
+Intercept 133.56557092166588
+Prediction_local [197.76283108]
+Right: 183.42085016100137
+Intercept 142.88148910727716
+Prediction_local [184.0131818]
+Right: 180.3328252585839
+Intercept 172.7712907268912
+Prediction_local [89.29908353]
+Right: 84.75743006246246
+Intercept 132.832059259262
+Prediction_local [197.85799267]
+Right: 179.86537869735562
+Intercept 168.17937390001
+Prediction_local [97.10106538]
+Right: 89.55247733183101
+Intercept 176.79199713902705
+Prediction_local [88.21308502]
+Right: 97.54458720591464
+Intercept 170.17813202994023
+Prediction_local [110.65257732]
+Right: 116.61618639238087
+Intercept 173.1094772816987
+Prediction_local [101.05326543]
+Right: 104.63904707984963
+Intercept 134.49002391675188
+Prediction_local [205.53098528]
+Right: 201.61571735348883
+Intercept 168.89072181438308
+Prediction_local [102.35624352]
+Right: 102.99358195693442
+Intercept 144.48501993332098
+Prediction_local [161.74551636]
+Right: 148.1421390547702
+Intercept 174.64025711099754
+Prediction_local [79.83202727]
+Right: 75.85558426000101
+Intercept 149.0864167882181
+Prediction_local [173.56442112]
+Right: 184.9462569100053
+Intercept 181.39767224369098
+Prediction_local [76.31917712]
+Right: 86.05006313942597
+Intercept 134.0105018360732
+Prediction_local [219.92545938]
+Right: 226.9083548130735
+Intercept 143.08187889042307
+Prediction_local [190.44439472]
+Right: 199.96996646946724
+Intercept 162.1578035980173
+Prediction_local [124.93785609]
+Right: 123.5588921380201
+Intercept 150.475737065218
+Prediction_local [152.3532785]
+Right: 147.02017642772574
+Intercept 131.86352523869607
+Prediction_local [229.70398222]
+Right: 237.06935672651773
+Intercept 170.18624629601445
+Prediction_local [107.5631003]
+Right: 111.84290009932558
+Intercept 132.17173808017216
+Prediction_local [213.11468966]
+Right: 204.62835231549803
+Intercept 125.31068891794047
+Prediction_local [240.32827153]
+Right: 236.87717981980146
+Intercept 172.57950738685835
+Prediction_local [96.65724509]
+Right: 99.19677525081615
+Intercept 169.41081564844228
+Prediction_local [101.4100651]
+Right: 101.7680592609119
+Intercept 170.95879989649268
+Prediction_local [84.0784297]
+Right: 67.13270540020723
+Intercept 130.04220715979002
+Prediction_local [218.70059848]
+Right: 209.92683074547801
+Intercept 134.32693058932745
+Prediction_local [210.29411515]
+Right: 211.53920614845165
+Intercept 138.34761878836775
+Prediction_local [214.73236637]
+Right: 236.00494644600872
+Intercept 131.5240254133465
+Prediction_local [222.42273215]
+Right: 229.79663690269143
+Intercept 162.49418089768687
+Prediction_local [148.83305907]
+Right: 174.9192622550656
+Intercept 150.62410654850927
+Prediction_local [145.70069776]
+Right: 135.75858009944628
+Intercept 126.63220187406043
+Prediction_local [250.84482374]
+Right: 273.4336799027237
+Intercept 122.06283515995878
+Prediction_local [245.68554975]
+Right: 243.3342012748094
+Intercept 139.62253614645863
+Prediction_local [195.85878083]
+Right: 200.33772250096092
+Intercept 145.831011257031
+Prediction_local [180.85706681]
+Right: 179.29263828289524
+Intercept 182.49527619748153
+Prediction_local [77.49057959]
+Right: 88.2366785334232
+Intercept 158.06274886362027
+Prediction_local [157.05133655]
+Right: 181.03710863467217
+Intercept 172.4547709103914
+Prediction_local [106.55198659]
+Right: 118.66349963694299
+Intercept 170.8071870197455
+Prediction_local [86.65510644]
+Right: 76.8117375727851
+Intercept 119.57011418531195
+Prediction_local [265.83656552]
+Right: 281.3145806802831
+Intercept 171.87774170470945
+Prediction_local [76.68863899]
+Right: 59.385082239936025
+Intercept 173.89938540495424
+Prediction_local [95.21967477]
+Right: 99.2928557875664
+Intercept 142.180617435386
+Prediction_local [182.23466066]
+Right: 178.25481158209095
+Intercept 168.30070054968823
+Prediction_local [124.56718141]
+Right: 145.67340714694095
+Intercept 125.95911546779078
+Prediction_local [214.87821988]
+Right: 196.60537634233702
+Intercept 144.80037340747805
+Prediction_local [181.67893022]
+Right: 188.55979873987104
+Intercept 168.66671266584433
+Prediction_local [100.41199447]
+Right: 95.09903621247533
+Intercept 179.84933594804457
+Prediction_local [84.41888424]
+Right: 97.4689589160411
+Intercept 127.27114668807707
+Prediction_local [215.07773815]
+Right: 205.5130749721566
+Intercept 148.9892154882122
+Prediction_local [170.22519821]
+Right: 171.37616259997404
+Intercept 152.95160976107707
+Prediction_local [144.30162468]
+Right: 134.36300257568962
+Intercept 180.99605114055214
+Prediction_local [67.72503823]
+Right: 64.40486091479941
+Intercept 166.49038361205703
+Prediction_local [115.62498237]
+Right: 118.32034445536347
+Intercept 158.01643716522403
+Prediction_local [123.10810816]
+Right: 106.87082127685544
+Intercept 135.22588450946452
+Prediction_local [192.2263479]
+Right: 177.0109744291292
+Intercept 148.81971739782497
+Prediction_local [140.92573587]
+Right: 115.04644609601236
+Intercept 184.74076720131296
+Prediction_local [59.45307253]
+Right: 58.13413136787313
+Intercept 180.20540999351027
+Prediction_local [74.20115528]
+Right: 81.78333273956574
+Intercept 139.0891403323182
+Prediction_local [204.55723367]
+Right: 217.36883393968716
+Intercept 161.38277381070552
+Prediction_local [143.53705953]
+Right: 160.63835142964692
+Intercept 119.97574778667709
+Prediction_local [258.97040222]
+Right: 267.05236577608315
+Intercept 143.21136395504655
+Prediction_local [170.04546675]
+Right: 154.84704615963722
+Intercept 142.82019632979137
+Prediction_local [162.3073161]
+Right: 142.09866968618869
+Intercept 181.14939726974555
+Prediction_local [75.72108638]
+Right: 82.36940523084034
+Intercept 161.48390543935938
+Prediction_local [122.37639099]
+Right: 123.68072687836506
+Intercept 177.37041275378328
+Prediction_local [115.83738879]
+Right: 148.90766734829063
+Intercept 171.33297513573865
+Prediction_local [90.9885641]
+Right: 83.41621110244303
+Intercept 153.22200398619364
+Prediction_local [152.68856269]
+Right: 153.415580126107
+Intercept 131.52911118063759
+Prediction_local [185.48428931]
+Right: 156.89259200817813
+Intercept 129.30987734475875
+Prediction_local [239.63164456]
+Right: 256.086721974101
+Intercept 146.44201365052183
+Prediction_local [168.77587606]
+Right: 156.65654054854593
+Intercept 116.58712755105867
+Prediction_local [281.779405]
+Right: 294.62409874876175
+Intercept 143.85365543570427
+Prediction_local [187.15553443]
+Right: 195.73258800880086
+Intercept 161.31411568050407
+Prediction_local [100.45307003]
+Right: 73.69250662785075
+Intercept 149.25479031225703
+Prediction_local [144.92473816]
+Right: 120.92241496089028
+Intercept 130.56262289202712
+Prediction_local [242.64469668]
+Right: 262.08220603694184
+Intercept 155.9538290378109
+Prediction_local [164.98188628]
+Right: 181.60466777904855
+Intercept 177.07877749249562
+Prediction_local [83.01640874]
+Right: 81.9436858693083
+Intercept 124.86412731065516
+Prediction_local [239.23646076]
+Right: 240.342246128939
+Intercept 120.96996480372388
+Prediction_local [264.38038807]
+Right: 275.856991668696
+Intercept 173.0048016918347
+Prediction_local [92.22019319]
+Right: 93.72114827986628
+Intercept 132.2850423438378
+Prediction_local [201.64406852]
+Right: 189.1839449968594
+Intercept 171.73493498081524
+Prediction_local [85.09022249]
+Right: 74.30496479640237
+
+Our dataframes are:
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1      47.154      39.056       0.340      20.600       4.560
+Run_2      55.290      22.096      20.273       1.366       8.964 
+
+       1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+Run_1          s5         bmi         sex          bp          s3
+Run_2          s5         bmi          bp         sex          s1 
+
+
+Describe df with the feature names:
+
+        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
+count            2           2           2           2           2
+unique           1           1           2           2           2
+top             s5         bmi         sex          bp          s3
+freq             2           2           1           1           1
+
+..........................................
+
+
+This is the new dictionary we created:
+ {'bmi': array([39.056, 22.096]), 'bp': array([20.6  , 20.273]), 's1': array([8.964]), 's3': array([4.56]), 's5': array([47.154, 55.29 ]), 'sex': array([0.34 , 1.366])}
+
+This is the matrix with the unique features: 
+
+bmi
+bp
+s1
+s3
+s5
+sex
+
+This is the matrix with the list of values each feature has: 
+
+[39.056 22.096]
+[20.6   20.273]
+[8.964]
+[4.56]
+[47.154 55.29 ]
+[0.34  1.366]
+
+This is the the std deviation of each list: 
+
+8.48
+0.16
+0.00
+0.00
+4.07
+0.51
+
+This is the relative std deviation of each list of values: 
+
+27.73%
+0.80%
+0.00%
+0.00%
+7.94%
+60.14%
+
+The standard deviation of our features is: 
+
+('bmi', '8.48')
+('bp', '0.16')
+('s1', '0.00')
+('s3', '0.00')
+('s5', '4.07')
+('sex', '0.51')
+
+The relative standard deviation of our features is: 
+
+('bmi', '27.73%')
+('bp', '0.80%')
+('s1', '0.00%')
+('s3', '0.00%')
+('s5', '7.94%')
+('sex', '60.14%')
+
+..........................................
+
+
+These are the positions where each feature is present and what ranking it has:
+ 
+s5[('Run_1', '1st Feature'), ('Run_2', '1st Feature')]
+bmi[('Run_1', '2nd Feature'), ('Run_2', '2nd Feature')]
+sex[('Run_1', '3rd Feature'), ('Run_2', '4th Feature')]
+bp[('Run_2', '3rd Feature'), ('Run_1', '4th Feature')]
+s3[('Run_1', '5th Feature')]
+s1[('Run_2', '5th Feature')]
+
+The ranking deviation of each feature is: 
+
+s5: 0.0
+bmi: 0.0
+sex: 0.5
+bp: 0.5
+s3: 0.0
+s1: 0.0
+
+This is the ranking deviation percentage for each feature: 
+
+s5: 0.00%
+bmi: 0.00%
+sex: 14.29%
+bp: 14.29%
+s3: 0.00%
+s1: 0.00%
+
+..........................................
+
+Mean of the ranking deviation: 4.76%
+
+Mean of the standard deviation (from importance of features): 16.10%

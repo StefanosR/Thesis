@@ -54,16 +54,16 @@ def bigger_experiment(loop_num):
                 input_earthquake(training_data[i],earthquake_magnitude)
             return "Earthquake is over"
           
-        X, y = make_classification(n_samples=50000, n_features=30, random_state=42)
+        X, y = make_classification(n_samples=50000, n_features=30, random_state=42)          
+        X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=False)
         
         if (iteration_number == 2):
             # invoke the input perturbation script
-            change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
+            change_inputs(X_test,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
             print("easter_egg")
         else:
-            print("Did nothing") 
+            print("Did nothing")  
             
-        X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=False)
         model = MLPClassifier(random_state=42)
         model.fit(X_train, y_train)
 
@@ -82,7 +82,7 @@ def bigger_experiment(loop_num):
         input = 24
         
         # Produce explanations for the instance
-        exp = explainer.explain_instance(X[input], model.predict_proba, num_features=number_features)
+        exp = explainer.explain_instance(X_test[input], model.predict_proba, num_features=number_features)
 
         # # Visualized explanations
         # exp.show_in_notebook(show_table=True)

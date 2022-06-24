@@ -33,7 +33,7 @@ def myscript(iteration_number):
 
     # Calculate shap values 
     explainer = shap.TreeExplainer(model)
-    shap_values = explainer.shap_values(X)
+    shap_values = explainer.shap_values(X_test)
 
     # ----------- Extract global explanations -----------
     feature_names = fetch_california_housing().feature_names

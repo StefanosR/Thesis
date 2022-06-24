@@ -48,7 +48,7 @@ def myscript(iteration_number, number_features):
     input = 24
 
     # Produce explanations for the instance
-    exp = explainer.explain_instance(X[input], model.predict_proba, num_features=number_features)
+    exp = explainer.explain_instance(X_test[input], model.predict_proba, num_features=number_features)
 
     # # Visualized explanations
     # exp.show_in_notebook(show_table=True)

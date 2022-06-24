@@ -7,7 +7,7 @@ Our dataframes are:
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 Run_1   29.934288   16.655935   5.7158937    2.500792   2.4948123
-Run_2    35.30369    9.802291    7.774782   5.5085535    4.489263 
+Run_2   29.949291   16.633127    5.715302   2.4927688   2.4733264 
 
        1st Feature 2nd Feature 3rd Feature 4th Feature 5th Feature
 Run_1    Feature2    Feature8    Feature1    Feature9    Feature6
@@ -26,7 +26,7 @@ freq             2           2           2           1           1
 
 
 This is the new dictionary we created:
- {'Feature1': array([5.7158937, 7.774782 ]), 'Feature2': array([29.934288, 35.30369 ]), 'Feature6': array([2.4948123, 5.5085535]), 'Feature8': array([16.655935,  9.802291]), 'Feature9': array([2.500792, 4.489263])}
+ {'Feature1': array([5.7158937, 5.715302 ]), 'Feature2': array([29.934288, 29.949291]), 'Feature6': array([2.4948123, 2.4927688]), 'Feature8': array([16.655935, 16.633127]), 'Feature9': array([2.500792 , 2.4733264])}
 
 This is the matrix with the unique features: 
 
@@ -38,43 +38,43 @@ Feature9
 
 This is the matrix with the list of values each feature has: 
 
-[5.7158937 7.774782 ]
-[29.934288 35.30369 ]
-[2.4948123 5.5085535]
-[16.655935  9.802291]
-[2.500792 4.489263]
+[5.7158937 5.715302 ]
+[29.934288 29.949291]
+[2.4948123 2.4927688]
+[16.655935 16.633127]
+[2.500792  2.4733264]
 
 This is the the std deviation of each list: 
 
-1.03
-2.68
-1.51
-3.43
-0.99
+0.00
+0.01
+0.00
+0.01
+0.01
 
 This is the relative std deviation of each list of values: 
 
-15.26%
-8.23%
-37.66%
-25.90%
-28.45%
+0.01%
+0.03%
+0.04%
+0.07%
+0.55%
 
 The standard deviation of our features is: 
 
-('Feature1', '1.03')
-('Feature2', '2.68')
-('Feature6', '1.51')
-('Feature8', '3.43')
-('Feature9', '0.99')
+('Feature1', '0.00')
+('Feature2', '0.01')
+('Feature6', '0.00')
+('Feature8', '0.01')
+('Feature9', '0.01')
 
 The relative standard deviation of our features is: 
 
-('Feature1', '15.26%')
-('Feature2', '8.23%')
-('Feature6', '37.66%')
-('Feature8', '25.90%')
-('Feature9', '28.45%')
+('Feature1', '0.01%')
+('Feature2', '0.03%')
+('Feature6', '0.04%')
+('Feature8', '0.07%')
+('Feature9', '0.55%')
 
 ..........................................
 
@@ -107,6 +107,6 @@ Feature6: 11.11%
 
 Mean of the ranking deviation: 4.44%
 
-Mean of the standard deviation (from importance of features): 23.10%
+Mean of the standard deviation (from importance of features): 0.14%
 
 All predictions were the same

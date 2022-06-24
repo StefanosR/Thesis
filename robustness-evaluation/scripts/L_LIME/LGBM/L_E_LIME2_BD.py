@@ -53,15 +53,15 @@ def bigger_experiment(loop_num):
             return "Earthquake is over"
            
         X, y = fetch_california_housing(return_X_y=True)
+        X_train, X_test, y_train, y_test = train_test_split(X, y)
         
         if (loop_num == 1):
             # invoke the input perturbation script
-            change_inputs(X,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
+            change_inputs(X_test,2) # input training data and earthquake magnitude (1: 0.5-1% change, 10: 5-10% change)
             print("Input perturbation occured")
         else:
             print("Did nothing")
-            
-        X_train, X_test, y_train, y_test = train_test_split(X, y)
+                    
         model = lgb.LGBMRegressor()
         model.fit(X_train, y_train)
 
@@ -75,7 +75,7 @@ def bigger_experiment(loop_num):
         input = 24
         
         # Produce explanations for the instance
-        exp = explainer.explain_instance(X[input], model.predict, num_features=number_features)
+        exp = explainer.explain_instance(X_test[input], model.predict, num_features=number_features)
 
         # # Visualized explanations
         # exp.show_in_notebook(show_table=True)

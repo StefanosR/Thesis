@@ -34,7 +34,7 @@ def myscript(iteration_number):
 
     # Insert here the instance we want to examine
     instance = 24
-    local = X[instance]
+    local = X_test[instance]
     from numpy import asarray
     input = asarray([local])
 
