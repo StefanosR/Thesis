@@ -8,9 +8,7 @@
 # can judge the robustness or volatility of the system.
 # Runtime: 5 minutes
 
-from cmath import exp
 import sys
-from threading import local
 import pandas as pd
 import numpy as np
 import shap
@@ -28,7 +26,7 @@ stdoutOrigin=sys.stdout
 
 def bigger_experiment(loop_num):
         
-    # These 2 lines are for redirecting the python output to a log file
+    # This line is for redirecting the python output to a log file
       
     sys.stdout = open("log_GEM_S3_MLPC_D_BD_%dL.txt"%(loop_num+1), "w")    
 
